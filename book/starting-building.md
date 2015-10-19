@@ -60,6 +60,8 @@ But before going straight to the hardware, a [simulation run](simulation-sitl.md
 
 The PX4 system supports Qt Creator, Eclipse and Sublime Text. Qt Creator is the most user-friendly variant and hence the only officially supported IDE. Unless an expert in Eclipse or Sublime, their use is discouraged. Hardcore users can find an [Eclipse project](https://github.com/PX4/Firmware/blob/master/.project) and a [Sublime project](https://github.com/PX4/Firmware/blob/master/Firmware.sublime-project) in the source tree.
 
+![](images/toolchain/qtcreator.png)
+
 Before starting Qt Creator, the [project file](https://cmake.org/Wiki/CMake_Generator_Specific_Information#Code::Blocks_Generator) needs to be created:
 
 <div class="host-code"></div>
@@ -70,4 +72,6 @@ cd build_creator
 cmake .. -G "CodeBlocks - Unix Makefiles"
 ```
 
-That's it! Start Qt Creator, then click on *File -> Open File or Project..* and select the file '~/src/Firmware/build_creator/px4.cbp'. Building (the hammer symbol) now already works, and the correct setup to run the project is explained in the video below.
+That's it! Start Qt Creator, then complete the steps in the video below to set up the project to build.
+
+
