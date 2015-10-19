@@ -7,7 +7,7 @@ This is the summary of the PX4 dev guide.
   * [Toolchain Installation](starting-installing.md)
     * [Mac OS](starting-installing-mac.md)
     * [Linux](starting-installing-linux.md)
-      * [Troubleshooting](starting-installing-linux-boutique.md)
+      * [Advanced Linux](starting-installing-linux-boutique.md)
     * [Windows](starting-installing-windows.md)
   * [Building the Code](starting-building.md)
   * [Contributing](starting-contributing.md)

@@ -1,7 +1,49 @@
 # Linux Installation Instructions for Arch and CentOS
 
+## USB Device Configuration
 
-## CentOs
+Linux users need to explicitly allow access to the USB bus for JTAG programming adapters.
+
+<aside class="note">
+For Archlinux: replace the group plugdev with uucp in the following commands
+</aside>
+
+Run a simple ls in sudo mode to ensure the commands below succeed:
+
+<div class="host-code"></div>
+
+```sh
+sudo ls
+```
+
+Then with sudo rights temporarily granted, run this command:
+
+<div class="host-code"></div>
+
+```sh
+cat > $HOME/rule.tmp <<_EOF
+# All 3D Robotics (includes PX4) devices
+SUBSYSTEM=="usb", ATTR{idVendor}=="26AC", GROUP="plugdev"
+# FTDI (and Black Magic Probe) Devices
+SUBSYSTEM=="usb", ATTR{idVendor}=="0483", GROUP="plugdev"
+# Olimex Devices
+SUBSYSTEM=="usb",  ATTR{idVendor}=="15ba", GROUP="plugdev"
+_EOF
+sudo mv $HOME/rule.tmp /etc/udev/rules.d/10-px4.rules
+sudo restart udev
+```
+
+User needs to be added to the group plugdev:
+
+<div class="host-code"></div>
+
+```sh
+sudo usermod -a -G plugdev $USER
+```
+
+## Installation Instructions for Uncommon Linux Systems
+
+### CentOs
 
 The build requires Python 2.7.5. Therefore as of this writing Centos 7 should be used. 
 (For earlier Centos releases a side-by-side install of python v2.7.5 may be done. But it is not recommended because it can break yum.) 
@@ -23,7 +65,7 @@ yum install openocd libftdi-devel libftdi-python python-argparse flex bison-deve
 
 Note:You may want to also install  python-pip and screen
 
-### Additional 32 bit libraries
+#### Additional 32 bit libraries
 
 Once the arm toolchain is installed test it with:
 
@@ -50,7 +92,7 @@ sudo yum install glibc.i686 ncurses-libs.i686
 Pulling in ncurses-libs.i686 will pull in most of the other required 32 bit libraries. Centos 7 will install most all the PX4 related devices without the need for any added udev rules. The devices will be accessible to the predefined group ' dialout'. Therefore any references to adding udev rules can be ignored. The only requirement is that your user account is a member of the group 'dial out'
 </aside>
 
-## Arch Linux
+### Arch Linux
 
 <div class="host-code"></div>
 
@@ -58,7 +100,7 @@ Pulling in ncurses-libs.i686 will pull in most of the other required 32 bit libr
 sudo pacman -S base-devel lib32-glibc git-core python-pyserial zip python-empy
 ```
 
-Install [[https://wiki.archlinux.org/index.php/Yaourt#Installation|yaourt]], the package manager for the [[https://wiki.archlinux.org/index.php/Arch_User_Repository|Arch User Repository (AUR)]].
+Install [yaourt](https://wiki.archlinux.org/index.php/Yaourt#Installation), the package manager for the [Arch User Repository (AUR)](https://wiki.archlinux.org/index.php/Arch_User_Repository).
 
 Then use it to download, compile and install the following:
 
@@ -68,7 +110,7 @@ Then use it to download, compile and install the following:
 yaourt -S genromfs
 ```
 
-### Permissions
+#### Permissions
 
 The user needs to be added to the group "uucp":
 
@@ -80,44 +122,6 @@ sudo usermod -a -G uucp $USER
 
 After that, logging out and logging back in is needed.
 
-
-### USB Device Configuration
-
-Linux users need to explicitly allow access to the USB bus for the programming adapters.
-
-For Archlinux: replace the group plugdev with uucp in the following commands
-
-
-Run a simple ls in sudo mode to ensure the commands below succeed:
-
-<div class="host-code"></div>
-
-```sh
-sudo ls
-```
-
-<div class="host-code"></div>
-
-```sh
-cat > $HOME/rule.tmp <<_EOF
-# All 3D Robotics (includes PX4) devices
-SUBSYSTEM=="usb", ATTR{idVendor}=="26AC", GROUP="plugdev"
-# FTDI (and Black Magic Probe) Devices
-SUBSYSTEM=="usb", ATTR{idVendor}=="0483", GROUP="plugdev"
-# Olimex Devices
-SUBSYSTEM=="usb",  ATTR{idVendor}=="15ba", GROUP="plugdev"
-_EOF
-sudo mv $HOME/rule.tmp /etc/udev/rules.d/10-px4.rules
-sudo restart udev
-```
-
-User needs to be in group plugdev:
-
-<div class="host-code"></div>
-
-```sh
-sudo usermod -a -G plugdev $USER
-```
 
 <aside class="note">
 Log out and log in for changes to take effect! Also remove the device and plug it back in!**
