@@ -13,11 +13,11 @@ sudo apt-get update
 sudo apt-get install python-serial python-argparse openocd \
     flex bison libncurses5-dev autoconf texinfo build-essential \
     libftdi-dev libtool zlib1g-dev genromfs git-core wget zip \
-    python-empy
+    python-empy qtcreator
 ```
 
 <aside class="note">
-If using Debian, run this command:
+If using Debian Linux, run this command:
 </aside>
 
 <div class="host-code"></div>

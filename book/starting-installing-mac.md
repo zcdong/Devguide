@@ -24,4 +24,6 @@ sudo easy_install pip
 sudo pip install pyserial empy
 ```
 
+And finally download and install the Qt Creator app: [Download](http://www.qt.io/download-open-source/#section-6)
+
 Now continue to run the [first build](starting-building.md)!
