@@ -60,11 +60,28 @@ But before going straight to the hardware, a [simulation run](simulation-sitl.md
 
 The PX4 system supports Qt Creator, Eclipse and Sublime Text. Qt Creator is the most user-friendly variant and hence the only officially supported IDE. Unless an expert in Eclipse or Sublime, their use is discouraged. Hardcore users can find an [Eclipse project](https://github.com/PX4/Firmware/blob/master/.project) and a [Sublime project](https://github.com/PX4/Firmware/blob/master/Firmware.sublime-project) in the source tree.
 
+{% youtube %}https://www.youtube.com/watch?v=Bkk8zttWxEI&vq=hd720{% endyoutube %}
+
+## Qt Creator Functionality
+
+Qt creator offers clickable symbols, auto-completion of the complete codebase and building and flashing firmware.
+
 ![](images/toolchain/qtcreator.png)
+
+<aside class="note">
+Linux users can just load the CMakeLists.txt in the root firmware folder via File -> Open File or Project -> Select the CMakeLists.txt file.
+</aside>
+
+<aside class="todo">
+Windows has not been tested with Qt creator yet.
+</aside>
+
+### Mac Os Workaround for Qt Creator
 
 Before starting Qt Creator, the [project file](https://cmake.org/Wiki/CMake_Generator_Specific_Information#Code::Blocks_Generator) needs to be created:
 
 <div class="host-code"></div>
+
 ```sh
 cd ~/src/Firmware
 mkdir build_creator
@@ -74,4 +91,4 @@ cmake .. -G "CodeBlocks - Unix Makefiles"
 
 That's it! Start Qt Creator, then complete the steps in the video below to set up the project to build.
 
-
+{% youtube %}https://www.youtube.com/watch?v=0pa0gS30zNw&vq=hd720{% endyoutube %}
