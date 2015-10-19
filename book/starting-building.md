@@ -10,6 +10,7 @@ Before moving on to a graphical editor or IDE, it is important to validate the s
 
 The terminal starts in the home directory. We default to '~/src/Firmware' and clone the upstream repository. Experienced developers might clone [their fork](https://help.github.com/articles/fork-a-repo/) instead.
 
+<div class="host-code"></div>
 ```sh
 mkdir -p ~/src
 cd ~/src
@@ -17,6 +18,7 @@ git clone https://github.com/PX4/Firmware.git
 ```
 Now its time to build the binaries by compiling the source code.
 
+<div class="host-code"></div>
 ```sh
 cd Firmware
 make px4fmu-v2_default
@@ -24,6 +26,7 @@ make px4fmu-v2_default
 
 Note the syntax: 'make' is the build tool, 'px4fmu-v2' is the hardware / autopilot version and 'default' is the default configuration. All PX4 build targets follow this logic. A successful run will end with this output:
 
+<div class="host-code"></div>
 ```sh
 [100%] Linking CXX executable firmware_nuttx
 [100%] Built target firmware_nuttx
@@ -34,12 +37,14 @@ Scanning dependencies of target build_firmware_px4fmu-v2
 
 By appending 'upload' to these commands the compiled binary will be uploaded via USB to the autopilot hardware:
 
+<div class="host-code"></div>
 ```sh
 make px4fmu-v2_default upload
 ```
 
 A successful run will end with this output:
 
+<div class="host-code"></div>
 ```sh
 Erase  : [====================] 100.0%
 Program: [====================] 100.0%
@@ -57,6 +62,7 @@ The PX4 system supports Qt Creator, Eclipse and Sublime Text. Qt Creator is the 
 
 Before starting Qt Creator, the [project file](https://cmake.org/Wiki/CMake_Generator_Specific_Information#Code::Blocks_Generator) needs to be created:
 
+<div class="host-code"></div>
 ```sh
 cd ~/src/Firmware
 mkdir build_creator

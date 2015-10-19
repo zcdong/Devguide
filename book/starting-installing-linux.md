@@ -7,6 +7,7 @@ We have standardized on Debian / Ubuntu LTS as the supported Linux distribution,
 Update the package list and install the following dependencies:
 
 <div class="host-code"></div>
+
 ```sh
 sudo apt-get update
 sudo apt-get install python-serial python-argparse openocd \
@@ -20,6 +21,7 @@ If using Debian, run this command:
 </aside>
 
 <div class="host-code"></div>
+
 ```sh
 sudo dpkg --add-architecture i386
 sudo apt-get update
@@ -28,15 +30,21 @@ sudo apt-get update
 Install the 32 bit support libraries (if running already on 32 bit this might fail and can be skipped):
 
 <div class="host-code"></div>
+
 ```sh
 sudo apt-get install libc6:i386 libgcc1:i386 gcc-4.6-base:i386 libstdc++5:i386 libstdc++6:i386
 ```
 
 ## Permission Setup
 
+<aside class="note">
+Never ever fix permission problems by using 'sudo'. It will create more permission problems in the process and require a system reinstallation to fix them.
+</aside>
+
 The user needs to be added to the group "dialout":
 
 <div class="host-code"></div>
+
 ```sh
 sudo usermod -a -G dialout $USER
 ```
