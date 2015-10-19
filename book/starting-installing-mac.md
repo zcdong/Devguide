@@ -19,6 +19,7 @@ brew install cmake
 Then install the required python packages:
 
 <div class="host-code"></div>
+
 ```sh
 sudo easy_install pip
 sudo pip install pyserial empy
