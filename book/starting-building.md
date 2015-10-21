@@ -73,15 +73,21 @@ Qt creator offers clickable symbols, auto-completion of the complete codebase an
 
 ![](images/toolchain/qtcreator.png)
 
+### Qt Creator on Linux
+
 <aside class="note">
 Linux users can just load the CMakeLists.txt in the root firmware folder via File -> Open File or Project -> Select the CMakeLists.txt file.
 </aside>
+
+After loading, the 'play' button can be configured to run the project by selecting 'custom executable' in the run target configuration and entering 'make' as executable and 'upload' as argument.
+
+### Qt Creator on Windows
 
 <aside class="todo">
 Windows has not been tested with Qt creator yet.
 </aside>
 
-### Mac Os Workaround for Qt Creator
+### Qt Creator on Mac OS
 
 Before starting Qt Creator, the [project file](https://cmake.org/Wiki/CMake_Generator_Specific_Information#Code::Blocks_Generator) needs to be created:
 

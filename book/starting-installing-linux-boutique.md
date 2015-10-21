@@ -129,7 +129,33 @@ Log out and log in for changes to take effect! Also remove the device and plug i
 
 ### Toolchain Installation
 
-Please refer to the [Debian / Ubuntu instructions](starting-installing-linux.md) for the toolchain installation.
+Execute the script below to either install GCC 4.8.4 or 4.9.2:
+
+<div class="host-code"></div>
+
+```sh
+pushd .
+cd ~
+wget https://launchpadlibrarian.net/186124160/gcc-arm-none-eabi-4_8-2014q3-20140805-linux.tar.bz2
+tar -jxf gcc-arm-none-eabi-4_8-2014q3-20140805-linux.tar.bz2
+exportline="export PATH=$HOME/gcc-arm-none-eabi-4_8-2014q3/bin:\$PATH"
+if grep -Fxq "$exportline" ~/.profile; then echo nothing to do ; else echo $exportline >> ~/.profile; fi
+. ~/.profile
+popd
+```
+
+<div class="host-code"></div>
+
+```sh
+pushd .
+cd ~
+wget https://launchpad.net/gcc-arm-embedded/4.9/4.9-2014-q4-major/+download/gcc-arm-none-eabi-4_9-2014q4-20141203-linux.tar.bz2
+tar -jxf gcc-arm-none-eabi-4_9-2014q4-20141203-linux.tar.bz2
+exportline="export PATH=$HOME/gcc-arm-none-eabi-4_9-2014q4/bin:\$PATH"
+if grep -Fxq "$exportline" ~/.profile; then echo nothing to do ; else echo $exportline >> ~/.profile; fi
+. ~/.profile
+popd
+```
 
 ## Troubleshooting
 

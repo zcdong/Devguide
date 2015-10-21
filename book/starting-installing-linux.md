@@ -16,6 +16,16 @@ sudo apt-get install python-serial python-argparse openocd \
     python-empy qtcreator
 ```
 
+Toolchain installation: Generally installing from this ARM-maintained PPA is fine, however, we recommend for a production system to use the last tested toolchain, which is documented at the bottom of this page.
+
+<div class="host-code"></div>
+
+```sh
+sudo add-apt-repository ppa:terry.guo/gcc-arm-embedded
+sudo apt-get update
+sudo apt-get install gcc-arm-none-eabi
+```
+
 <aside class="note">
 If using Debian Linux, run this command:
 </aside>
@@ -50,3 +60,19 @@ sudo usermod -a -G dialout $USER
 ```
 
 Now continue to run the [first build](starting-building.md)!
+
+## Latest GCC version recommended for production
+
+The current recommended GCC version is 4.8.4 and can be installed manually for the local user by running this script:
+
+```sh
+pushd .
+cd ~
+wget https://launchpadlibrarian.net/186124160/gcc-arm-none-eabi-4_8-2014q3-20140805-linux.tar.bz2
+tar -jxf gcc-arm-none-eabi-4_8-2014q3-20140805-linux.tar.bz2
+exportline="export PATH=$HOME/gcc-arm-none-eabi-4_8-2014q3/bin:\$PATH"
+if grep -Fxq "$exportline" ~/.profile; then echo nothing to do ; else echo $exportline >> ~/.profile; fi
+. ~/.profile
+popd
+```
+
