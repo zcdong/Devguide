@@ -60,7 +60,7 @@ yum groupinstall “Development Tools”
 yum install python-setuptools
 easy_install pyserial
 easy_install pexpect
-yum install openocd libftdi-devel libftdi-python python-argparse flex bison-devel ncurses-devel ncurses-libs autoconf texinfo libtool zlib-devel 
+yum install openocd libftdi-devel libftdi-python python-argparse flex bison-devel ncurses-devel ncurses-libs autoconf texinfo libtool zlib-devel cmake
 ```
 
 Note:You may want to also install  python-pip and screen
