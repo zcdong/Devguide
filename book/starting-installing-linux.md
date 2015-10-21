@@ -13,7 +13,7 @@ sudo apt-get update
 sudo apt-get install python-serial python-argparse openocd \
     flex bison libncurses5-dev autoconf texinfo build-essential \
     libftdi-dev libtool zlib1g-dev genromfs git-core wget zip \
-    python-empy qtcreator
+    python-empy cmake qtcreator
 ```
 
 Toolchain installation: Generally installing from this ARM-maintained PPA is fine, however, we recommend for a production system to use the last tested toolchain, which is documented at the bottom of this page.
