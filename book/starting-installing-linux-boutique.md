@@ -30,7 +30,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="0483", GROUP="plugdev"
 SUBSYSTEM=="usb",  ATTR{idVendor}=="15ba", GROUP="plugdev"
 _EOF
 sudo mv $HOME/rule.tmp /etc/udev/rules.d/10-px4.rules
-sudo restart udev
+sudo /etc/init.d/udev restart
 ```
 
 User needs to be added to the group plugdev:
