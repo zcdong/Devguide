@@ -4,6 +4,8 @@ We have standardized on Debian / Ubuntu LTS as the supported Linux distribution,
 
 ## Installation
 
+### STM32 based hardware
+
 Update the package list and install the following dependencies:
 
 <div class="host-code"></div>
@@ -25,6 +27,21 @@ sudo add-apt-repository ppa:terry.guo/gcc-arm-embedded
 sudo apt-get update
 sudo apt-get install gcc-arm-none-eabi
 ```
+<aside class="note">
+The current recommended GCC version is 4.8.4 and can be installed manually for the local user by running the script below.
+</aside>
+
+```sh
+pushd .
+cd ~
+wget https://launchpadlibrarian.net/186124160/gcc-arm-none-eabi-4_8-2014q3-20140805-linux.tar.bz2
+tar -jxf gcc-arm-none-eabi-4_8-2014q3-20140805-linux.tar.bz2
+exportline="export PATH=$HOME/gcc-arm-none-eabi-4_8-2014q3/bin:\$PATH"
+if grep -Fxq "$exportline" ~/.profile; then echo nothing to do ; else echo $exportline >> ~/.profile; fi
+. ~/.profile
+popd
+```
+
 
 <aside class="note">
 If using Debian Linux, run this command:
@@ -59,20 +76,44 @@ The user needs to be added to the group "dialout":
 sudo usermod -a -G dialout $USER
 ```
 
-Now continue to run the [first build](starting-building.md)!
+### Snapdragon Flight
 
-## Latest GCC version recommended for production
+Developers working on Snapdragon Flight should download the Hexagon Linux toolchain and execute the commands below. The installation guide will come up, leave everything at default by just continuing to press enter.
 
-The current recommended GCC version is 4.8.4 and can be installed manually for the local user by running this script:
+<div class="host-code"></div>
 
 ```sh
-pushd .
-cd ~
-wget https://launchpadlibrarian.net/186124160/gcc-arm-none-eabi-4_8-2014q3-20140805-linux.tar.bz2
-tar -jxf gcc-arm-none-eabi-4_8-2014q3-20140805-linux.tar.bz2
-exportline="export PATH=$HOME/gcc-arm-none-eabi-4_8-2014q3/bin:\$PATH"
-if grep -Fxq "$exportline" ~/.profile; then echo nothing to do ; else echo $exportline >> ~/.profile; fi
-. ~/.profile
-popd
+sudo apt-get install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
+tar xf Hexagon.LNX.7.2\ Installer-07210.1.tar
+chmod u+x Hexagon.LLVM_linux_installer_7.2.10.bin
+./Hexagon.LLVM_linux_installer_7.2.10.bin
 ```
 
+After this the tools will have been installed to '~/Qualcomm/HEXAGON_Tools/7.2.10'. Add this to your path variable:
+
+<div class="host-code"></div>
+
+```sh
+export PATH="$PATH:$HOME/Qualcomm/HEXAGON_Tools/7.2.10/Tools/bin/"
+```
+
+Load the new configuration:
+
+<div class="host-code"></div>
+
+```sh
+source ~/.bashrc
+```
+
+### Simulation
+
+The default toolchain for simulation is CLANG.
+
+<div class="host-code"></div>
+
+```sh
+
+
+```
+
+Now continue to run the [first build](starting-building.md)!
