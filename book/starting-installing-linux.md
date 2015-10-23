@@ -18,7 +18,11 @@ sudo apt-get install python-serial python-argparse openocd \
     python-empy cmake qtcreator
 ```
 
-Toolchain installation: Generally installing from this ARM-maintained PPA is fine, however, we recommend for a production system to use the last tested toolchain, which is documented at the bottom of this page.
+<aside class="note">
+For development systems the packaged toolchain is recommended. For production systems GCC 4.8.4 is recommended and can be installed using the script below.
+</aside>
+
+Toolchain installation: Generally installing from this ARM-maintained PPA is fine, however, we recommend for a production system to use the last tested toolchain, which is documented below.
 
 <div class="host-code"></div>
 
@@ -27,9 +31,10 @@ sudo add-apt-repository ppa:terry.guo/gcc-arm-embedded
 sudo apt-get update
 sudo apt-get install gcc-arm-none-eabi
 ```
-<aside class="note">
-The current recommended GCC version is 4.8.4 and can be installed manually for the local user by running the script below.
-</aside>
+
+If the latest verified toolchain is preferred, install the binary below instead:
+
+<div class="host-code"></div>
 
 ```sh
 pushd .
@@ -41,7 +46,6 @@ if grep -Fxq "$exportline" ~/.profile; then echo nothing to do ; else echo $expo
 . ~/.profile
 popd
 ```
-
 
 <aside class="note">
 If using Debian Linux, run this command:
@@ -107,12 +111,12 @@ source ~/.bashrc
 
 ### Simulation
 
-The default toolchain for simulation is CLANG.
+The default toolchain for simulation is CLANG 3.5.
 
 <div class="host-code"></div>
 
 ```sh
-
+sudo apt-get install -y build-essential cmake clang-3.5 lldb-3.5
 
 ```
 
