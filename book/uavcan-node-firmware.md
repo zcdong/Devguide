@@ -31,6 +31,8 @@ TODO: BLACK MAGIC INSTRUCTIONS
 
 ### Compiling the Main Binary
 
+<div class="host-code"><div>
+
 ```sh
 BOARD=s2740vc_1_0 make && BOARD=px4esc_1_6 make
 ```
@@ -52,6 +54,8 @@ git checkout px4esc_1.4_update
 ### Flashing the UAVCAN Bootloader
 
 Before updating firmware via UAVCAN, the Pixhawk ESC 1.4 requires the UAVCAN bootloader be flashed. The bootloader can be built as follows:
+
+<div class="host-code"><div>
 
 ```sh
 cd bootloader
