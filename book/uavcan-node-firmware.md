@@ -15,7 +15,7 @@ cd vectorcontrol
 
 Before updating firmware via UAVCAN, the Pixhawk ESC 1.6 requires the UAVCAN bootloader be flashed. To build the bootloader, run:
 
-<div class="host-code"><div>
+<div class="host-code"></div>
 
 ```sh
 make clean && BOARD=px4esc_1_6 make -j8
@@ -23,7 +23,7 @@ make clean && BOARD=px4esc_1_6 make -j8
 
 After building, the bootloader image is located at `firmware/bootloader.bin`, and can be flashed via an SWD adapter such as the ST-Link v2 or the BlackMagic Probe:
 
-<div class="host-code"><div>
+<div class="host-code"></div>
 
 ```sh
 TODO: BLACK MAGIC INSTRUCTIONS
@@ -31,7 +31,7 @@ TODO: BLACK MAGIC INSTRUCTIONS
 
 ### Compiling the Main Binary
 
-<div class="host-code"><div>
+<div class="host-code"></div>
 
 ```sh
 BOARD=s2740vc_1_0 make && BOARD=px4esc_1_6 make
@@ -43,7 +43,7 @@ This will build the UAVCAN node firmware for both supported ESCs. The firmware i
 
 Download the Pixhawk ESC 1.4 support branch of PX4ESC:
 
-<div class="host-code"><div>
+<div class="host-code"></div>
 
 ```sh
 git clone https://github.com/thiemar/px4esc
@@ -55,7 +55,7 @@ git checkout px4esc_1.4_update
 
 Before updating firmware via UAVCAN, the Pixhawk ESC 1.4 requires the UAVCAN bootloader be flashed. The bootloader can be built as follows:
 
-<div class="host-code"><div>
+<div class="host-code"></div>
 
 ```sh
 cd bootloader
@@ -67,7 +67,7 @@ The bootloader image is located at `bootloader/firmware/bootloader.bin`, and can
 
 ### Compiling the Main Binary
 
-<div class="host-code"><div>
+<div class="host-code"></div>
 
 ```sh
 cd firmware
