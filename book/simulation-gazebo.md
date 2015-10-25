@@ -16,7 +16,7 @@ Run the PX4 SITL with the Iris configuration in the Firmware directory:
 
 ```sh
 cd ~/src/Firmware
-make posix_sitl_default run_sitl
+make posix_sitl_default gazebo
 ```
 
 This will bring up the PX4 shell:
@@ -37,16 +37,6 @@ Ready to fly.
 
 pxh>
 ```
-
-In contrast to the [simple SITL](simulation-sitl.md) it will not start the gazebo simulator. To run it, type:
-
-<div class="host-code"></div>
-
-```sh
-gazebo
-```
-
-Then insert the IRIS model from the **insert** tab. This should trigger the communication with the PX4 SITL app.
 
 <aside class="note">
 Right-clicking the quadrotor model allows to enable follow mode from the context menu, which is handy to keep it in view.

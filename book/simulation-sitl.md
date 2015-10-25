@@ -15,7 +15,7 @@ After ensuring that the [simulation prerequisites](simulation-prerequisites.md) 
 <div class="host-code"></div>
 
 ```sh
-make posix_sitl_default run_sitl
+make posix_sitl_default jmavsim
 ```
 
 This will bring up the PX4 shell:
