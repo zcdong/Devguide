@@ -161,9 +161,7 @@ popd
 
 Ninja is fast than Make and the PX4 CMake generators support it. Unfortunately Ubuntu carries only a very outdated version at this point. To install a recent version of [Ninja](https://github.com/martine/ninja), download the binary and add it to your path:
 
-<aside class="todo">
-The instructions below have not been verified yet.
-</aside>
+<div class="host-code"></div>
 
 ```sh
 mkdir -p $HOME/ninja
