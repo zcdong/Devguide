@@ -157,6 +157,24 @@ if grep -Fxq "$exportline" ~/.profile; then echo nothing to do ; else echo $expo
 popd
 ```
 
+## Ninja Build System
+
+Ninja is fast than Make and the PX4 CMake generators support it. Unfortunately Ubuntu carries only a very outdated version at this point. To install a recent version of [Ninja](https://github.com/martine/ninja), download the binary and add it to your path:
+
+<aside class="todo">
+The instructions below have not been verified yet.
+</aside>
+
+```sh
+mkdir -p $HOME/ninja
+cd $HOME/ninja
+wget https://github.com/martine/ninja/releases/download/v1.6.0/ninja-linux.zip
+unzip ninja-linux.zip
+exportline="export PATH=$HOME/ninja:\$PATH"
+if grep -Fxq "$exportline" ~/.profile; then echo nothing to do ; else echo $exportline >> ~/.profile; fi
+. ~/.profile
+```
+
 ## Troubleshooting
 
 ### Version Test

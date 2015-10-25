@@ -16,7 +16,7 @@ Run the PX4 SITL with the Iris configuration in the Firmware directory:
 
 ```sh
 cd ~/src/Firmware
-make run_sitl_iris
+make posix_sitl_default run_sitl
 ```
 
 This will bring up the PX4 shell:

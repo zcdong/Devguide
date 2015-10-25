@@ -15,7 +15,7 @@ sudo apt-get update
 sudo apt-get install python-serial python-argparse openocd \
     flex bison libncurses5-dev autoconf texinfo build-essential \
     libftdi-dev libtool zlib1g-dev genromfs git-core wget zip \
-    python-empy cmake qtcreator
+    python-empy qtcreator
 ```
 
 <aside class="note">
@@ -28,8 +28,9 @@ Toolchain installation: Generally installing from this ARM-maintained PPA is fin
 
 ```sh
 sudo add-apt-repository ppa:terry.guo/gcc-arm-embedded
+sudo add-apt-repository ppa:george-edison55/cmake-3.x
 sudo apt-get update
-sudo apt-get install gcc-arm-none-eabi
+sudo apt-get install gcc-arm-none-eabi cmake
 ```
 
 If the latest verified toolchain is preferred, install the binary below instead:

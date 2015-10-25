@@ -15,7 +15,7 @@ After ensuring that the [simulation prerequisites](simulation-prerequisites.md) 
 <div class="host-code"></div>
 
 ```sh
-make run_sitl_quad
+make posix_sitl_default run_sitl
 ```
 
 This will bring up the PX4 shell:
