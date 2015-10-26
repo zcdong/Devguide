@@ -4,4 +4,4 @@ Use [QGroundControl](qgroundcontrol-intro.md) and switch to the Setup view. Sele
 
 After the first ESC beeps, turn the propeller on it swiftly into the correct turn direction. Repeat this step for all motor controllers. This step has to be performed only once and does not need to be repeated after firmware upgrades.
 
-![UAVCAN Enumeration Controls (bottom right of image)](uavcan-qgc-setup.png)
+![UAVCAN Enumeration Controls (bottom right of image)](images/uavcan-qgc-setup.png)
