@@ -29,7 +29,7 @@ Ubuntu comes with a serial modem manager which interferes heavily with any robot
 sudo apt-get remove modemmanager
 ```
 
-Update the package list and install the following dependencies:
+Update the package list and install the following dependencies. Packages with specified versions should be installed with this particular package version.
 
 <div class="host-code"></div>
 
@@ -39,45 +39,7 @@ sudo apt-get update
 sudo apt-get install python-serial openocd \
     flex bison libncurses5-dev autoconf texinfo build-essential \
     libftdi-dev libtool zlib1g-dev genromfs \
-    python-empy gcc-arm-none-eabi -y
-```
-
-<aside class="note">
-For development systems the packaged toolchain is recommended. For production systems GCC 4.8.4 is recommended and can be installed using the script below.
-</aside>
-
-If the latest verified toolchain is preferred, install the binary below instead. In this case the `gcc-arm-none-eabi` should be left out in the instructions above.
-
-<div class="host-code"></div>
-
-```sh
-pushd .
-cd ~
-wget https://launchpadlibrarian.net/186124160/gcc-arm-none-eabi-4_8-2014q3-20140805-linux.tar.bz2
-tar -jxf gcc-arm-none-eabi-4_8-2014q3-20140805-linux.tar.bz2
-exportline="export PATH=$HOME/gcc-arm-none-eabi-4_8-2014q3/bin:\$PATH"
-if grep -Fxq "$exportline" ~/.profile; then echo nothing to do ; else echo $exportline >> ~/.profile; fi
-. ~/.profile
-popd
-```
-
-<aside class="note">
-If using Debian Linux, run this command:
-</aside>
-
-<div class="host-code"></div>
-
-```sh
-sudo dpkg --add-architecture i386
-sudo apt-get update
-```
-
-Install the 32 bit support libraries (if running already on 32 bit this might fail and can be skipped):
-
-<div class="host-code"></div>
-
-```sh
-sudo apt-get install libc6:i386 libgcc1:i386 gcc-4.6-base:i386 libstdc++5:i386 libstdc++6:i386
+    python-empy gcc-arm-none-eabi=4.8.3-18ubuntu2+12 -y
 ```
 
 ### Snapdragon Flight
