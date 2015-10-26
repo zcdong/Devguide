@@ -24,10 +24,37 @@ sudo apt-get install valgrind
 
 ### Address Sanitizer
 
+The Clang address sanitizer can help to find alignment (bus) errors and other memory faults like segmentation fauls. The diff below sets the right compile options.
+
+<aside class="todo">
+Add convenience target to run `make abc address-sanitizer`
+</aside>
+
 <div class="host-code"></div>
 
-```clang
--O1 -g -fsanitize=address -fno-omit-frame-pointer
+```diff
+diff --git a/cmake/common/px4_base.cmake b/cmake/common/px4_base.cmake
+index 26598fe..4c9177d 100644
+--- a/cmake/common/px4_base.cmake
++++ b/cmake/common/px4_base.cmake
+@@ -530,14 +530,14 @@ function(px4_add_common_flags)
+                )
+        endif()
+ 
+-       set(max_optimization -Os)
++       set(max_optimization -O1)
+ 
+        set(optimization_flags
+                -fno-strict-aliasing
+-               -fomit-frame-pointer
+                -funsafe-math-optimizations
+                -ffunction-sections
+                -fdata-sections
++               -g -fsanitize=address -fno-omit-frame-pointer
+                )
+ 
+        if (NOT ${CMAKE_C_COMPILER_ID} MATCHES ".*Clang.*")
+
 ```
 
 ## Start combinations
