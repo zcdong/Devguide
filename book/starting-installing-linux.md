@@ -10,6 +10,10 @@ Update the package list and install the following dependencies for all PX4 build
   * Snapdragon Flight hardware: [Snapdragon](hardware-snapdragon.md)
   * Host simulation: [jMAVSim SITL](simulation-sitl.md) and [Gazebo SITL](simulation-gazebo.md)
 
+<aside class="note">
+Install the [Ninja Build System](starting-installing-linux-boutique.md#ninja-build-system) for faster build times than with Make. It will be automatically selected if installed.
+</aside>
+
 <div class="host-code"></div>
 
 ```sh
@@ -61,6 +65,7 @@ After this the tools will have been installed to '~/Qualcomm/HEXAGON_Tools/7.2.1
 
 ```sh
 export PATH="$PATH:$HOME/Qualcomm/HEXAGON_Tools/7.2.10/Tools/bin/"
+export HEXAGON_TOOLS_ROOT="$HOME/Qualcomm/HEXAGON_Tools/7.2.10/Tools"
 ```
 
 Load the new configuration:
