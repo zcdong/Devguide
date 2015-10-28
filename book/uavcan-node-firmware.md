@@ -21,13 +21,7 @@ Before updating firmware via UAVCAN, the Pixhawk ESC 1.6 requires the UAVCAN boo
 make clean && BOARD=px4esc_1_6 make -j8
 ```
 
-After building, the bootloader image is located at `firmware/bootloader.bin`, and can be flashed via an SWD adapter such as the ST-Link v2 or the BlackMagic Probe:
-
-<div class="host-code"></div>
-
-```sh
-TODO: BLACK MAGIC INSTRUCTIONS
-```
+After building, the bootloader image is located at `firmware/px4esc_1_6-bootloader.bin`, and the OpenOCD configuration is located at `openocd_px4esc_1_6.cfg`. Follow [these instructions](uavcan-bootloader-installation.md) to install the bootloader on the ESC.
 
 ### Compiling the Main Binary
 
@@ -37,7 +31,7 @@ TODO: BLACK MAGIC INSTRUCTIONS
 BOARD=s2740vc_1_0 make && BOARD=px4esc_1_6 make
 ```
 
-This will build the UAVCAN node firmware for both supported ESCs. The firmware images will be located at `firmware/com.thiemar.s2740vc-v1-1.0.00000000.uavcan.bin` and `firmware/org.pixhawk.px4esc-v1-1.0.00000000.uavcan.bin`.
+This will build the UAVCAN node firmware for both supported ESCs. The firmware images will be located at `firmware/com.thiemar.s2740vc-v1-1.0.00000000.bin` and `firmware/org.pixhawk.px4esc-v1-1.0.00000000.bin`.
 
 ## PX4 ESC Codebase (Pixhawk ESC 1.4)
 
@@ -63,7 +57,7 @@ make clean && make -j8
 cd ..
 ```
 
-The bootloader image is located at `bootloader/firmware/bootloader.bin`, and can be flashed via an SWD adapter such as the ST-Link v2 or the BlackMagic Probe.
+The bootloader image is located at `bootloader/firmware/bootloader.bin`, and the OpenOCD configuration is located at `openocd.cfg`. Follow [these instructions](uavcan-bootloader-installation.md) to install the bootloader on the ESC.
 
 ### Compiling the Main Binary
 
@@ -73,7 +67,7 @@ The bootloader image is located at `bootloader/firmware/bootloader.bin`, and can
 cd firmware
 make px4esc.image
 ```
-The firmware image will be located at `firmware/build/org.pixhawk.px4esc-bldc-v1-1.0.00000000.uavcan.bin`.
+The firmware image will be located at `firmware/build/org.pixhawk.px4esc-bldc-v1-1.0.00000000.bin`.
 
 ## Firmware Installation on the Autopilot
 
@@ -81,7 +75,7 @@ The UAVCAN node file names follow a naming convention which allows the Pixhawk t
 
 The convention for firmware image names is:
 
-  ```<node name>-<hw version major>.<hw version minor>-<git commit hash>.uavcan.bin```
+  ```<node name>-<hw version major>.<hw version minor>-<git commit hash>.bin```
 
 However, due to space/path length/performance constraints, the UAVCAN firmware updater requires those filenames to be split and stored in a directory structure like the following:
 
@@ -97,8 +91,8 @@ The git commit hash is not validated so it can actually be anything.
 
 The resulting finale file locations are:
 
-  * S2740VC ESC: ```ROMFS/px4fmu_common/uavcan/fw/com.thiemar.s2740vc-v1/1.0/00000000.uavcan.bin```
-  * Pixhawk ESC 1.6: ```ROMFS/px4fmu_common/uavcan/fw/org.pixhawk.px4esc-v1/1.0/00000000.uavcan.bin```
-  * Pixhawk ESC 1.4: ```ROMFS/px4fmu_common/uavcan/fw/org.pixhawk.px4esc-bldc-v1/1.0/00000000.uavcan.bin```
+  * S2740VC ESC: ```ROMFS/px4fmu_common/uavcan/fw/com.thiemar.s2740vc-v1/1.0/00000000.bin```
+  * Pixhawk ESC 1.6: ```ROMFS/px4fmu_common/uavcan/fw/org.pixhawk.px4esc-v1/1.0/00000000.bin```
+  * Pixhawk ESC 1.4: ```ROMFS/px4fmu_common/uavcan/fw/org.pixhawk.px4esc-bldc-v1/1.0/00000000.bin```
 
 Note that the ROMFS/px4fmu_common directory will be mounted to /etc on Pixhawk.
