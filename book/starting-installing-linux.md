@@ -11,7 +11,7 @@ Update the package list and install the following dependencies for all PX4 build
   * Host simulation: [jMAVSim SITL](simulation-sitl.md) and [Gazebo SITL](simulation-gazebo.md)
 
 <aside class="note">
-Install the [Ninja Build System](starting-installing-linux-boutique.md#ninja-build-system) for faster build times than with Make. It will be automatically selected if installed.
+Install the [Ninja Build System](http://dev.px4.io/starting-installing-linux-boutique.html#ninja-build-system) for faster build times than with Make. It will be automatically selected if installed.
 </aside>
 
 <div class="host-code"></div>
