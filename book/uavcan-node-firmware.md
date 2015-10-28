@@ -67,7 +67,7 @@ The bootloader image is located at `bootloader/firmware/bootloader.bin`, and the
 cd firmware
 make px4esc.image
 ```
-The firmware image will be located at `firmware/build/org.pixhawk.px4esc-bldc-v1-1.0.00000000.bin`.
+The firmware image will be located at `firmware/build/org.pixhawk.px4esc-bldc-v1-1.0.<xxxxxxxx>.bin`, where `<xxxxxxxx>` is an arbitrary sequence of numbers and letters.
 
 ## Firmware Installation on the Autopilot
 
@@ -75,24 +75,24 @@ The UAVCAN node file names follow a naming convention which allows the Pixhawk t
 
 The convention for firmware image names is:
 
-  ```<node name>-<hw version major>.<hw version minor>-<git commit hash>.bin```
+  ```<node name>-<hw version major>.<hw version minor>-<version hash>.bin```
 
 However, due to space/path length/performance constraints, the UAVCAN firmware updater requires those filenames to be split and stored in a directory structure like the following:
 
-  ```/fs/microsd/fw/<node name>/<hw version major>.<hw version minor>/<git commit hash>.bin```
+  ```/fs/microsd/fw/<node name>/<hw version major>.<hw version minor>/<version hash>.bin```
 
 The ROMFS-based updater follows that pattern, so you add the firmware in:
 
-  ```/etc/uavcan/fw/<node name>/<hw version major>.<hw version minor>/<git commit hash>.bin```
-
-The git commit hash is not validated so it can actually be anything.
+  ```/etc/uavcan/fw/<node name>/<hw version major>.<hw version minor>/<version hash>.bin```
 
 ## Placing the binaries in the PX4 ROMFS
 
 The resulting finale file locations are:
 
-  * S2740VC ESC: ```ROMFS/px4fmu_common/uavcan/fw/com.thiemar.s2740vc-v1/1.0/00000000.bin```
-  * Pixhawk ESC 1.6: ```ROMFS/px4fmu_common/uavcan/fw/org.pixhawk.px4esc-v1/1.0/00000000.bin```
-  * Pixhawk ESC 1.4: ```ROMFS/px4fmu_common/uavcan/fw/org.pixhawk.px4esc-bldc-v1/1.0/00000000.bin```
+  * S2740VC ESC: ```ROMFS/px4fmu_common/uavcan/fw/com.thiemar.s2740vc-v1/1.0/<xxxxxxxx>.bin```
+  * Pixhawk ESC 1.6: ```ROMFS/px4fmu_common/uavcan/fw/org.pixhawk.px4esc-v1/1.0/<xxxxxxxx>.bin```
+  * Pixhawk ESC 1.4: ```ROMFS/px4fmu_common/uavcan/fw/org.pixhawk.px4esc-bldc-v1/1.0/<xxxxxxxx>.bin```
+
+(In all the above, `<xxxxxxxx>` is an arbitrary sequence of numbers and letters.)
 
 Note that the ROMFS/px4fmu_common directory will be mounted to /etc on Pixhawk.
