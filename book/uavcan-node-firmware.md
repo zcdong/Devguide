@@ -105,8 +105,6 @@ When using the [PX4 Flight Stack](concept-flight-stack.md), set the UAVCAN_ENABL
 
 Alternatively UAVCAN firmware upgrading can be started manually on NSH via:
 
-<div class="host-code"></div>
-
 ```sh
 uavcan start
 uavcan start fw
