@@ -30,18 +30,21 @@ The process for doing this depends on the SWD or JTAG interface used.
 
 ## BlackMagic Probe
 
-1. Ensure your BlackMagic Probe [firmware is up to date](https://github.com/blacksphere/blackmagic/wiki/Hacking).
-2. Connect the probe to your UAVCAN device.
-3. Connect the probe to your computer, and identify its device name. This will typically be `/dev/ttyACM<x>` or `/dev/ttyUSB<x>`.
-4. Power up your UAVCAN device.
-5. Run:
+Ensure your BlackMagic Probe [firmware is up to date](https://github.com/blacksphere/blackmagic/wiki/Hacking).
+
+Connect the probe to your UAVCAN device, and connect the probe to your computer.
+
+Identify the probe's device name. This will typically be `/dev/ttyACM<x>` or `/dev/ttyUSB<x>`.
+
+Power up your UAVCAN device, and run:
 
 <div class="host-code"></div>
 
 ```sh
 arm-none-eabi-gdb /path/to/your/bootloader/image.elf
 ```
-6. At the `gdb` prompt, run:
+
+At the `gdb` prompt, run:
 
 <div class="host-code"></div>
 
@@ -59,11 +62,11 @@ If `monitor swdp_scan` returns an error, ensure your wiring is correct, and that
 
 ## ST-Link v2
 
-1. Install a recent version—at least 0.9.0—of [OpenOCD](http://openocd.org).
-2. Connect the ST-Link to your UAVCAN device.
-3. Connect the ST-Link to your computer.
-4. Power up your UAVCAN device.
-5. Run:
+Ensure you have a recent version—at least 0.9.0—of [OpenOCD](http://openocd.org).
+
+Connect the ST-Link to your UAVCAN device, and connect the ST-Link to your computer.
+
+Power up your UAVCAN device, and run:
 
 <div class="host-code"></div>
 
@@ -71,7 +74,8 @@ If `monitor swdp_scan` returns an error, ensure your wiring is correct, and that
 openocd -f /path/to/your/openocd.cfg &
 arm-none-eabi-gdb /path/to/your/bootloader/image.elf
 ```
-6. At the `gdb` prompt, run:
+
+At the `gdb` prompt, run:
 
 <div class="host-code"></div>
 
