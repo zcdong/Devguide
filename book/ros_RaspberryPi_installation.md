@@ -34,7 +34,7 @@ Next (still in your workspace folder), source and make your files.
 ```sh
 $ source /opt/ros/indigo/setup.bash
 
-$ source ./devel/setup.bash
+$ source devel/setup.bash
 
 $ catkin_make
 ```
