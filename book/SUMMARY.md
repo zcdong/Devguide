@@ -35,6 +35,7 @@ This is the summary of the PX4 dev guide.
 * Sensor and Actuator Buses
   * [I2C Bus](i2c-intro.md)
   * [UAVCAN Bus](uavcan-intro.md)
+    * [UAVCAN Bootloader](uavcan-bootloader-installation.md)
     * [UAVCAN Firmware Upgrades](uavcan-node-firmware.md)
     * [UAVCAN Configuration](uavcan-node-enumeration.md)
   * [PWM / GPIO](pwm-gpio-intro.md)
