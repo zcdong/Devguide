@@ -43,5 +43,6 @@ This is the summary of the PX4 dev guide.
   * [PWM / GPIO](pwm-gpio-intro.md)
   * [UART](uart-intro.md)
 * Advanced Topics
+  * [Flight Modes](advanced-flight-modes.md)
   * [uORB Messaging](advanced-uorb.md)
   * [Licenses](advanced-licenses.md)
