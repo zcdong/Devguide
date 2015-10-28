@@ -96,3 +96,18 @@ The resulting finale file locations are:
 (In all the above, `<xxxxxxxx>` is an arbitrary sequence of numbers and letters.)
 
 Note that the ROMFS/px4fmu_common directory will be mounted to /etc on Pixhawk.
+
+### Starting the Firmware Upgrade process
+
+<aside class="note">
+When using the [PX4 Flight Stack](concept-flight-stack.md), set the UAVCAN_ENABLE parameter to '3' in the QGroundControl parameter editor and *power cycle* the board to enable CAN motor outputs. Set it to '2' to enable CAN firmware upgrades, but leave motor outputs on PWM.
+</aside>
+
+Alternatively UAVCAN firmware upgrading can be started manually on NSH via:
+
+<div class="host-code"></div>
+
+```sh
+uavcan start
+uavcan start fw
+```
