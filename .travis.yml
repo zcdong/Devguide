@@ -9,6 +9,8 @@ before_script:
 - grunt
 - gem install dotenv aws-sdk thread bundler git mime
 after_success:
+- cp theme/assets/style.css theme/assets/website/style.css
+- cp theme/assets/print.css theme/assets/website/print.css
 - |
   ./deploy.rb
 matrix:
