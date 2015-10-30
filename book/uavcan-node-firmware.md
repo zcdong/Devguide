@@ -71,7 +71,7 @@ The firmware image will be located at `firmware/build/org.pixhawk.px4esc-bldc-v1
 
 ## Zubax GNSS
 
-Please refer to the project page at <https://github.com/Zubax/zubax_gnss> to learn how to build and flash the firmware.
+Please refer to the [project page](https://github.com/Zubax/zubax_gnss) to learn how to build and flash the firmware.
 Zubax GNSS comes with a UAVCAN-capable bootloader, so its firmware can be updated in a uniform fashion via UAVCAN as described below.
 
 ## Firmware Installation on the Autopilot
