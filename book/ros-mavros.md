@@ -66,15 +66,3 @@ $ wstool up -j4
 $ catkin clean --all
 $ catkin build # also will build mavros
 ```
-
-### Building ros-\*-mavlink debian package
-
-You could build debian package by pulling right bloom branch from [mavlink-gbp-release](https://github.com/mavlink/mavlink-gbp-release)
-(common naming: `debian/<rosdistro>/<osdistro>/<package>`) using `dh binary`.
-```sh
-$ cd /tmp
-$ git clone https://github.com/mavlink/mavlink-gbp-release.git -b debian/indigo/trusty/mavlink
-$ cd mavlink-gbp-release
-$ fakeroot dh binary
-    # deb will be in /tmp
-```
