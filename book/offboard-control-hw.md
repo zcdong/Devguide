@@ -37,7 +37,7 @@ graph LR;
 ```
 
 ### 3. On-board processor and wifi link to ROS (***Recommended***)
-A small computer mounted onto the vehicle connected to the autopilot through a UART to USB adapter while also having a WiFi link to a ground station running ROS. This can be any of the computers from the abose section coupled with a WiFi adapter. For example, the Intel NUC D34010WYB has a PCI Express Half-Mini connector which can accomodate an [Intel Wifi Link 5000](http://www.intel.com/products/wireless/adapters/5000/) adapter.
+A small computer mounted onto the vehicle connected to the autopilot through a UART to USB adapter while also having a WiFi link to a ground station running ROS. This can be any of the computers from the above section coupled with a WiFi adapter. For example, the Intel NUC D34010WYB has a PCI Express Half-Mini connector which can accomodate an [Intel Wifi Link 5000](http://www.intel.com/products/wireless/adapters/5000/) adapter.
 
 
 ```mermaid
