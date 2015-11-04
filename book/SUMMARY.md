@@ -22,6 +22,7 @@ This is the summary of the PX4 dev guide.
   * [Light Simulation](simulation-sitl.md)
     * [Debugging](simulation-debugging.md)
   * [Gazebo Simulation](simulation-gazebo.md)
+    * [Octomap](simulation-gazebo-octomap.md)
 * Autopilot Hardware
   * [Snapdragon Flight](hardware-snapdragon.md)
   * [Pixhawk](hardware-pixhawk.md)
