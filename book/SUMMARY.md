@@ -46,4 +46,9 @@ This is the summary of the PX4 dev guide.
 * Advanced Topics
   * [Flight Modes](advanced-flight-modes.md)
   * [uORB Messaging](advanced-uorb.md)
+  * [Offboard Control](offboard-control.md)
+    * [Hardware Setup](offboard-control-hw.md)
+    * [Firmware Setup](offboard-control-fw.md)
+    * [C library](offboard-control-clib.md)
+    * [Mavros](offboard-control-mavros.md)
   * [Licenses](advanced-licenses.md)
