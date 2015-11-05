@@ -29,6 +29,7 @@ This is the summary of the PX4 dev guide.
   * [Pixfalcon](hardware-pixfalcon.md)
 * Airframes
   * [Unified Codebase](airframes-architecture.md)
+  * [Adding a new Airframe Configuration](airframes-adding-a-new-frame.md)
   * [Multicopters](airframes-multicopter.md)
   * [Planes](airframes-plane.md)
   * [VTOL](airframes-vtol.md)
