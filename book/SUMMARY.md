@@ -52,4 +52,5 @@ This is the summary of the PX4 dev guide.
     * [Firmware Setup](offboard-control-fw.md)
     * [C library](offboard-control-clib.md)
     * [Mavros](offboard-control-mavros.md)
+  * [External Position Estimation](external-position.md)
   * [Licenses](advanced-licenses.md)
