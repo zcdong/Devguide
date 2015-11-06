@@ -10,8 +10,9 @@ This is the summary of the PX4 dev guide.
       * [Advanced Linux](starting-installing-linux-boutique.md)
     * [Windows](starting-installing-windows.md)
   * [Building the Code](starting-building.md)
-  * [Contributing](starting-contributing.md)
+  * [Contributing & Dev Call](starting-contributing.md)
 * Concepts
+  * [Flight Modes / Operation](concept-flight-modes.md)
   * [Architectural Overview](concept-architecture.md)
   * [Flight Stack](concept-flight-stack.md)
   * [Middleware](concept-middleware.md)
@@ -29,7 +30,7 @@ This is the summary of the PX4 dev guide.
   * [Pixfalcon](hardware-pixfalcon.md)
 * Airframes
   * [Unified Codebase](airframes-architecture.md)
-  * [Adding a new Airframe Configuration](airframes-adding-a-new-frame.md)
+  * [Adding a new Airframe](airframes-adding-a-new-frame.md)
   * [Multicopters](airframes-multicopter.md)
   * [Planes](airframes-plane.md)
   * [VTOL](airframes-vtol.md)
@@ -48,10 +49,6 @@ This is the summary of the PX4 dev guide.
 * Advanced Topics
   * [Flight Modes](advanced-flight-modes.md)
   * [uORB Messaging](advanced-uorb.md)
-  * [Offboard Control](offboard-control.md)
-    * [Hardware Setup](offboard-control-hw.md)
-    * [Firmware Setup](offboard-control-fw.md)
-    * [C library](offboard-control-clib.md)
-    * [Mavros](offboard-control-mavros.md)
+  * [Offboard Control from Linux](offboard-control.md)
   * [External Position Estimation](external-position.md)
   * [Licenses](advanced-licenses.md)
