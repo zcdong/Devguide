@@ -32,6 +32,7 @@ This is the summary of the PX4 dev guide.
   * [Unified Codebase](airframes-architecture.md)
   * [Adding a new Airframe](airframes-adding-a-new-frame.md)
   * [Multicopters](airframes-multicopter.md)
+    * [Motor Map](airframes-motor-map.md)
   * [Planes](airframes-plane.md)
   * [VTOL](airframes-vtol.md)
   * [Boats, Submarines, Blimps](airframes-experimental.md)
