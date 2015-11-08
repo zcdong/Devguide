@@ -1,7 +1,7 @@
 # UAVCAN Enumeration and Configuration
 
-<aside class="todo">
-Set the UAVCAN_ENABLE parameter to '3' in the QGroundControl parameter editor and *power cycle* the board to enable CAN motor outputs. Set it to '2' to enable CAN, but leave motor outputs on PWM.
+<aside class="note">
+Enable UAVCAN as the default motor output bus by ticking the 'Enable UAVCAN' checkbox as shown below. Alternatively the UAVCAN_ENABLE parameter can be set to '3' in the QGroundControl parameter editor. Set it to '2' to enable CAN, but leave motor outputs on PWM.
 </aside>
 
 Use [QGroundControl](qgroundcontrol-intro.md) and switch to the Setup view. Select the Power Configuration on the left. Click on the UAVCAN configuration start button. The ESCs will all beep each time one is enumerated, and then the enumerated one will restart.
