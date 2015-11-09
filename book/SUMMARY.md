@@ -38,7 +38,8 @@ This is the summary of the PX4 dev guide.
   * [Boats, Submarines, Blimps](airframes-experimental.md)
 * Robotics using ROS
   * [ROS Installation on RPi 2](ros-raspberrypi-installation.md)
-  * [MAVROS Overview](ros-mavros.md)
+  * [MAVROS](ros-mavros.md)
+    * [Installation](ros-mavros-installation.md)
 * Sensor and Actuator Buses
   * [I2C Bus](i2c-intro.md)
   * [UAVCAN Bus](uavcan-intro.md)
