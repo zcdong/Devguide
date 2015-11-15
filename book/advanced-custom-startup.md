@@ -1,3 +1,0 @@
-# Custom System Startup
-
-## Introduction
