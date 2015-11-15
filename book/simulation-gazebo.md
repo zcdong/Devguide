@@ -8,6 +8,10 @@ The installation requires to install Gazebo and our simulation plugin.
 
 Follow the instruction in the [sitl_gazebo documentation](https://github.com/px4/sitl_gazebo) to build.
 
+<aside class="tip">
+If you installed a ROS version earlier than Jade, be sure to uninstall the bundled Gazebo (sudo apt-get remove ros-indigo-gazebo) version as it is too old. 
+</aside>
+
 ## Running the Simulation
 
 Run the PX4 SITL with the Iris configuration in the Firmware directory:
