@@ -1,7 +1,13 @@
 
 # MAVROS
+
+The [mavros](http://wiki.ros.org/mavros#mavros.2BAC8-Plugins.sys_status) ros package enables MAVLink extendable communication between computers running ROS, MAVLink enabled autopilots, and MAVLink enabled GCS.  While MAVRos can be used to communicate with any MAVLink enabled autopilot this documentation will be in the context of enabling communication between the PX4 flight stack and a ROS enabled companion computer.
+
 ## Installation
-### Binary installation (debian)
+
+MAVROS can be installed either from source or binary. Developers working with ROS are advised to use the source installation.
+
+### Binary installation (Debian / Ubuntu)
 
 Since v0.5 that programs available in precompiled debian packages for x86 and amd64 (x86\_64).
 Also v0.9+ exists in ARMv7 repo for Ubuntu armhf.

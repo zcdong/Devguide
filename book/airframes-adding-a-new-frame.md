@@ -2,7 +2,7 @@
 
 PX4 uses canned configurations as starting point for airframes. Adding a configuration is straightforward: Create a new file which is prepended with a free autostart ID in the [init.d folder](https://github.com/PX4/Firmware/tree/master/ROMFS/px4fmu_common/init.d) and [build and upload](starting-building.md) the software.
 
-Developers not wanting to create their own configuration can instead  customize existing configurations using textfiles on the microSD card, as detailed on the [custom system startup](advanced-custom-startup.md) page.
+Developers not wanting to create their own configuration can instead  customize existing configurations using textfiles on the microSD card, as detailed on the [custom system startup](advanced-system-startup.md) page.
 
 ## Airframe configurations
 
