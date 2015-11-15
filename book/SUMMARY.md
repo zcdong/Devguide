@@ -29,6 +29,7 @@ This is the summary of the PX4 dev guide.
   * [Snapdragon Flight](hardware-snapdragon.md)
   * [Pixhawk](hardware-pixhawk.md)
   * [Pixfalcon](hardware-pixfalcon.md)
+  * [Pixracer](hardware-pixracer.md)
 * Airframes
   * [Unified Codebase](airframes-architecture.md)
   * [Adding a new Airframe](airframes-adding-a-new-frame.md)
