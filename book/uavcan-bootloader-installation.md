@@ -88,3 +88,26 @@ set mem inaccessible-by-default off
 load
 run
 ```
+## Segger J-Link Debugger
+
+Connect the JLink Debugger to your UAVCAN device, and connect the JLink Debugger to your computer.
+
+Power up your UAVCAN device, and run:
+
+<div class="host-code"></div>
+
+```JLinkGDBServer -select USB=0 -device STM32F446RE -if SWD-DP -speed 20000 -vd```
+
+Open a second terminal, navigate to the directory that includes the px4esc_1_6-bootloader.elf for the esc and run:
+
+<div class="host-code"></div>
+
+```arm-none-eabi-gdb px4esc_1_6-bootloader.elf```
+
+At the `gdb` prompt, run:
+
+<div class="host-code"></div>
+
+```tar ext :2331
+load
+```
