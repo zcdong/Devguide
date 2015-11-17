@@ -102,6 +102,10 @@ Connect the 3DR radiometry with the pixhawk TELEM2 and the counter part with you
 ### Step 9
 Go to your catkinWS and run
 ```sh
+$ catkin build
+```
+and afterwards
+```sh
 $ roslaunch mavros px4.launch fcu_url:=/dev/ttyUSB0:57600
 ```
 That's it! Your pixhawk now gets GPS data and the light should pulse in green color.
