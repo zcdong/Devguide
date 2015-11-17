@@ -82,7 +82,7 @@ Next, open "mocap_fake_gps.cpp". You should find it at: yourCatkinWS/src/mavros/
 
 Replace DJI_450/DJI_450 in
 ```sh
-mocap_tf_sub = mp_nh.subscribe("/vicon/DJI_450/DJI_450_drop", 1, &MocapPoseEstimatePlugin::mocap_tf_cb, this);
+mocap_tf_sub = mp_nh.subscribe("/vicon/DJI_450/DJI_450_drop", 1, &MocapFakeGPSPlugin::mocap_tf_cb, this);
 ```
 with your model name (e.g. /vicon/yourModelName/yourModelname_drop). The "_drop" will be explained in the next step.
 
