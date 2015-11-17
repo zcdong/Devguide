@@ -61,8 +61,8 @@ To simulate GPS we use:
 * publish rate = 5.0Hz
 * tf_frame_in = vicon/yourModelName/yourModelName (e.g. vicon/DJI_450/DJI_450)
 * delay = 200ms
-* sigma_xy = 0.05
-* sigma_z = 0.05
+* sigma_xy = 0.05m
+* sigma_z = 0.05m
 
 
 ### Step 5
@@ -102,6 +102,6 @@ Connect the 3DR radiometry with the pixhawk TELEM2 and the counter part with you
 ### Step 9
 Go to your catkinWS and run
 ```sh
-roslaunch mavros px4.launch
+roslaunch mavros apm.launch fcu_url:=/dev/ttyUSB0:57600
 ```
 that's it! Your pixhawk now gets GPS data and the light should pulse in green color.
