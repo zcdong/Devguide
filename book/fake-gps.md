@@ -90,7 +90,7 @@ with your model name (e.g. /vicon/yourModelName/yourModelname_drop). The "_drop"
 ### Step 7
 In step 5, we enabled heading from motion capture. Therefore pixhawk does not use the original North, East direction, but the one from the motion capture system. Because the 3DR radiometry device is not fast enought, we have to limit the rate of our MOCAP data. To do this run
 ```sh
-rosrun topic_tools drop /vicon/yourModelName/yourModelName 9 10
+$ rosrun topic_tools drop /vicon/yourModelName/yourModelName 9 10
 ```
 This means, that from the rostopic /vicon/yourModelName/yourModelName, 9 out of 10 messages will be droped and published under the topic name "/vicon/yourModelName/yourModelName_drop".
 
@@ -102,6 +102,6 @@ Connect the 3DR radiometry with the pixhawk TELEM2 and the counter part with you
 ### Step 9
 Go to your catkinWS and run
 ```sh
-roslaunch mavros px4.launch fcu_url:=/dev/ttyUSB0:57600
+$ roslaunch mavros px4.launch fcu_url:=/dev/ttyUSB0:57600
 ```
 That's it! Your pixhawk now gets GPS data and the light should pulse in green color.
