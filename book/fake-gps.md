@@ -4,7 +4,7 @@ The tutorial setup looks as follows:
 There is a "VICON computer" which has the required software installed + [ROS](http://www.ros.org/) + [vicon_bridge](https://github.com/ethz-asl/vicon_bridge) and sends this data over network to "your Computer".
 On "your computer" you should have ROS + MAVROS installed. In MAVROS there is a script which simulates gps data out of mocap data.
 "Your computer" then sends the data over 3DR radiometry to the pixhawk.
-*NOTE*: of course the "VICON computer" and "your computer" can be the same.
+*NOTE*: The "VICON computer" and "your computer" can be the same, of course.
 
 ## Prerequisites
 * MOCAP system (in this example, VICON is used)
@@ -27,6 +27,8 @@ Next, add the following two lines to the "launch_fake_gps_distorted.sh" file and
 export ROS_MASTER_URI=http://xxx.xxx.x.xxx:11311
 rosrun vicon_bridge tf_distort $@
 ```
+
+Put markers on your drone and create a model in the MOCAP system (later refered to as yourModelName).
 
 ### Step 2
 Run
@@ -68,15 +70,38 @@ Connect your pixhawk in QGroundControl. Go to PARAMETERS -> System and change SY
 
 Next, go to PARAMETERS -> MAVLink and change MAV_USEHILGPS to 1 (enable HIL GPS).
 
-Now, go to PARAMETERS -> Attitude Q estimator and change and change ATT_EXT_HDG_M to 2 (use heading from motion capture).
+Now, go to PARAMETERS -> Attitude Q estimator and change ATT_EXT_HDG_M to 2 (use heading from motion capture).
+
+Last but not least, go to PARAMETERS -> Position Estimator INAV and change INAV_DISAB_MOCAP to 1 (disable mocap estimation).
 
 *NOTE*: if you can't find the above stated parameters, check PARAMETERS -> default Group
 
 
 ### Step 6
-Next, open "mocap_fake_gps.cpp". It should be at: yourCatkinWS/src/mavros/mavros_extras/src/plugins/mocap_fake_gps.cpp
+Next, open "mocap_fake_gps.cpp". You should find it at: yourCatkinWS/src/mavros/mavros_extras/src/plugins/mocap_fake_gps.cpp
 
-Replace the subscription 
+Replace DJI_450/DJI_450 in
 ```sh
 mocap_tf_sub = mp_nh.subscribe("/vicon/DJI_450/DJI_450_drop", 1, &MocapPoseEstimatePlugin::mocap_tf_cb, this);
 ```
+with your model name (e.g. /vicon/yourModelName/yourModelname_drop). The "_drop" will be explained in the next step.
+
+
+### Step 7
+In step 5, we enabled heading from motion capture. Therefore pixhawk does not use the original North, East direction, but the one from the motion capture system. Because the 3DR radiometry device is not fast enought, we have to limit the rate of our MOCAP data. To do this run
+```sh
+rosrun topic_tools drop /vicon/yourModelName/yourModelName 9 10
+```
+This means, that from the rostopic /vicon/yourModelName/yourModelName, 9 out of 10 messages will be droped and published under the topic name "/vicon/yourModelName/yourModelName_drop".
+
+
+### Step 8
+Connect the 3DR radiometry with the pixhawk TELEM2 and the counter part with your computer (USB).
+
+
+### Step 9
+Go to your catkinWS and run
+```sh
+roslaunch mavros px4.launch
+```
+that's it! Your pixhawk now gets GPS data and the light should pulse in green color.
