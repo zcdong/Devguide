@@ -1,6 +1,7 @@
 # FAKE GPS
 This page shows you how to use mocap data to fake gps. 
-The tutorial setup looks as follows:
+
+The setup looks as follows:
 There is a "VICON computer" which has the required software installed + [ROS](http://www.ros.org/) + [vicon_bridge](https://github.com/ethz-asl/vicon_bridge) and sends this data over network to "your Computer".
 On "your computer" you should have ROS + MAVROS installed. In MAVROS there is a script which simulates gps data out of mocap data.
 "Your computer" then sends the data over 3DR radiometry to the pixhawk.
