@@ -4,6 +4,8 @@ The system console allows low-level access to the system, debug output and analy
 
 ## Wiring the Console
 
+The system console can be accessed through the Dronecode probe or an FTDI cable. Both options are explained in the section below.
+
 ### Connecting via Dronecode Probe
 
 Connect the 6-pos DF13 1:1 cable on the [Dronecode probe](http://nicadrone.com/index.php?id_product=65&controller=product) to the SERIAL4/5 port of Pixhawk.
