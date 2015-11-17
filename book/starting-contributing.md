@@ -1,6 +1,6 @@
 # Contributing
 
-The PX4 project uses a three-branch Git branching model:
+Contact information for the core dev team and community can be found below. The PX4 project uses a three-branch Git branching model:
 
   * [master](https://github.com/px4/firmware/tree/master) is by default unstable and sees rapid development.
   * [beta](https://github.com/px4/firmware/tree/beta) has been thoroughly tested. Its intended for flight testers.
@@ -12,6 +12,9 @@ To contribute new functionality, [sign up for Github](https://help.github.com/ar
 
 All contributions have to be under the permissive [BSD 3-clause license](https://opensource.org/licenses/BSD-3-Clause) and all code must not impose any further constraints on the use.
 
+## Tests Flight Results
+
+Test flights are important for quality assurance. Please upload the logs from the microSD card to [Log Muncher](http://logs.uaventure.com) and share the link on the [forum](http://groups.google.com/group/px4users) along with a verbal flight report.
 
 ## Forums and Chat
 
@@ -26,4 +29,4 @@ The PX4 Dev Team syncs up on its weekly dev call (connect via [Mumble](http://mu
   * TIME: 19:00h Zurich time, 1 p.m. Eastern Time, 10 a.m. Pacific Standard Time
   * Server: sitl01.dronetest.io (port default)
   * Password: px4
-  * The agenda is announced the same day on the [px4users forum](https://en.wikipedia.org/wiki/Continuous_integration)
+  * The agenda is announced the same day on the [px4users forum](http://groups.google.com/group/px4users)

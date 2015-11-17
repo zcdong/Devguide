@@ -11,7 +11,7 @@ Update the package list and install the following dependencies for all PX4 build
   * Host simulation: [jMAVSim SITL](simulation-sitl.md) and [Gazebo SITL](simulation-gazebo.md)
 
 <aside class="note">
-Install the [Ninja Build System](starting-installing-linux-boutique.md#ninja-build-system) for faster build times than with Make. It will be automatically selected if installed.
+Install the [Ninja Build System](http://dev.px4.io/starting-installing-linux-boutique.html#ninja-build-system) for faster build times than with Make. It will be automatically selected if installed.
 </aside>
 
 <div class="host-code"></div>
@@ -48,11 +48,15 @@ sudo apt-get install python-serial openocd \
 
 This guide generally refers to the specific latest GCC version tested. Use the package version tag for current Ubuntu versions:
 
+<div class="host-code"></div>
+
 ```sh
 sudo apt-get install gcc-arm-none-eabi=4.8.3-18ubuntu2+12 -y
 ```
 
 For older releases, e.g. Ubuntu 14.04 (Trusty) and 14.10, leave the version tag out:
+
+<div class="host-code"></div>
 
 ```sh
 sudo apt-get install gcc-arm-none-eabi -y

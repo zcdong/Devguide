@@ -18,6 +18,14 @@ or
 sudo apt-get install valgrind
 ```
 
+Then run Valgrind with this target:
+
+<div class="host-code"></div>
+
+```sh
+make posix_sitl_default jmavsim___valgrind
+```
+
 ## GCC Toolchain (Linux)
 
 ## CLANG Toolchain (Mac OS, Linux)

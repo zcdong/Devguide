@@ -1,7 +1,7 @@
 language: node_js
 sudo: false
 node_js:
-- iojs
+- "4.1"
 before_script:
 - npm install -g grunt-cli gitbook-cli
 - npm install
@@ -9,6 +9,8 @@ before_script:
 - grunt
 - gem install dotenv aws-sdk thread bundler git mime
 after_success:
+- cp theme/assets/style.css theme/assets/website/style.css
+- cp theme/assets/print.css theme/assets/website/print.css
 - |
   ./deploy.rb
 matrix:

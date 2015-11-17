@@ -73,6 +73,6 @@ export AWS_SECRET=[SECRET]
 
 ## License
 
-Content: CC-BY
+Content: CC-BY, (c) PX4 Project
 
-README & Template: CC-BY-SA 4.0 Template based on the 3DR px4 Dev Guide.
+Template: CC-BY, stolen from the [Solo dev guide](http://dev.3dr.com).

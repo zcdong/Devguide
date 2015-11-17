@@ -11,11 +11,8 @@ After installing Homebrew, copy these commands to your shell:
 ```sh
 brew tap PX4/homebrew-px4
 brew update
-brew install genromfs
-brew install kconfig-frontends
-brew install gcc-arm-none-eabi
-brew install astyle
-brew install cmake
+brew install genromfs kconfig-frontends gcc-arm-none-eabi
+brew install astyle cmake ninja
 ```
 
 Then install the required python packages:

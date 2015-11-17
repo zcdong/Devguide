@@ -69,6 +69,11 @@ make px4esc.image
 ```
 The firmware image will be located at `firmware/build/org.pixhawk.px4esc-bldc-v1-1.0.<xxxxxxxx>.bin`, where `<xxxxxxxx>` is an arbitrary sequence of numbers and letters.
 
+## Zubax GNSS
+
+Please refer to the [project page](https://github.com/Zubax/zubax_gnss) to learn how to build and flash the firmware.
+Zubax GNSS comes with a UAVCAN-capable bootloader, so its firmware can be updated in a uniform fashion via UAVCAN as described below.
+
 ## Firmware Installation on the Autopilot
 
 The UAVCAN node file names follow a naming convention which allows the Pixhawk to update all UAVCAN devices on the network, regardless of manufacturer. The firmware files generated in the steps above must therefore be copied to the correct locations on an SD card or the PX4 ROMFS in order for the devices to be updated.
@@ -77,7 +82,7 @@ The convention for firmware image names is:
 
   ```<node name>-<hw version major>.<hw version minor>-<version hash>.bin```
 
-However, due to space/path length/performance constraints, the UAVCAN firmware updater requires those filenames to be split and stored in a directory structure like the following:
+However, due to space/performance constraints, the UAVCAN firmware updater requires those filenames to be split and stored in a directory structure like the following:
 
   ```/fs/microsd/fw/<node name>/<hw version major>.<hw version minor>/<version hash>.bin```
 
@@ -89,10 +94,25 @@ The ROMFS-based updater follows that pattern, so you add the firmware in:
 
 The resulting finale file locations are:
 
-  * S2740VC ESC: ```ROMFS/px4fmu_common/uavcan/fw/com.thiemar.s2740vc-v1/1.0/<xxxxxxxx>.bin```
-  * Pixhawk ESC 1.6: ```ROMFS/px4fmu_common/uavcan/fw/org.pixhawk.px4esc-v1/1.0/<xxxxxxxx>.bin```
-  * Pixhawk ESC 1.4: ```ROMFS/px4fmu_common/uavcan/fw/org.pixhawk.px4esc-bldc-v1/1.0/<xxxxxxxx>.bin```
+  * S2740VC ESC: `ROMFS/px4fmu_common/uavcan/fw/com.thiemar.s2740vc-v1/1.0/<xxxxxxxx>.bin`
+  * Pixhawk ESC 1.6: `ROMFS/px4fmu_common/uavcan/fw/org.pixhawk.px4esc-v1/1.0/<xxxxxxxx>.bin`
+  * Pixhawk ESC 1.4: `ROMFS/px4fmu_common/uavcan/fw/org.pixhawk.px4esc-bldc-v1/1.0/<xxxxxxxx>.bin`
+  * Zubax GNSS v1: `ROMFS/px4fmu_common/uavcan/fw/com.zubax.gnss/1.0/<xxxxxxxx>.bin`
+  * Zubax GNSS v2: `ROMFS/px4fmu_common/uavcan/fw/com.zubax.gnss/2.0/<xxxxxxxx>.bin`
 
 (In all the above, `<xxxxxxxx>` is an arbitrary sequence of numbers and letters.)
 
 Note that the ROMFS/px4fmu_common directory will be mounted to /etc on Pixhawk.
+
+### Starting the Firmware Upgrade process
+
+<aside class="note">
+When using the [PX4 Flight Stack](concept-flight-stack.md), enable UAVCAN in the 'Power Config' section and reboot the system before attempting an UAVCAN firmware upgrade.
+</aside>
+
+Alternatively UAVCAN firmware upgrading can be started manually on NSH via:
+
+```sh
+uavcan start
+uavcan start fw
+```
