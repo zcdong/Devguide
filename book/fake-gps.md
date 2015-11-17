@@ -104,4 +104,4 @@ Go to your catkinWS and run
 ```sh
 roslaunch mavros apm.launch fcu_url:=/dev/ttyUSB0:57600
 ```
-that's it! Your pixhawk now gets GPS data and the light should pulse in green color.
+That's it! Your pixhawk now gets GPS data and the light should pulse in green color.
