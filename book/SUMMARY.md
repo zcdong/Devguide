@@ -45,6 +45,7 @@ This is the summary of the PX4 dev guide.
   * [ROS Installation on RPi 2](ros-raspberrypi-installation.md)
   * [MAVROS (MAVLink on ROS)](ros-mavros-installation.md)
   * [Offboard Control from Linux](offboard-control.md)
+  * [MAVROS offboard example](ros-mavros-offboard.md)
   * [External Position Estimation](external-position.md)
 * Sensor and Actuator Buses
   * [I2C Bus](i2c-intro.md)
