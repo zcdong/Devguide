@@ -111,3 +111,13 @@ At the `gdb` prompt, run:
 ```tar ext :2331
 load
 ```
+## Erasing Flash with SEGGER JLink Debugger
+
+Before flashign the bootloader it may be beneficial to to erase the memory of the microcontroller since parameters may be stored in flash. 
+
+Go to the directory of your SEGGER installation and launch JLinkExe, then run:
+
+    device <name-of-device>
+    erase
+    
+Replace `<name-of-device>` with the name of the microcontroller, e.g. STM32F446RE for the Pixhawk ESC 1.6 or STM32F302K8 for the SV2470VC ESC.
