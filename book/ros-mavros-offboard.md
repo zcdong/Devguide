@@ -30,11 +30,11 @@ int main(int argc, char **argv)
     ros::NodeHandle nh("~");
 
     ros::Publisher local_pos_pub = nh.advertise<geometry_msgs::PoseStamped>
-            ("/mavros/setpoint_position/local", 1);
+            ("mavros/setpoint_position/local", 10);
     ros::ServiceClient arming_client = nh.serviceClient<mavros_msgs::CommandBool>
-            ("/mavros/cmd/arming");
+            ("mavros/cmd/arming");
     ros::ServiceClient set_mode_client = nh.serviceClient<mavros_msgs::SetMode>
-            ("/mavros/set_mode");
+            ("mavros/set_mode");
 
     mavros_msgs::SetMode offb_set_mode;
     offb_set_mode.request.custom_mode = "OFFBOARD";
@@ -99,11 +99,11 @@ int main(int argc, char **argv)
 The `mavros_msgs` package contains all of the custom messages required to operate services and topics provided by the mavros package. All services and topics as well as their corresponding message types are documented in the [mavros wiki](http://wiki.ros.org/mavros).
 
 ```C++
-ros::Publisher local_pos_pub = nh.advertise<geometry_msgs::PoseStamped>("/mavros/setpoint_position/local", 1);
-ros::ServiceClient arming_client = nh.serviceClient<mavros_msgs::CommandBool>("/mavros/cmd/arming");
-ros::ServiceClient set_mode_client = nh.serviceClient<mavros_msgs::SetMode>("/mavros/set_mode");
+ros::Publisher local_pos_pub = nh.advertise<geometry_msgs::PoseStamped>("mavros/setpoint_position/local", 10);
+ros::ServiceClient arming_client = nh.serviceClient<mavros_msgs::CommandBool>("mavros/cmd/arming");
+ros::ServiceClient set_mode_client = nh.serviceClient<mavros_msgs::SetMode>("mavros/set_mode");
 ```
-We instantiate a publisher to publish the commanded local position and the appropriate clients to request arming and mode change.
+We instantiate a publisher to publish the commanded local position and the appropriate clients to request arming and mode change. Note that for your own system, the "mavros" prefix might be different as it will depend on the name given to the node in it's launch file.
 
 ```C++
 mavros_msgs::SetMode offb_set_mode;
@@ -162,3 +162,7 @@ while(ros::ok()){
 }
 ```
 The rest of the code is pretty self explanatory. We attempt to switch to offboard mode after which we arm the quad to allow it to fly. In the same loop we continue sending the requested pose at the appropriate rate.
+
+<aside class="tip">
+This code has been simplified to the bare minimum for illustration purposed. In larger systems, it is often useful to create a new thread which will be in charge of periodically publishing the setpoint.
+</aside>
