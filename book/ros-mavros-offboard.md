@@ -23,18 +23,22 @@ Create the offb_node.cpp file in your ros package and paste the following inside
 #include <geometry_msgs/PoseStamped.h>
 #include <mavros_msgs/CommandBool.h>
 #include <mavros_msgs/SetMode.h>
+#include <mavros_msgs/State.h>
+
+mavros_msgs::State current_state;
+void state_cb(const mavros_msgs::State::ConstPtr& msg){
+    current_state = *msg;
+}
 
 int main(int argc, char **argv)
 {
     ros::init(argc, argv, "offb_node");
-    ros::NodeHandle nh("~");
+    ros::NodeHandle nh;
 
-    ros::Publisher local_pos_pub = nh.advertise<geometry_msgs::PoseStamped>
-            ("mavros/setpoint_position/local", 10);
-    ros::ServiceClient arming_client = nh.serviceClient<mavros_msgs::CommandBool>
-            ("mavros/cmd/arming");
-    ros::ServiceClient set_mode_client = nh.serviceClient<mavros_msgs::SetMode>
-            ("mavros/set_mode");
+    ros::Subscriber state_sub = nh.subscribe<mavros_msgs::State>("mavros/state", 10, state_cb);
+    ros::Publisher local_pos_pub = nh.advertise<geometry_msgs::PoseStamped>("mavros/setpoint_position/local", 10);
+    ros::ServiceClient arming_client = nh.serviceClient<mavros_msgs::CommandBool>("mavros/cmd/arming");
+    ros::ServiceClient set_mode_client = nh.serviceClient<mavros_msgs::SetMode>("mavros/set_mode");
 
     mavros_msgs::SetMode offb_set_mode;
     offb_set_mode.request.custom_mode = "OFFBOARD";
@@ -47,10 +51,15 @@ int main(int argc, char **argv)
     //the setpoint publishing rate MUST be faster than 2Hz
     ros::Rate rate(20.0);
 
-    int i = 100;
-    while(ros::ok() && i > 0){
+    // wait for FCU connection
+    while(ros::ok() && current_state.connected){
+        ros::spinOnce();
+        rate.sleep();
+    }
+
+    //send a few setpoints before starting
+    for(int i = 100; ros::ok() && i > 0; --i){
         local_pos_pub.publish(pose);
-        i--;
         ros::spinOnce();
         rate.sleep();
     }
@@ -58,19 +67,15 @@ int main(int argc, char **argv)
     mavros_msgs::CommandBool arm_cmd;
     arm_cmd.request.value = true;
 
-    bool offboard_enabled = false;
-    bool armed = false;
-
     while(ros::ok()){
-        if(!offboard_enabled){
-            // The mode switch should be accepted once a few setpoints are sent
+        if(!current_state.guided){
             if(set_mode_client.call(offb_set_mode) &&
                     offb_set_mode.response.success){
                 ROS_INFO("Offboard enabled");
                 offboard_enabled = true;
             }
         } else {
-            if(!armed){
+            if(!current_state.armed){
                 if(arming_client.call(arm_cmd) &&
                         arm_cmd.response.success){
                     ROS_INFO("Vehicle armed");
@@ -99,6 +104,15 @@ int main(int argc, char **argv)
 The `mavros_msgs` package contains all of the custom messages required to operate services and topics provided by the mavros package. All services and topics as well as their corresponding message types are documented in the [mavros wiki](http://wiki.ros.org/mavros).
 
 ```C++
+mavros_msgs::State current_state;
+void state_cb(const mavros_msgs::State::ConstPtr& msg){
+    current_state = *msg;
+}
+```
+We create a simple callback which will save the current state of the autopilot. This will allow us to check connection, arming and offboard flags.
+
+```C++
+ros::Subscriber state_sub = nh.subscribe<mavros_msgs::State>("mavros/state", 10, state_cb);
 ros::Publisher local_pos_pub = nh.advertise<geometry_msgs::PoseStamped>("mavros/setpoint_position/local", 10);
 ros::ServiceClient arming_client = nh.serviceClient<mavros_msgs::CommandBool>("mavros/cmd/arming");
 ros::ServiceClient set_mode_client = nh.serviceClient<mavros_msgs::SetMode>("mavros/set_mode");
@@ -126,27 +140,36 @@ ros::Rate rate(20.0);
 The px4 flight stack has a timeout of 500ms between two offboard commands. If this timeout is exceeded, the commander will fall back to the last mode the vehicle was in before entering offboard mode. This is why the publishing rate **must** be faster than 2 Hz to also account for possible latencies. This is also the same reason why it is recommended to enter offboard mode from POSCTL mode, this way if the vehicle drops out of offboard mode it will stop in its tracks and hover.
 
 ```C++
-int i = 100;
-while(ros::ok() && i > 0){
+// wait for FCU connection
+while(ros::ok() && current_state.connected){
+    ros::spinOnce();
+    rate.sleep();
+}
+```
+Before publishing anything, we wait for the connection to be established between mavros and the autopilot. This loop should exit as soon as a heartbeat message is received.
+```C++
+//send a few setpoints before starting
+for(int i = 100; ros::ok() && i > 0; --i){
     local_pos_pub.publish(pose);
-    i--;
     ros::spinOnce();
     rate.sleep();
 }
 ``` 
 Before entering offboard mode, you must have already started streaming setpoints otherwise the mode switch will be rejected. Here, 100 was chosen as an arbitrary amount.
 
-```
+```C++
+mavros_msgs::CommandBool arm_cmd;
+arm_cmd.request.value = true;
+
 while(ros::ok()){
-    if(!offboard_enabled){
-        // The mode switch should be accepted once a few setpoints are sent
+    if(!current_state.guided){
         if(set_mode_client.call(offb_set_mode) &&
                 offb_set_mode.response.success){
             ROS_INFO("Offboard enabled");
             offboard_enabled = true;
         }
     } else {
-        if(!armed){
+        if(!current_state.armed){
             if(arming_client.call(arm_cmd) &&
                     arm_cmd.response.success){
                 ROS_INFO("Vehicle armed");
