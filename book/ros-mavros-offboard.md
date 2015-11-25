@@ -72,14 +72,12 @@ int main(int argc, char **argv)
             if(set_mode_client.call(offb_set_mode) &&
                     offb_set_mode.response.success){
                 ROS_INFO("Offboard enabled");
-                offboard_enabled = true;
             }
         } else {
             if(!current_state.armed){
                 if(arming_client.call(arm_cmd) &&
                         arm_cmd.response.success){
                     ROS_INFO("Vehicle armed");
-                    armed = true;
                 }
             }
         }
@@ -154,7 +152,7 @@ for(int i = 100; ros::ok() && i > 0; --i){
     ros::spinOnce();
     rate.sleep();
 }
-``` 
+```
 Before entering offboard mode, you must have already started streaming setpoints otherwise the mode switch will be rejected. Here, 100 was chosen as an arbitrary amount.
 
 ```C++
