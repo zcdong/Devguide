@@ -187,5 +187,5 @@ while(ros::ok()){
 The rest of the code is pretty self explanatory. We attempt to switch to offboard mode after which we arm the quad to allow it to fly. In the same loop we continue sending the requested pose at the appropriate rate.
 
 <aside class="tip">
-This code has been simplified to the bare minimum for illustration purposed. In larger systems, it is often useful to create a new thread which will be in charge of periodically publishing the setpoint.
+This code has been simplified to the bare minimum for illustration purposes. In larger systems, it is often useful to create a new thread which will be in charge of periodically publishing the setpoint.
 </aside>
