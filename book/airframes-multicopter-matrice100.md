@@ -31,3 +31,8 @@
 | AUX1 | 50 Hz | RC AUX1 |
 | AUX2 | 50 Hz | RC AUX2 |
 | AUX3 | 50 Hz | RC AUX3 |
+
+## Parameters
+
+* Default gains for generic x quadrotor work pretty well. An optimized set hasn''t been created yet.
+* Set the battery number of cells to 6 cells from the default of 3.
