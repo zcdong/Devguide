@@ -36,6 +36,7 @@ This is the summary of the PX4 dev guide.
   * [Multicopters](airframes-multicopter.md)
     * [Motor Map](airframes-motor-map.md)
     * [QAV 250 Racer](airframes-multicopter-qav250.md)
+    * [Matrice 100](airframes-multicopter-matrice100.md)
   * [Planes](airframes-plane.md)
     * [Wing Wing Z-84](airframes-plane-wing-z-84.md)
   * [VTOL](airframes-vtol.md)

@@ -17,7 +17,7 @@ brew install npm
 On Linux - you're using Linux, so you should know!
 
 ```sh
-sudo apt-get install npm
+sudo apt-get install npm nodejs-legacy
 ```
 
 ### Installing Gitbook
