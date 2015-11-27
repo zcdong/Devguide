@@ -113,9 +113,7 @@ load
 ```
 ## Erasing Flash with SEGGER JLink Debugger
 
-Before flashign the bootloader it may be beneficial to to erase the memory of the microcontroller since parameters may be stored in flash. 
-
-Go to the directory of your SEGGER installation and launch JLinkExe, then run:
+As a recovery method it may be useful to erase flash to factory defaults such that the firmware is using the default parameters. Go to the directory of your SEGGER installation and launch JLinkExe, then run:
 
     device <name-of-device>
     erase
