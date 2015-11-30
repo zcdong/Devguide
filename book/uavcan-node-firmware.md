@@ -31,7 +31,7 @@ After building, the bootloader image is located at `firmware/px4esc_1_6-bootload
 BOARD=s2740vc_1_0 make && BOARD=px4esc_1_6 make
 ```
 
-This will build the UAVCAN node firmware for both supported ESCs. The firmware images will be located at `firmware/com.thiemar.s2740vc-v1-1.0.00000000.bin` and `firmware/org.pixhawk.px4esc-v1-1.0.00000000.bin`.
+This will build the UAVCAN node firmware for both supported ESCs. The firmware images will be located at `com.thiemar.s2740vc-v1-1.0-1.0.<git hash>.bin` and `org.pixhawk.px4esc-v1-1.6-1.0.<git hash>.binn`.
 
 ## PX4 ESC Codebase (Pixhawk ESC 1.4)
 
@@ -80,27 +80,29 @@ The UAVCAN node file names follow a naming convention which allows the Pixhawk t
 
 The convention for firmware image names is:
 
-  ```<node name>-<hw version major>.<hw version minor>-<version hash>.bin```
+  ```<uavcan name>-<hw version major>.<hw version minor>-<sw version major>.<sw version minor>.<version hash>.bin```
+  
+  e.g. ```com.thiemar.s2740vc-v1-1.0-1.0.68e34de6.bin```
 
-However, due to space/performance constraints, the UAVCAN firmware updater requires those filenames to be split and stored in a directory structure like the following:
+However, due to space/performance constraints (names may not exceed 28 charates), the UAVCAN firmware updater requires those filenames to be split and stored in a directory structure like the following:
 
-  ```/fs/microsd/fw/<node name>/<hw version major>.<hw version minor>/<version hash>.bin```
+  ```/fs/microsd/fw/<node name>/<hw version major>.<hw version minor>/<hw name>-<hw version major>.<hw version minor>.<git hash>.bin```
 
-The ROMFS-based updater follows that pattern, so you add the firmware in:
+ e.g. ```s2740vc-v1-1.0.68e34de6.bin```
 
-  ```/etc/uavcan/fw/<node name>/<hw version major>.<hw version minor>/<version hash>.bin```
+The ROMFS-based updater follows that pattern, but prepends the file name with ```_``` so you add the firmware in:
+
+  ```/etc/uavcan/fw/<device name>/<hw version major>.<hw version minor>/_<hw name>-<hw version major>.<hw version minor>.<git hash>.bin```
 
 ## Placing the binaries in the PX4 ROMFS
 
 The resulting finale file locations are:
 
-  * S2740VC ESC: `ROMFS/px4fmu_common/uavcan/fw/com.thiemar.s2740vc-v1/1.0/<xxxxxxxx>.bin`
-  * Pixhawk ESC 1.6: `ROMFS/px4fmu_common/uavcan/fw/org.pixhawk.px4esc-v1/1.0/<xxxxxxxx>.bin`
-  * Pixhawk ESC 1.4: `ROMFS/px4fmu_common/uavcan/fw/org.pixhawk.px4esc-bldc-v1/1.0/<xxxxxxxx>.bin`
-  * Zubax GNSS v1: `ROMFS/px4fmu_common/uavcan/fw/com.zubax.gnss/1.0/<xxxxxxxx>.bin`
-  * Zubax GNSS v2: `ROMFS/px4fmu_common/uavcan/fw/com.zubax.gnss/2.0/<xxxxxxxx>.bin`
-
-(In all the above, `<xxxxxxxx>` is an arbitrary sequence of numbers and letters.)
+  * S2740VC ESC: `ROMFS/px4fmu_common/uavcan/fw/com.thiemar.s2740vc-v1/1.0/_s2740vc-v1-1.0.<git hash>.bin`
+  * Pixhawk ESC 1.6: `ROMFS/px4fmu_common/uavcan/fw/org.pixhawk.px4esc-v1/1.6/_px4esc-v1-1.6.<git has>.bin`
+  * Pixhawk ESC 1.4: `ROMFS/px4fmu_common/uavcan/fw/org.pixhawk.px4esc-bldc-v1/1.4/_px4esc-bldc-v1-1.4.<git has>.bin``
+  * Zubax GNSS v1: `ROMFS/px4fmu_common/uavcan/fw/com.zubax.gnss/1.0/gnss-1.0.<git has>.bin`
+  * Zubax GNSS v2: `ROMFS/px4fmu_common/uavcan/fw/com.zubax.gnss/2.0/gnss-2.0.<git has>.bin`
 
 Note that the ROMFS/px4fmu_common directory will be mounted to /etc on Pixhawk.
 
