@@ -9,3 +9,19 @@ All [airframes](airframes-architecture.md), and in fact all robotic systems incl
   * The system can deal with varying workload
 
 In addition to these runtime considerations, its modularity maximizes [reusability](https://en.wikipedia.org/wiki/Reusability).
+
+## High Level Software Architecture
+
+```mermaid
+graph LR;
+  Simulator-->MAVLink;
+  MAVLink-->SITL;
+```
+
+## Control Architecture
+
+```mermaid
+graph LR;
+  Simulator-->MAVLink;
+  MAVLink-->SITL;
+```

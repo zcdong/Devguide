@@ -21,10 +21,8 @@ This is the summary of the PX4 dev guide.
   * [Introduction](qgroundcontrol-intro.md)
 * Simulation
   * [Prerequisites](simulation-prerequisites.md)
-  * [Light Simulation](simulation-sitl.md)
-    * [Debugging](simulation-debugging.md)
+  * [Basic Simulation](simulation-sitl.md)
   * [Gazebo Simulation](simulation-gazebo.md)
-    * [Octomap](simulation-gazebo-octomap.md)
 * Autopilot Hardware
   * [Snapdragon Flight](hardware-snapdragon.md)
   * [Pixhawk](hardware-pixhawk.md)
@@ -48,6 +46,7 @@ This is the summary of the PX4 dev guide.
   * [Offboard Control from Linux](offboard-control.md)
   * [MAVROS offboard example](ros-mavros-offboard.md)
   * [External Position Estimation](external-position.md)
+  * [Gazebo Octomap](simulation-gazebo-octomap.md)
 * Sensor and Actuator Buses
   * [I2C Bus](i2c-intro.md)
   * [UAVCAN Bus](uavcan-intro.md)
@@ -59,5 +58,7 @@ This is the summary of the PX4 dev guide.
 * Advanced Topics
   * [System Console](advanced-system-console.md)
   * [System Boot](advanced-system-startup.md)
+  * [Flash Bootloader](advanced-flash-bootloader.md)
   * [uORB Messaging](advanced-uorb.md)
+  * [Simulation Debugging](simulation-debugging.md)
   * [Licenses](advanced-licenses.md)
