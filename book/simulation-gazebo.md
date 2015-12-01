@@ -4,7 +4,8 @@
 
 ```mermaid
 graph LR;
-  Simulator-->Simulator-->MAVLink;
+  Gazebo-->Plugin;
+  Plugin-->MAVLink;
   MAVLink-->SITL;
 ```
 
