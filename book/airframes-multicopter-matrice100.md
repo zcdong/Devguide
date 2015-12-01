@@ -34,5 +34,8 @@
 
 ## Parameters
 
-* Default gains for generic x quadrotor work pretty well. An optimized set hasn''t been created yet.
-* Set the battery number of cells to 6 cells from the default of 3.
+* At high throttle the inner loop causes oscillations with default x quad gains. At low throttle, higher gains give a better response, this suggests that some gain scheduling based on the throttle may improve the overall response and this could be implemented in mc_att_control. For now we will just tune it so that there are no oscillations at low or high throttle, and take the bandwidth hit at low throttle.
+	* MC_PITCHRATE_P: 0.05
+	* MC_PITCHRATE_D: 0.001
+* The battery has 6 cells instead of the default 3
+	* BAT_N_CELLS: 6
