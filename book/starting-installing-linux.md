@@ -43,25 +43,8 @@ sudo apt-get update
 sudo apt-get install python-serial openocd \
     flex bison libncurses5-dev autoconf texinfo build-essential \
     libftdi-dev libtool zlib1g-dev genromfs \
-    python-empy
+    python-empy gcc-arm-none-eabi -y
 ```
-
-This guide generally refers to the specific latest GCC version tested. Use the package version tag for current Ubuntu versions:
-
-<div class="host-code"></div>
-
-```sh
-sudo apt-get install gcc-arm-none-eabi=4.8.3-18ubuntu2+12 -y
-```
-
-For older releases, e.g. Ubuntu 14.04 (Trusty) and 14.10, leave the version tag out:
-
-<div class="host-code"></div>
-
-```sh
-sudo apt-get install gcc-arm-none-eabi -y
-```
-
 
 ### Snapdragon Flight
 
