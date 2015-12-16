@@ -41,3 +41,14 @@ More information about the Snapdragon Flight platform is at [Snapdragon-Flight-D
 ## Dimensions
 
 ![](images/hardware/hardware-snapdragon-dimensions.png)
+
+## Software
+
+The Hexagon SDK and Hexagon Tools can be requested from [here](https://developer.qualcomm.com/software/hexagon-dsp-sdk/application)
+
+The PX4 build instructions use version 7.2.10 Linux of the Hexagon Tools and the Hexagon 2.0 SDK for Linux.
+
+There is a guide for installing the toolchain at:
+
+  * [GettingStarted](https://github.com/ATLFlight/ATLFlightDocs/blob/master/GettingStarted.md)
+
