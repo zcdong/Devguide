@@ -48,24 +48,43 @@ sudo apt-get install python-serial openocd \
 
 ### Snapdragon Flight
 
-Developers working on Snapdragon Flight should download the Hexagon Linux toolchain and execute the commands below. The installation guide will come up, leave everything at default by just continuing to press enter.
+Developers working on Snapdragon Flight should request the Hexagon 7.2.10 Linux toolchain and 2.0 SDK for Linux from [here](https://developer.qualcomm.com/software/hexagon-dsp-sdk/application) and execute the commands below. The installation guide will come up, leave everything at default by just continuing to press enter.
+
+Arm cross toolchain:
 
 <div class="host-code"></div>
 
 ```sh
 sudo apt-get install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf -y
+```
+
+Hexagon SDK:
+
+<div class="host-code"></div>
+
+```sh
+chmod u+x qualcomm_hexagon_sdk_2_0_eval.bin
+./qualcomm_hexagon_sdk_2_0_eval.bin
+```
+
+Hexagon Tools:
+
+<div class="host-code"></div>
+
+```sh
 tar xf Hexagon.LNX.7.2\ Installer-07210.1.tar
 chmod u+x Hexagon.LLVM_linux_installer_7.2.10.bin
 ./Hexagon.LLVM_linux_installer_7.2.10.bin
 ```
 
-After this the tools will have been installed to '~/Qualcomm/HEXAGON_Tools/7.2.10'. Add this to your path variable:
+After this the tools and SDK will have been installed to "$HOME/Qualcomm/...". Append the following to your ~/.bashrc:
 
 <div class="host-code"></div>
 
 ```sh
-export PATH="$PATH:$HOME/Qualcomm/HEXAGON_Tools/7.2.10/Tools/bin/"
 export HEXAGON_TOOLS_ROOT="$HOME/Qualcomm/HEXAGON_Tools/7.2.10/Tools"
+export HEXAGON_SDK_ROOT="$HOME/Qualcomm/Hexagon_SDK/2.0"
+if [[ ":$PATH:" != *":$HEXAGON_TOOLS_ROOT/bin/:"* ]]; then PATH="$PATH:$HEXAGON_TOOLS_ROOT/bin; fi
 ```
 
 Load the new configuration:
@@ -75,6 +94,19 @@ Load the new configuration:
 ```sh
 source ~/.bashrc
 ```
+
+There is a an external guide for installing the toolchain at 
+[GettingStarted](https://github.com/ATLFlight/ATLFlightDocs/blob/master/GettingStarted.md). The 
+[HelloWorld](https://github.com/ATLFlight/HelloWorld) and [DSPAL tests](https://github.com/ATLFlight/dspal/tree/master/test/dspal_tester) can be used to validate your tools installation and DSP image.
+
+Messages from the DSP can be viewed using mini-dm.
+
+<div class="host-code"></div>
+
+```sh
+$HOME/Qualcomm/Hexagon_SDK/2.0/tools/mini-dm/Linux_Debug/mini-dm
+```
+
 
 ### Simulation
 
