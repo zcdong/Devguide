@@ -16,7 +16,8 @@ More information about the Snapdragon Flight platform is at [Snapdragon-Flight-D
   * Storage: 32GB eMMC Flash
   * Video: Sony IMX135 on Liteon Module 12P1BAD11
     * 4k@30fps 3840×2160 video capture to SD card with H.264 @ 100Mbits (1080p/60 with parallel FPV), 720p FPV
-  * Optic Flow: 640x480 Omnivision OV7251 on Sunny Module MD102A-200
+  * Optic Flow: Omnivision OV7251 on Sunny Module MD102A-200
+    * 640x480 @ 30/60/90 fps
   * Wifi: Qualcomm® VIVE™ 1-stream 802.11n/ac with MU-MIMO † Integrated digital core
   * BT/WiFi: BT 4.0 and 2G/5G WiFi via QCA6234
     * 802.11n, 2×2 MIMO with 2 uCOAX connectors on-board for connection to external antenna
@@ -36,7 +37,8 @@ More information about the Snapdragon Flight platform is at [Snapdragon-Flight-D
   * ESC connector (2W UART)
   * I2C
   * 60-pin high speed Samtec QSH-030-01-L-D-A-K expansion connector
-  * 2x BLSP ([BAM Low Speed Peripheral](http://www.inforcecomputing.com/public_docs/BLSPs_on_Inforce_6540_6501_Snapdragon_805.pdf))
+    * 2x BLSP ([BAM Low Speed Peripheral](http://www.inforcecomputing.com/public_docs/BLSPs_on_Inforce_6540_6501_Snapdragon_805.pdf))
+    * USB
 
 ## Dimensions
 
