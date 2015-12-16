@@ -46,7 +46,7 @@ More information about the Snapdragon Flight platform is at [Snapdragon-Flight-D
 
 The Hexagon SDK and Hexagon Tools can be requested from [here](https://developer.qualcomm.com/software/hexagon-dsp-sdk/application)
 
-The PX4 build instructions use version 7.2.10 Linux of the Hexagon Tools and the Hexagon 2.0 SDK for Linux.
+The PX4 build instructions use Hexagon Tools version 7.2.10 for Linux and the Hexagon SDK 2.0 for Linux.
 
 There is a guide for installing the toolchain at:
 
