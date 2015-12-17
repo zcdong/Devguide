@@ -16,7 +16,7 @@ brew install ant
 <div class="host-code"></div>
 
 ```sh
-sudo apt-get install ant
+sudo apt-get install ant openjdk-7-jdk openjdk-7-jre
 ```
 
 ## Windows
