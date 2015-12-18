@@ -13,10 +13,10 @@ The Caipiroshka VTOL is a slightly modified TBS Caipirinha.
     * [ePower 2208](http://www.eflight.ch/pi/ePower-X-22081.html)
   * 2x 20-30S ESC
     * [Eflight store](http://www.eflight.ch/shop/USER_ARTIKEL_HANDLING_AUFRUF.php?von_suchresultat=true&Ziel_ID=19713&Kategorie_ID=36077)
-  * BEC
+  * BEC (3A, 5-5.3V)
   * 3S 2200 mA LiPo battery
     * Team Orion 3S 11.1V 50 C ([Brack store](https://www.brack.ch/team-orion-2200mah-11-1v-50c-308340))
-  * Pixfalcon kit with GPS + mini telemetry (or OSD + telemetry)
+  * [Pixracer autopilot board + power module](hardware-pixracer.md)
   * [Digital airspeed sensor](http://www.hobbyking.com/hobbyking/store/__62752__HKPilot_32_Digital_Air_Speed_Sensor_And_Pitot_Tube_Set.html)
 
 <aside type="todo">
