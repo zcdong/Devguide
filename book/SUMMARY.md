@@ -40,6 +40,8 @@ This is the summary of the PX4 dev guide.
   * [VTOL](airframes-vtol.md)
     * [TBS Caipiroshka](airframes-vtol-caipiroshka.md)
   * [Boats, Submarines, Blimps, Rovers](airframes-experimental.md)
+* Companion Computers
+  * [Pixhawk family companion](pixhawk-companion-computer.md)
 * Robotics using ROS
   * [ROS Installation on RPi 2](ros-raspberrypi-installation.md)
   * [MAVROS (MAVLink on ROS)](ros-mavros-installation.md)
@@ -61,4 +63,5 @@ This is the summary of the PX4 dev guide.
   * [Flash Bootloader](advanced-flash-bootloader.md)
   * [uORB Messaging](advanced-uorb.md)
   * [Simulation Debugging](simulation-debugging.md)
+  * [Indoor / Fake GPS](advanced-fake-gps.md)
   * [Licenses](advanced-licenses.md)

@@ -12,16 +12,31 @@ In addition to these runtime considerations, its modularity maximizes [reusabili
 
 ## High Level Software Architecture
 
+Each of 
+
 ```mermaid
-graph LR;
-  Simulator-->MAVLink;
-  MAVLink-->SITL;
+graph TD;
+  commander-->navigator;
+  user-->commander;
+  user-->stickmapper;
+  stickmapper-->navigator;
+  navigator-->pos_ctrl
+  pos_ctrl-->att_ctrl;
+  att_ctrl-->mixer;
+  position_estimator-->pos_ctrl;
+  position_estimator-->navigator;
+  position_estimator-->attitude_estimator;
+  attitude_estimator-->att_ctrl;
+  mixer-->motor_driver;
 ```
 
-## Control Architecture
+## Communication Architecture
 
 ```mermaid
-graph LR;
-  Simulator-->MAVLink;
-  MAVLink-->SITL;
+graph TD;
+  mavlink---commander;
+  mavlink---navigator;
+  position_estimator-->mavlink;
+  attitude_estimator-->mavlink;
+  mixer-->mavlink;
 ```

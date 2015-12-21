@@ -19,6 +19,14 @@ Mac OS users should install gazebo7 (not 6). Linux users: If you installed a ROS
 
 Follow the instruction in the [sitl_gazebo documentation](https://github.com/px4/sitl_gazebo) to install. Binaries are available for all major operating systems and can be installed via `apt-get` or `brew`.
 
+### Mac OS
+
+<div class="host-code"></div>
+
+```sh
+brew install gazebo7
+```
+
 ## Running the Simulation
 
 Run the PX4 SITL with the Iris configuration in the Firmware directory:
@@ -65,4 +73,12 @@ pxh> commander takeoff
 
 <aside class="tip">
 Joystick or thumb-joystick support is available through QGroundControl (QGC). To use manual input, put the system in a manual flight mode (e.g. POSCTL, position control). Enable the thumb joystick from the QGC preferences menu.
+</aside>
+
+## Extending and Customizing
+
+To extend or customize the simulation interface, edit the files in the `Tools/sitl_gazebo` folder. The code can be accessed through the[sitl_gazebo repository](https://github.com/px4/sitl_gazebo) on Github.
+
+<aside class="note">
+The build system enforces the correct submodule to be checked out for all dependencies, including the simulator. It will not overwrite changes in files in the directory, however, when these changes are comitted the submodule needs to be registered in the Firmware repo with the new commit hash. To do so, `git add Tools/sitl_gazebo` and commit the change. This will update the GIT hash of the simulator.
 </aside>
