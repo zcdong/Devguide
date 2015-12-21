@@ -43,7 +43,22 @@ sudo apt-get update
 sudo apt-get install python-serial openocd \
     flex bison libncurses5-dev autoconf texinfo build-essential \
     libftdi-dev libtool zlib1g-dev genromfs \
-    python-empy gcc-arm-none-eabi -y
+    python-empy -y
+```
+
+We recommend to install the particular GCC version we guarantee compatibility against.
+
+<div class="host-code"></div>
+
+```sh
+pushd .
+cd ~
+wget https://launchpadlibrarian.net/186124160/gcc-arm-none-eabi-4_8-2014q3-20140805-linux.tar.bz2
+tar -jxf gcc-arm-none-eabi-4_8-2014q3-20140805-linux.tar.bz2
+exportline="export PATH=$HOME/gcc-arm-none-eabi-4_8-2014q3/bin:\$PATH"
+if grep -Fxq "$exportline" ~/.profile; then echo nothing to do ; else echo $exportline >> ~/.profile; fi
+. ~/.profile
+popd
 ```
 
 ### Snapdragon Flight

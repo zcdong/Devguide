@@ -1,3 +1,19 @@
 # PX4 Flight Stack
 
 The PX4 flight stack is a collection of guidance, navigation and control algorithms for autonomous drones. It includes controllers for fixed wing, multirotor and VTOL airframes as well as estimators for attitude and position.
+
+## Estimation and Control Architecture
+
+```mermaid
+graph TD;
+  pos_ctrl-->att_ctrl;
+  att_ctrl-->mixer;
+  inertial_sensors-->attitude_estimator;
+  inertial_sensors-->position_estimator;
+  GPS-->position_estimator;
+  computer_vision-->position_estimator;
+  position_estimator-->navigator;
+  position_estimator-->attitude_estimator;
+  position_estimator-->pos_ctrl;
+  attitude_estimator-->att_ctrl;
+```

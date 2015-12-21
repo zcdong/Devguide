@@ -1,6 +1,6 @@
 # Pixracer
 
-The Pixhawk XRacer board family is optimized for small racing quads and planes. In contrast to the [Pixfalcon](hardware-pixfalcon.md) it has in-built Wifi, new sensors, convenient full servo headers, CAN and supports 2M flash.
+The Pixhawk XRacer board family is optimized for small racing quads and planes. In contrast to [Pixfalcon](hardware-pixfalcon.md) and [Pixhawk](hardware-pixhawk.md) it has in-built Wifi, new sensors, convenient full servo headers, CAN and supports 2M flash.
 
 ![](images/hardware/hardware-pixracer.jpg)
 
@@ -23,6 +23,10 @@ The main hardware documentation is here: https://pixhawk.org/modules/pixracer
   * Optional: Safety switch and buzzer
   * Availability:
     * [AUAV Pixracer](http://www.auav.co/product-p/xr-v1.htm)
+  * Accessories:
+    * [Digital airspeed sensor](http://www.hobbyking.com/hobbyking/store/__62752__HKPilot_32_Digital_Air_Speed_Sensor_And_Pitot_Tube_Set.html)
+    * [Hobbyking OSD + US Telemetry (915 MHz)](http://www.hobbyking.com/hobbyking/store/__74651__Micro_HKPilot_Telemetry_Radio_Module_with_On_Screen_Display_OSD_unit_915MHz_.html)
+    * [Hobbyking OSD + EU Telemetry (433 MHz)](http://www.hobbyking.com/hobbyking/store/__74650__Micro_HKPilot_Telemetry_Radio_Module_with_On_Screen_Display_OSD_unit_433MHz_.html)
 
 
 ## Kit
