@@ -28,6 +28,9 @@ This is the summary of the PX4 dev guide.
   * [Pixhawk](hardware-pixhawk.md)
   * [Pixfalcon](hardware-pixfalcon.md)
   * [Pixracer](hardware-pixracer.md)
+* Middleware and Architecture
+  * [uORB Messaging](advanced-uorb.md)
+  * [uORB Messaging](advanced-drivers.md)
 * Airframes
   * [Unified Codebase](airframes-architecture.md)
   * [Adding a new Airframe](airframes-adding-a-new-frame.md)
@@ -57,11 +60,9 @@ This is the summary of the PX4 dev guide.
     * [UAVCAN Configuration](uavcan-node-enumeration.md)
   * [PWM / GPIO](pwm-gpio-intro.md)
   * [UART](uart-intro.md)
-* Advanced Topics
+* Debugging and Advanced Topics
   * [System Console](advanced-system-console.md)
   * [System Boot](advanced-system-startup.md)
-  * [Flash Bootloader](advanced-flash-bootloader.md)
-  * [uORB Messaging](advanced-uorb.md)
   * [Simulation Debugging](simulation-debugging.md)
   * [Indoor / Fake GPS](advanced-fake-gps.md)
   * [Licenses](advanced-licenses.md)

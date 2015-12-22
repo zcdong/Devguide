@@ -37,6 +37,11 @@ Ready to fly.
 pxh>
 ```
 
+## Important Files
+
+  * The startup script is in the [posix-configs/SITL/init](https://github.com/PX4/Firmware/tree/master/posix-configs/SITL/init) folder and named `rcS_SIM_AIRFRAME`, the default is `rcS_jmavsim_iris`.
+  * The root file system (the equivalent of `/` as seen by the) is located inside the build directory: `build_posix_sitl_default/src/firmware/posix/rootfs/`
+
 ## Taking it to the Sky
 
 And a window with the 3D view of the [jMAVSim](http://github.com/PX4/jMAVSim.git) simulator:

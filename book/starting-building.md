@@ -19,6 +19,8 @@ git clone https://github.com/PX4/Firmware.git
 ```
 Now its time to build the binaries by compiling the source code.
 
+### NuttX / Pixhawk based boards
+
 <div class="host-code"></div>
 
 ```sh
@@ -57,6 +59,19 @@ Verify : [====================] 100.0%
 Rebooting.
 
 [100%] Built target upload
+```
+
+### QuRT / Snapdragon based boards
+
+<aside class="todo">
+Add Snapdragon flash instructions
+</aside>
+
+<div class="host-code"></div>
+
+```sh
+cd Firmware
+XXX?
 ```
 
 But before going straight to the hardware, a [simulation run](simulation-sitl.md) is recommended as the next step. Users preferring to work in a graphical development environment should continue with the next section.
