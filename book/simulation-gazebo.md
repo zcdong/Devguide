@@ -82,3 +82,9 @@ To extend or customize the simulation interface, edit the files in the `Tools/si
 <aside class="note">
 The build system enforces the correct submodule to be checked out for all dependencies, including the simulator. It will not overwrite changes in files in the directory, however, when these changes are comitted the submodule needs to be registered in the Firmware repo with the new commit hash. To do so, `git add Tools/sitl_gazebo` and commit the change. This will update the GIT hash of the simulator.
 </aside>
+
+## Interfacing to ROS
+
+<aside class="todo">
+Work is under way to provide a tutorial. The basic steps are: 1) start another MAVLink instance via UDP to a free port, 2) connect MAVROS via UDP to bridge to ROS: https://github.com/mavlink/mavros
+</aside>
