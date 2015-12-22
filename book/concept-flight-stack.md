@@ -4,6 +4,8 @@ The PX4 flight stack is a collection of guidance, navigation and control algorit
 
 ## Estimation and Control Architecture
 
+The diagram below shows an example implementation 
+
 ```mermaid
 graph TD;
   pos_ctrl-->att_ctrl;
