@@ -17,8 +17,9 @@ This is the summary of the PX4 dev guide.
   * [Flight Stack](concept-flight-stack.md)
   * [Middleware](concept-middleware.md)
   * [Mixing and Actuators](concept-mixing.md)
-* Ground Control
-  * [Introduction](qgroundcontrol-intro.md)
+* Tutorials
+  * [Ground Control Station](qgroundcontrol-intro.md)
+  * [Writing an Application](tutorial-hello-sky.md)
 * Simulation
   * [Prerequisites](simulation-prerequisites.md)
   * [Basic Simulation](simulation-sitl.md)
@@ -30,7 +31,7 @@ This is the summary of the PX4 dev guide.
   * [Pixracer](hardware-pixracer.md)
 * Middleware and Architecture
   * [uORB Messaging](advanced-uorb.md)
-  * [uORB Messaging](advanced-drivers.md)
+  * [Driver Framework](advanced-drivers.md)
 * Airframes
   * [Unified Codebase](airframes-architecture.md)
   * [Adding a new Airframe](airframes-adding-a-new-frame.md)
