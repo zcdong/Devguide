@@ -4,7 +4,7 @@ The PX4 flight stack is a collection of guidance, navigation and control algorit
 
 ## Estimation and Control Architecture
 
-The diagram below shows an example implementation 
+The diagram below shows an example implementation of the typical blocks. Depending on the vehicle some of these can be also combined into a single application (e.g. when a model predictive controller for a specific vehicle is wanted).
 
 ```mermaid
 graph TD;
