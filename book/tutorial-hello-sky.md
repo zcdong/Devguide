@@ -186,7 +186,7 @@ The application is now correctly registered with the system and can be extended 
 
 To to something useful, the application needs to subscribe inputs and publish outputs (e.g. motor or servo commands). Note that the *true* hardware abstraction of the PX4 platform comes into play here -- no need to interact in any way with sensor drivers and no need to update your app if the board or sensors are updated.
 
-Individual message channels between applications are called *topics* in PX4. For this tutorial, we are interested in the [sensor_combined](https://github.com/PX4/Firmware/blob/master/src/modules/uORB/topics/sensor_combined.h) [advanced-uorb.md](topic), which holds the synchronized sensor data of the complete system.
+Individual message channels between applications are called *topics* in PX4. For this tutorial, we are interested in the [sensor_combined](https://github.com/PX4/Firmware/blob/master/src/modules/uORB/topics/sensor_combined.h) [topic](advanced-uorb.md), which holds the synchronized sensor data of the complete system.
 
 Subscribing to a topic is swift and clean:
 
@@ -259,7 +259,7 @@ It will exit after printing five values. The next tutorial page will explain how
 
 ## Step 7: Publishing Data
 
-To use the calculated outputs, the next step is to //publish// the results. If we use a topic from which we know that the ''mavlink'' app forwards it to the ground control station, we can even look at the results. Let's hijack the attitude topic for this purpose.
+To use the calculated outputs, the next step is to *publish* the results. If we use a topic from which we know that the ''mavlink'' app forwards it to the ground control station, we can even look at the results. Let's hijack the attitude topic for this purpose.
 
 The interface is pretty simple: Initialize the struct of the topic to be published and advertise the topic:
 
@@ -375,7 +375,7 @@ And finally run your app:
   px4_simple_app
 ```
 
-If you start QGroundControl or Mission Planner, you can check that the sensor values displayed in the realtime plot (//Main Menu: Main Widget -> Realtime Plot//) reflects the values your process is sending.
+If you start QGroundControl, you can check the sensor values in the realtime plot (Tools -> Analyze)
 
 ## Wrap-Up
 
