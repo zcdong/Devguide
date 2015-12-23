@@ -40,6 +40,69 @@ More information about the Snapdragon Flight platform is at [Snapdragon-Flight-D
     * 2x BLSP ([BAM Low Speed Peripheral](http://www.inforcecomputing.com/public_docs/BLSPs_on_Inforce_6540_6501_Snapdragon_805.pdf))
     * USB
 
+## Pinouts
+
+<aside class="warning">
+Although the Snapdragon uses DF13 connectors, the pinout is different from Pixhawk.
+</aside>
+
+### WiFi
+
+  * WLAN0, WLAN1 (+BT 4.0): U.FL connector: [Taoglas adhesive antenna (DigiKey)](http://www.digikey.com/product-detail/en/FXP840.07.0055B/931-1222-ND/3877414)
+
+### J9 / GPS
+
+| Pin | Signal | Comment |
+| -- | -- | -- |
+| 1 | 3.3V | |
+| 2 | UART2_TX | Output (3.3V) |
+| 3 | UART2_RX | Input (3.3V) |
+| 4 | I2C2_SDA | (3.3V) |
+| 5 | GND | |
+| 6 | I2C2_SCL | (3.3V) |
+
+### J12 / Gimbal bus
+
+| Pin | Signal | Comment |
+| -- | -- | -- |
+| 1 | 3.3V | |
+| 2 | UART8_TX | Output (3.3V) |
+| 3 | UART8_RX | Input (3.3V) |
+| 4 | APQ_GPIO_47 | (3.3V) |
+| 5 | GND | |
+| 6 | APQ_GPIO_48 | (3.3V) |
+
+### J13 / ESC bus
+
+| Pin | Signal | Comment |
+| -- | -- | -- |
+| 1 | 5V | |
+| 2 | UART6_TX | Output (5V) |
+| 3 | UART6_RX | Input (5V) |
+| 4 | APQ_GPIO_29 | (5V) |
+| 5 | GND | |
+| 6 | APQ_GPIO_30 | (5V) |
+
+### J14 / Power
+
+| Pin | Signal | Comment |
+| -- | -- | -- |
+| 1 | 5V DC | Power input |
+| 2 | GND | |
+| 3 | I2C3_SCL | (5V) |
+| 4 | I2C3_SDA | (5V) |
+
+### J15 / Radio Receiver / Sensors
+
+| Pin | Signal | Comment |
+| -- | -- | -- |
+| 1 | 3.3V | |
+| 2 | UART9_TX | Output |
+| 3 | UART9_RX | Input |
+| 4 | I2C9_SDA | |
+| 5 | GND | |
+| 6 | I2C9_SCL | |
+
 ## Dimensions
 
 ![](images/hardware/hardware-snapdragon-dimensions.png)

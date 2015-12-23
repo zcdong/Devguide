@@ -8,7 +8,7 @@ The uORB is a publish() / subcribe() messaging tool.
 ## Listing Topics and Listening in
 
 <aside class="note">
-The 'listener' command is only available on Linux / OS X.
+The 'listener' command is only available on Pixracer (FMUv4) and Linux / OS X.
 </aside>
 
 To list all topics, list the file handles:
