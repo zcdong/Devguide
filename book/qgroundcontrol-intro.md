@@ -15,7 +15,7 @@ To plan a new mission, switch to the planning tab, click on the + icon in the to
 
 Switch to the flying tab. The mission should be visible on the map. Click on the current flight mode to change it to MISSION and click on DISARMED to arm the vehicle. If the vehicle is already in flight it will fly to the first leg of the mission and then follow it.
 
-![](images/gcs/flying-mission.png
+![](images/gcs/flying-mission.png)
 
 ## Setting parameters
 
