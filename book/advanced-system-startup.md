@@ -22,6 +22,9 @@ The right approach to debug the boot sequence is to connect the [system console]
   * For custom applications: The system was out of RAM. Run the `free` command to see the amount of free RAM.
   * A software fault or assertion resulting in a stack trace
 
+## Replacing the System Startup
+
+In most cases customizing the default boot is the better approach, which is documented below. If the complete boot should be replaced, create a file `/fs/microsd/etc/rc.txt`, which is located in the `etc` folder on the microSD card. If this file is present nothing in the system will be auto-started.
 
 ## Customizing the System Startup
 

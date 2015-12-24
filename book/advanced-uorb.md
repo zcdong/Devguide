@@ -2,8 +2,11 @@
 
 ## Introduction
 
-The uORB is a publish() / subcribe() messaging tool.
+The uORB is a publish() / subcribe() messaging API.
 
+<aside class="todo">
+The current documentation is still here for [uORB](https://pixhawk.org/dev/shared_object_communication) and this [page](https://pixhawk.org/dev/add_uorb_topic) covers how to add a new topic.
+</aside>
 
 ## Listing Topics and Listening in
 
