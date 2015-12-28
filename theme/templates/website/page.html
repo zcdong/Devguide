@@ -8,6 +8,12 @@
     {% if progress.current.prev and progress.current.prev.path %}
     <link rel="prev" href="{{ basePath }}/{{ progress.current.prev.path|contentLink }}" />
     {% endif %}
+    <script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'PX4/Firmware'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 {% endblock %}
 
 {% block title %}{{ progress.current.title }} | {{ title }}{% endblock %}
