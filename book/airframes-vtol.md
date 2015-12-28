@@ -8,4 +8,27 @@ The [PX4 Flight Stack](concept-flight-stack.md) supports virtually all VTOL conf
 
 The VTOL codebase is the same codebase as for all other airframes and just adds additional control logic, in particular for transitions.
 
-{% youtube %}https://www.youtube.com/watch?v=snysYTZP5rQ&vq=hd720{% endyoutube %}
+<aside class="note">
+All these VTOL configurations have been actively test-flown and are ready to use. Ensure to have an airspeed sensor attached to the system as its used by the autopilot when its safe to perform the transition.
+</aside>
+
+## Tailsitter
+
+The [build log](airframes-vtol-caipiroshka.md) contains further detail.
+
+{% youtube %}https://www.youtube.com/watch?v=acG0aTuf3f8&vq=hd720{% endyoutube %}
+
+## Tiltrotor
+
+The [build log](https://pixhawk.org/platforms/vtol/birdseyeview_firefly) contains all settings and instructions to get one of these up and running.
+
+{% youtube %}https://www.youtube.com/watch?v=Vsgh5XnF44Y&vq=hd720{% endyoutube %}
+
+## Standard Plane VTOL
+
+The [build log](https://pixhawk.org/platforms/vtol/fun_cub_quad_vtol) contains further instructions how to build and reproduce the results below.
+
+{% youtube %}https://www.youtube.com/watch?v=4K8yaa6A0ks&vq=hd720{% endyoutube %}
+
+{% youtube %}https://www.youtube.com/watch?v=7tGXkW6d3sA&vq=hd720{% endyoutube %}
+

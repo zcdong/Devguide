@@ -2,6 +2,8 @@
 
 The Caipiroshka VTOL is a slightly modified TBS Caipirinha.
 
+{% youtube %}https://www.youtube.com/watch?v=acG0aTuf3f8&vq=hd720{% endyoutube %}
+
 ## Parts List
 
   * TBS Caipirinha Wing ([Eflight store](http://www.eflight.ch/shop/USER_ARTIKEL_HANDLING_AUFRUF.php?von_suchresultat=true&Ziel_ID=19638&Kategorie_ID=110923))
