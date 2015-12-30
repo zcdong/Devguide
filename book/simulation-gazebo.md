@@ -93,6 +93,4 @@ The build system enforces the correct submodule to be checked out for all depend
 
 ## Interfacing to ROS
 
-<aside class="todo">
-Work is under way to provide a tutorial. The basic steps are: 1) start another MAVLink instance via UDP to a free port, 2) connect MAVROS via UDP to bridge to ROS: https://github.com/mavlink/mavros
-</aside>
+The simulated autopilot starts a second MAVLink interface on port 14557. Connecting MAVROS to this port allows to receive all data the vehicle would expose if in real flight.
