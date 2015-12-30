@@ -17,18 +17,23 @@ graph LR;
 The installation requires to install Gazebo and our simulation plugin.
 
 <aside class="tip">
-Mac OS users should install gazebo7 (not 6). Linux users: If you installed a ROS version earlier than Jade, be sure to uninstall the bundled Gazebo (sudo apt-get remove ros-indigo-gazebo) version as it is too old.
+Mac OS users should install gazebo 7. Linux users: If you installed a ROS version earlier than Jade, be sure to uninstall the bundled Gazebo (sudo apt-get remove ros-indigo-gazebo) version as it is too old. Linux users should install gazebo 6.
 </aside>
 
-Follow the instruction in the [sitl_gazebo documentation](https://github.com/px4/sitl_gazebo) to install. Binaries are available for all major operating systems and can be installed via `apt-get` or `brew`.
-
 ### Mac OS
+
+Mac OS requires Gazebo 7.
 
 <div class="host-code"></div>
 
 ```sh
+brew install graphviz sdformat3 protobuf eigen opencv
 brew install gazebo7
 ```
+
+### Linux
+
+[Linux installation instructions](http://gazebosim.org/tutorials?tut=install_ubuntu&ver=6.0&cat=install) for Gazebo 6.
 
 ## Running the Simulation
 

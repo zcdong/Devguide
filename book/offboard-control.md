@@ -4,7 +4,7 @@
 Offboard control is dangerous. It is the responsibility of the developer to ensure adequate preparation, testing and safety precautions are taken before offboard flights.
 </aside>
 
-The idea behind off-board control is to be able to control the px4 flight stack using software running outside of the autopilot. This is done through the Mavlink protocol, specifically the [SET_POSITION_TARGET_LOCAL_NED](https://pixhawk.ethz.ch/mavlink/#SET_POSITION_TARGET_LOCAL_NED) and the [SET_ATTITUDE_TARGET](https://pixhawk.ethz.ch/mavlink/#SET_ATTITUDE_TARGET) messages.
+The idea behind off-board control is to be able to control the px4 flight stack using software running outside of the autopilot. This is done through the Mavlink protocol, specifically the [SET_POSITION_TARGET_LOCAL_NED](http://mavlink.org/messages/common#SET_POSITION_TARGET_LOCAL_NED) and the [SET_ATTITUDE_TARGET](http://mavlink.org/messages/common#SET_ATTITUDE_TARGET) messages.
 
 ## Offboard Control Firmware Setup
 There are two things you want to setup on the firmware side before starting offboard development.
@@ -32,7 +32,7 @@ Example radios include
 * [Digi International XBee Pro](http://www.digi.com/products/xbee-rf-solutions/modules)
 
 ```mermaid
-graph LR;
+graph TD;
   gnd[Ground Station] --MAVLink--> rad1[Ground Radio];
   rad1 --RadioProtocol--> rad2[Vehicle Radio];
   rad2 --MAVLink--> a[Autopilot];
@@ -52,7 +52,7 @@ Larger high power examples
 * [Nvidia Jetson TK1](https://developer.nvidia.com/jetson-tk1)
 
 ```mermaid
-graph LR;
+graph TD;
   comp[Companion Computer] --MAVLink--> uart[UART Adapter];
   uart --MAVLink--> Autopilot;
 ```
@@ -62,7 +62,7 @@ A small computer mounted onto the vehicle connected to the autopilot through a U
 
 
 ```mermaid
- graph LR
+ graph TD
 	subgraph Ground  Station
 		gnd[ROS Enabled Computer] --- qgc[qGroundControl]
 	end
