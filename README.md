@@ -1,5 +1,7 @@
 # PX4 Developer Guide
 
+[![Join the chat at https://gitter.im/PX4/Devguide](https://badges.gitter.im/PX4/Devguide.svg)](https://gitter.im/PX4/Devguide?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/PX4/Devguide.svg?branch=master)](https://travis-ci.org/PX4/Devguide)
 
 This guide *is published by Travis CI* online at: http://dev.px4.io/
