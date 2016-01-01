@@ -22,7 +22,7 @@ The Caipiroshka VTOL is a slightly modified TBS Caipirinha.
   * [Digital airspeed sensor](http://www.hobbyking.com/hobbyking/store/__62752__HKPilot_32_Digital_Air_Speed_Sensor_And_Pitot_Tube_Set.html)
 
 <aside type="todo">
-The mixer needs to be adjusted to allow the usage of Pixfalcon as two servo output speeds are required.
+Update the mixer for Pixracer
 </aside>
 
 ## Servo Connections
