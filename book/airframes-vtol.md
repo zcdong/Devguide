@@ -12,6 +12,13 @@ The VTOL codebase is the same codebase as for all other airframes and just adds 
 All these VTOL configurations have been actively test-flown and are ready to use. Ensure to have an airspeed sensor attached to the system as its used by the autopilot when its safe to perform the transition.
 </aside>
 
+## Key Configuration Parameters
+
+These configuration parameters have to be set correctly when creating a new airframe configuration.
+
+  * `VT_FW_PERM_STAB` the system always uses attitude stabilization in hover mode. If this parameter is set to 1, the plane mode also defaults to attitude stabilization. If it is set to 0, it defaults to pure manual flight.
+  * `VT_ARSP_TRANS` is the airspeed in m/s at which the plane transitions into forward flight. Setting it too low can cause a stall during the transition.
+
 ## Tailsitter
 
 The [build log](airframes-vtol-caipiroshka.md) contains further detail.

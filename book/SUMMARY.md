@@ -24,6 +24,7 @@ This is the summary of the PX4 dev guide.
   * [Prerequisites](simulation-prerequisites.md)
   * [Basic Simulation](simulation-sitl.md)
   * [Gazebo Simulation](simulation-gazebo.md)
+  * [Interfacing to ROS](simulation-ros-interface.md)
 * Autopilot Hardware
   * [Snapdragon Flight](hardware-snapdragon.md)
   * [Pixhawk](hardware-pixhawk.md)
@@ -47,9 +48,9 @@ This is the summary of the PX4 dev guide.
 * Companion Computers
   * [Pixhawk family companion](pixhawk-companion-computer.md)
 * Robotics using ROS
+  * [Offboard Control from Linux](offboard-control.md)
   * [ROS Installation on RPi 2](ros-raspberrypi-installation.md)
   * [MAVROS (MAVLink on ROS)](ros-mavros-installation.md)
-  * [Offboard Control from Linux](offboard-control.md)
   * [MAVROS offboard example](ros-mavros-offboard.md)
   * [External Position Estimation](external-position.md)
   * [Gazebo Octomap](simulation-gazebo-octomap.md)
