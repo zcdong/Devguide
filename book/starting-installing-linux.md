@@ -86,7 +86,7 @@ After this the tools and SDK will have been installed to "$HOME/Qualcomm/...". A
 ```sh
 export HEXAGON_TOOLS_ROOT="$HOME/Qualcomm/HEXAGON_Tools/7.2.10/Tools"
 export HEXAGON_SDK_ROOT="$HOME/Qualcomm/Hexagon_SDK/2.0"
-if [[ ":$PATH:" != *":$HEXAGON_TOOLS_ROOT/bin/:"* ]]; then PATH="$PATH:$HEXAGON_TOOLS_ROOT/bin; fi
+if [[ ":$PATH:" != *":$HEXAGON_TOOLS_ROOT/bin/:"* ]]; then PATH="$PATH:$HEXAGON_TOOLS_ROOT/bin"; fi
 ```
 
 Load the new configuration:

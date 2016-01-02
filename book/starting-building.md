@@ -17,7 +17,7 @@ mkdir -p ~/src
 cd ~/src
 git clone https://github.com/PX4/Firmware.git
 ```
-Now its time to build the binaries by compiling the source code.
+Now its time to build the binaries by compiling the source code. But before going straight to the hardware, a [simulation run](simulation-sitl.md) is recommended as the next step. Users preferring to work in a graphical development environment should continue with the next section.
 
 ### NuttX / Pixhawk based boards
 
@@ -63,18 +63,19 @@ Rebooting.
 
 ### QuRT / Snapdragon based boards
 
-<aside class="todo">
-Add Snapdragon flash instructions
-</aside>
+The commands below build the targets for the Linux and the DSP side. Both executables communicate via [muORB](advanced-uorb.md).
 
 <div class="host-code"></div>
 
 ```sh
 cd Firmware
-XXX?
+make posix_eagle_default
+make qurt_eagle_default
 ```
 
-But before going straight to the hardware, a [simulation run](simulation-sitl.md) is recommended as the next step. Users preferring to work in a graphical development environment should continue with the next section.
+<aside class="todo">
+Add Snapdragon flash instructions
+</aside>
 
 ## Compiling in a graphical IDE
 
