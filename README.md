@@ -19,20 +19,27 @@ brew install npm
 On Linux - you're using Linux, so you should know!
 
 ```sh
-sudo apt-get install npm nodejs-legacy
+sudo apt-get install npm nodejs-legacy curl
 ```
 
 ### Installing Gitbook
 
 ```
-npm install grunt-cli -g
-npm install gitbook-cli -g
+sudo npm install grunt-cli -g
+sudo npm install gitbook-cli -g
+```
+
+Fork this repo by clicking on the FORK Button on the top right of this github site.
+
+Git clone your fork of this repo:
+```
+git clone http://github.com/YOUR_GITHUB_USERNAME/Devguide.git
 ```
 
 Change to the directory of this repo:
 
 ```
-cd px4devguide
+cd Devguide
 npm install
 gitbook install book
 
