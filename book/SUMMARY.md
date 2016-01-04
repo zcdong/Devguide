@@ -24,6 +24,7 @@ This is the summary of the PX4 dev guide.
   * [Prerequisites](simulation-prerequisites.md)
   * [Basic Simulation](simulation-sitl.md)
   * [Gazebo Simulation](simulation-gazebo.md)
+  * [HITL Simulation](simulation-hitl.md)
   * [Interfacing to ROS](simulation-ros-interface.md)
 * Autopilot Hardware
   * [Snapdragon Flight](hardware-snapdragon.md)

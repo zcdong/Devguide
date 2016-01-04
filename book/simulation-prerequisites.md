@@ -18,7 +18,7 @@ brew install ant graphviz sdformat3 protobuf eigen
 <div class="host-code"></div>
 
 ```sh
-sudo apt-get install ant openjdk-7-jdk openjdk-7-jre
+sudo apt-get install ant protobuf-compiler libeigen3-dev openjdk-7-jdk openjdk-7-jre
 ```
 
 ### Windows
