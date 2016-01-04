@@ -9,7 +9,7 @@ If an interface to ROS is wanted, the already running secondary MAVLink instance
 <div class="host-code"></div>
 
 ```sh
-roslaunch mavros px4.launch fcu_url:="udp://:11111@192.168.5.35:14557"
+roslaunch mavros px4.launch fcu_url:="udp://:14540@192.168.1.36:14557"
 ```
 
 To connect to localhost, use this URL:
@@ -17,5 +17,5 @@ To connect to localhost, use this URL:
 <div class="host-code"></div>
 
 ```sh
-roslaunch mavros px4.launch fcu_url:="udp://:0@:14557"
+roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"
 ```
