@@ -1,5 +1,6 @@
 # Hardware in the Loop Simulation (HITL)
 
+Hardware in the loop simulation is a simulation mode where the autopilot is connected to the simulator and all flight code runs on the autopilot. This approach has the benefit of testing the actual flight code on the real processor.
 
 ## Configure the System for HITL
 
