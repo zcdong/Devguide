@@ -2,7 +2,35 @@
 
 The system console allows low-level access to the system, debug output and analysis of the system boot process. The most convient way to connect it is by using a [Dronecode probe](http://nicadrone.com/index.php?id_product=65&controller=product), but a plain FTDI cable can be used as well.
 
-## Wiring the Console
+## System Console vs. Shell
+
+There are multiple shells, but only one console: The system console is the location where all boot output (and applications auto-started on boot) is printed.
+
+  * System console (first shell): Hardware serial port
+  * Additional shells: Pixhawk on USB (e.g. lists as /dev/tty.usbmodem1 on Mac OS)
+
+<aside class="tip">
+USB: To just run a few quick commands or test an application connecting to the USB shell is sufficient. To use it, boot the system without the microSD card inserted. The hardware serial console is only needed for boot debugging or when USB should be used for MAVLink to connect a [GCS](qgroundcontrol-intro.md).
+</aside>
+
+## Snapdragon Flight: Wiring the Console
+
+The developer kit comes with a breakout board with three pins to access the console. Connect the bundled FTDI cable to the header and the breakout board to the expansion connector.
+
+## Pixracer / Pixhawk v3: Wiring the Console
+
+Connect the 6-pos JST SH 1:1 cable to the Dronecode probe or connect the individual pins of the cable to a FTDI cable like this:
+
+| Pixracer / Pixhawk v3  |         | FTDI    |        |
+| -- | -- | -- | -- |
+|1         | +5V (red)     |         | N/C    |
+|2         | UART7 Tx      | 5       | FTDI RX (yellow)  |
+|3         | UART7 Rx      | 4       | FTDI TX (orange)  |
+|4         | SWDIO      |         | N/C   |
+|5         | SWCLK      |         | N/C   |
+|6         | GND     | 1       | FTDI GND (black)   |
+
+## Pixhawk v1: Wiring the Console
 
 The system console can be accessed through the Dronecode probe or an FTDI cable. Both options are explained in the section below.
 
@@ -16,12 +44,12 @@ Connect the 6-pos DF13 1:1 cable on the [Dronecode probe](http://nicadrone.com/i
 
 If no Dronecode probe is at hand an FTDI 3.3V (Digi-Key: [768-1015-ND](http://www.digikey.com/product-detail/en/TTL-232R-3V3/768-1015-ND/1836393)) will do as well.
 
-| Pixhawk  |         | FTDI    |        |
+| Pixhawk 1/2  |         | FTDI    |        |
 | -- | -- | -- | -- |
 |1         | +5V (red)     |         | N/C    |
-|2         | S4 Tx      | 5       | N/C   |
-|3         | S4 Rx      | 4       | N/C   |
-|4         | S5 Tx      | 5       | FTDI Rx (yellow)   |
+|2         | S4 Tx      |         | N/C   |
+|3         | S4 Rx      |         | N/C   |
+|4         | S5 Tx      | 5       | FTDI RX (yellow)   |
 |5         | S5 Rx      | 4       | FTDI TX (orange)   |
 |6         | GND     | 1       | FTDI GND (black)   |
 
@@ -47,12 +75,15 @@ Install screen on Ubuntu (Mac OS already has it installed):
 sudo apt-get install screen
 ```
 
-Connect screen at 57600 baud, 8 data bits, 1 stop bit to the right serial port (use `ls /dev/tty*` and watch what changes when unplugging / replugging the USB device). Common names are `/dev/ttyUSB0` and `/dev/ttyACM0` for Linux and `/dev/tty.usbserial-ABCBD` for Mac OS.
+  * Serial: Pixhawk v1 / Pixracer use 57600 baud
+  * Serial: Snapdragon Flight uses 115200 baud
+
+Connect screen at BAUDRATE baud, 8 data bits, 1 stop bit to the right serial port (use `ls /dev/tty*` and watch what changes when unplugging / replugging the USB device). Common names are `/dev/ttyUSB0` and `/dev/ttyACM0` for Linux and `/dev/tty.usbserial-ABCBD` for Mac OS.
 
 <div class="host-code"></div>
 
 ```bash
-screen /dev/ttyXXX 57600 8N1
+screen /dev/ttyXXX BAUDRATE 8N1
 ```
 
 ### Windows: PuTTY

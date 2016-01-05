@@ -37,6 +37,35 @@ Ready to fly.
 pxh>
 ```
 
+## Important Files
+
+  * The startup script is in the [posix-configs/SITL/init](https://github.com/PX4/Firmware/tree/master/posix-configs/SITL/init) folder and named `rcS_SIM_AIRFRAME`, the default is `rcS_jmavsim_iris`.
+  * The root file system (the equivalent of `/` as seen by the) is located inside the build directory: `build_posix_sitl_default/src/firmware/posix/rootfs/`
+
+## Taking it to the Sky
+
 And a window with the 3D view of the [jMAVSim](http://github.com/PX4/jMAVSim.git) simulator:
 
 ![](images/sim/jmavsim.png)
+
+The system will print the home position once it finished intializing (`telem> home: 55.7533950, 37.6254270, -0.00`). You can bring it into the air by typing:
+
+```sh
+pxh> commander takeoff
+```
+
+<aside class="tip">
+Joystick or thumb-joystick support is available through QGroundControl (QGC). To use manual input, put the system in a manual flight mode (e.g. POSCTL, position control). Enable the thumb joystick from the QGC preferences menu.
+</aside>
+
+## Extending and Customizing
+
+To extend or customize the simulation interface, edit the files in the `Tools/jMAVSim` folder. The code can be accessed through the[jMAVSim repository](https://github.com/px4/jMAVSim) on Github.
+
+<aside class="note">
+The build system enforces the correct submodule to be checked out for all dependencies, including the simulator. It will not overwrite changes in files in the directory, however, when these changes are comitted the submodule needs to be registered in the Firmware repo with the new commit hash. To do so, `git add Tools/jMAVSim` and commit the change. This will update the GIT hash of the simulator.
+</aside>
+
+## Interfacing to ROS
+
+The simulation can be [interfaced to ROS](simulation-ros-interface.md) the same way as onboard a real vehicle.

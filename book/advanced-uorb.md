@@ -2,13 +2,20 @@
 
 ## Introduction
 
-The uORB is a publish() / subcribe() messaging tool.
+The uORB is a publish() / subcribe() messaging API.
 
+<aside class="todo">
+The current documentation is still here for [uORB](https://pixhawk.org/dev/shared_object_communication) and this [page](https://pixhawk.org/dev/add_uorb_topic) covers how to add a new topic.
+</aside>
+
+## Publishing
+
+Publishing a topic can be done from anywhere in the system, including interrupt context (functions called by the `hrt_call` API). However, advertising a topic is only possible outside of interrupt context. A topic has to be advertised in the same process as its later published.
 
 ## Listing Topics and Listening in
 
 <aside class="note">
-The 'listener' command is only available on Linux / OS X.
+The 'listener' command is only available on Pixracer (FMUv4) and Linux / OS X.
 </aside>
 
 To list all topics, list the file handles:

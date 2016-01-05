@@ -27,6 +27,7 @@ Test flights are important for quality assurance. Please upload the logs from th
 The PX4 Dev Team syncs up on its weekly dev call (connect via [Mumble](http://mumble.info) client).
 
   * TIME: 19:00h Zurich time, 1 p.m. Eastern Time, 10 a.m. Pacific Standard Time
-  * Server: sitl01.dronetest.io (port default)
-  * Password: px4
+  * Server: mumble.dronecode.org
+  * Port: 10028
+  * Channel: PX4 Channel
   * The agenda is announced the same day on the [px4users forum](http://groups.google.com/group/px4users)

@@ -1,6 +1,16 @@
-# Unified Codebase for all Robot Types
+# Airframe Overview
 
 The PX4 system is architected in a modular fashion allowing it to use a single codebase for all robot types.
+
+```mermaid
+graph LR;
+  Autopilot-->Controller;
+  SafetyPilot-->Controller;
+  Controller-->Mixer;
+  Mixer-->Actuator
+```
+
+
 
 ## Basic Equipment
 

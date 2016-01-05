@@ -18,19 +18,23 @@ This is the summary of the PX4 dev guide.
   * [Middleware](concept-middleware.md)
   * [Mixing and Actuators](concept-mixing.md)
   * [PWM limit state machine](concept-pwm_limit.md)
-* Ground Control
-  * [Introduction](qgroundcontrol-intro.md)
+* Tutorials
+  * [Ground Control Station](qgroundcontrol-intro.md)
+  * [Writing an Application](tutorial-hello-sky.md)
 * Simulation
   * [Prerequisites](simulation-prerequisites.md)
-  * [Light Simulation](simulation-sitl.md)
-    * [Debugging](simulation-debugging.md)
+  * [Basic Simulation](simulation-sitl.md)
   * [Gazebo Simulation](simulation-gazebo.md)
-    * [Octomap](simulation-gazebo-octomap.md)
+  * [HITL Simulation](simulation-hitl.md)
+  * [Interfacing to ROS](simulation-ros-interface.md)
 * Autopilot Hardware
   * [Snapdragon Flight](hardware-snapdragon.md)
   * [Pixhawk](hardware-pixhawk.md)
   * [Pixfalcon](hardware-pixfalcon.md)
   * [Pixracer](hardware-pixracer.md)
+* Middleware and Architecture
+  * [uORB Messaging](advanced-uorb.md)
+  * [Driver Framework](advanced-drivers.md)
 * Airframes
   * [Unified Codebase](airframes-architecture.md)
   * [Adding a new Airframe](airframes-adding-a-new-frame.md)
@@ -43,12 +47,15 @@ This is the summary of the PX4 dev guide.
   * [VTOL](airframes-vtol.md)
     * [TBS Caipiroshka](airframes-vtol-caipiroshka.md)
   * [Boats, Submarines, Blimps, Rovers](airframes-experimental.md)
+* Companion Computers
+  * [Pixhawk family companion](pixhawk-companion-computer.md)
 * Robotics using ROS
+  * [Offboard Control from Linux](offboard-control.md)
   * [ROS Installation on RPi 2](ros-raspberrypi-installation.md)
   * [MAVROS (MAVLink on ROS)](ros-mavros-installation.md)
-  * [Offboard Control from Linux](offboard-control.md)
   * [MAVROS offboard example](ros-mavros-offboard.md)
   * [External Position Estimation](external-position.md)
+  * [Gazebo Octomap](simulation-gazebo-octomap.md)
 * Sensor and Actuator Buses
   * [I2C Bus](i2c-intro.md)
   * [UAVCAN Bus](uavcan-intro.md)
@@ -57,8 +64,9 @@ This is the summary of the PX4 dev guide.
     * [UAVCAN Configuration](uavcan-node-enumeration.md)
   * [PWM / GPIO](pwm-gpio-intro.md)
   * [UART](uart-intro.md)
-* Advanced Topics
+* Debugging and Advanced Topics
   * [System Console](advanced-system-console.md)
   * [System Boot](advanced-system-startup.md)
-  * [uORB Messaging](advanced-uorb.md)
+  * [Simulation Debugging](simulation-debugging.md)
+  * [Indoor / Fake GPS](advanced-fake-gps.md)
   * [Licenses](advanced-licenses.md)
