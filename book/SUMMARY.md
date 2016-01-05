@@ -17,6 +17,7 @@ This is the summary of the PX4 dev guide.
   * [Flight Stack](concept-flight-stack.md)
   * [Middleware](concept-middleware.md)
   * [Mixing and Actuators](concept-mixing.md)
+  * [PWM limit state machine](concept-pwm_limit.md)
 * Ground Control
   * [Introduction](qgroundcontrol-intro.md)
 * Simulation
