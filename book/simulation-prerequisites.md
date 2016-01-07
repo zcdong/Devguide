@@ -9,6 +9,8 @@ PX4 officially supports two simulation backends: [jMAVSim](simulation-sitl.md), 
 <div class="host-code"></div>
 
 ```sh
+brew tap osrf/simulation
+brew update
 brew install ant graphviz sdformat3 protobuf eigen
 ```
 
@@ -18,7 +20,7 @@ brew install ant graphviz sdformat3 protobuf eigen
 <div class="host-code"></div>
 
 ```sh
-sudo apt-get install ant protobuf-compiler libeigen3-dev openjdk-7-jdk openjdk-7-jre
+sudo apt-get install ant protobuf-compiler libeigen3-dev libopencv-dev openjdk-7-jdk openjdk-7-jre
 ```
 
 ### Windows

@@ -2,6 +2,20 @@
 
 We have standardized on Debian / Ubuntu LTS as the supported Linux distribution, but [boutique distribution instructions](starting-installing-linux-boutique.md) are available for Cent OS and Arch Linux.
 
+## Permission Setup
+
+<aside class="note">
+Never ever fix permission problems by using 'sudo'. It will create more permission problems in the process and require a system reinstallation to fix them.
+</aside>
+
+The user needs to be added to the group "dialout":
+
+<div class="host-code"></div>
+
+```sh
+sudo usermod -a -G dialout $USER
+```
+
 ## Installation
 
 Update the package list and install the following dependencies for all PX4 build targets. PX4 supports three main families:
@@ -21,6 +35,17 @@ sudo add-apt-repository ppa:george-edison55/cmake-3.x -y
 sudo apt-get update
 sudo apt-get install python-argparse git-core wget zip \
     python-empy qtcreator cmake build-essential -y
+```
+
+### Simulation
+
+The default toolchain for simulation is CLANG 3.5.
+
+<div class="host-code"></div>
+
+```sh
+sudo apt-get install -y clang-3.5 lldb-3.5
+
 ```
 
 ### NuttX based hardware
@@ -107,32 +132,6 @@ Messages from the DSP can be viewed using mini-dm.
 
 ```sh
 $HOME/Qualcomm/Hexagon_SDK/2.0/tools/mini-dm/Linux_Debug/mini-dm
-```
-
-
-### Simulation
-
-The default toolchain for simulation is CLANG 3.5.
-
-<div class="host-code"></div>
-
-```sh
-sudo apt-get install -y clang-3.5 lldb-3.5
-
-```
-
-## Permission Setup
-
-<aside class="note">
-Never ever fix permission problems by using 'sudo'. It will create more permission problems in the process and require a system reinstallation to fix them.
-</aside>
-
-The user needs to be added to the group "dialout":
-
-<div class="host-code"></div>
-
-```sh
-sudo usermod -a -G dialout $USER
 ```
 
 Now continue to run the [first build](starting-building.md)!
