@@ -85,14 +85,15 @@ switch to manual and it will recover in multirotor mode.
 
 #### Example mission
 
-The mission should contain at least:
-  * position waypoint near takeoff location
-  * position waypoint in the direction of the planned fixed-wing flight route
-  * transition waypoint (to plane mode)
-  * position waypoint further away (at least as far away as the transition needs)
-  * position waypoint to fly back (a bit before takeoff location so back transition takes some distance)
-  * transition waypoint (to hover mode)
-  * position waypoint near takeoff location
+The mission should contain at least (also see screenshots below):
+
+  * (1) position waypoint near takeoff location
+  * (2) position waypoint in the direction of the planned fixed-wing flight route
+  * (3) transition waypoint (to plane mode)
+  * (4) position waypoint further away (at least as far away as the transition needs)
+  * (6) position waypoint to fly back (a bit before takeoff location so back transition takes some distance)
+  * (7) transition waypoint (to hover mode)
+  * (8) position waypoint near takeoff location
 
 ![Mission, showing transition WP to plane](images/vtol/qgc_mission_example_a.png)
 
