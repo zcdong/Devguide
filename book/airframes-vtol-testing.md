@@ -15,11 +15,11 @@ There are currently 3 ways of commanding the VTOL to transition:
 
 When a transition is commanded (by either of the methods above), the VTOL enters the transition phase.
 If the VTOL receives a new transition command back to the old state during an ongoing transition it will switch back instantly.
-This is a safety feature to exit to abort the transition when necessary. After the transition has been completed,
+This is a safety feature to abort the transition when necessary. After the transition has been completed,
 the VTOL will be in the new state and a commanded transition into the reverse direction will take place normally.
 
 <aside class="warn">
-Make sure the AUX1 channel is assigned to an RC switch and airspeed is working properly.
+Make sure the AUX1 channel is assigned to an RC switch and that airspeed is working properly.
 </aside>
 
 <aside class="todo">
@@ -53,9 +53,13 @@ In general, if something doesn't go as planned, transition to multirotor mode an
 tuned).
 </aside>
 
-### Manual test
+### Manual transition test
 
-### Automatic test (mission, commanded)
+<aside class="todo">
+TODO: describe
+</aside>
+
+### Automatic transition test (mission, commanded)
 
 Commanded transitions only work in auto (mission) or offboard flight-mode.
 Make sure you are confident to operate the auto/offboard and transition switch in flight.
