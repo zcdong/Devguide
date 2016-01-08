@@ -67,6 +67,8 @@ Make sure you are confident to operate the auto/offboard and transition switch i
 Switching to manual will reactivate the transition switch. For example: if you switch out of auto/offboard when in automatic
 fixed-wing flight and the transition switch is currently in multirotor position it will transition to multirotor right away.
 
+#### Proceduce
+
 The following procedure can be used to test a mission with transition:
 
   * upload mission
@@ -81,6 +83,8 @@ The following procedure can be used to test a mission with transition:
 During flight, the manual transition switch stays in multirotor position. If something doesn't go as planned,
 switch to manual and it will recover in multirotor mode.
 
+#### Example mission
+
 The mission should contain at least:
   * position waypoint near takeoff location
   * position waypoint in the direction of the planned fixed-wing flight route
@@ -89,6 +93,10 @@ The mission should contain at least:
   * position waypoint to fly back (a bit before takeoff location so back transition takes some distance)
   * transition waypoint (to hover mode)
   * position waypoint near takeoff location
+
+![Mission, showing transition WP to plane](images/vtol/qgc_mission_example_a.png)
+
+![Mission, showing transition WP to hover](images/vtol/qgc_mission_example_b.png)
 
 ## Relevant parameters
 
