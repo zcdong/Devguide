@@ -10,7 +10,7 @@ graph LR;
 
 ## Running SITL
 
-After ensuring that the [simulation prerequisites](simulation-prerequisites.md) are installed on the system, just launch: The convenience make target will compile the POSIX host build and run the simulation.
+After ensuring that the [simulation prerequisites](starting-installing.md) are installed on the system, just launch: The convenience make target will compile the POSIX host build and run the simulation.
 
 <div class="host-code"></div>
 

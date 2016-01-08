@@ -27,8 +27,8 @@ Mac OS requires Gazebo 7.
 <div class="host-code"></div>
 
 ```sh
-brew install graphviz sdformat3 protobuf eigen opencv
-brew install gazebo7
+# dependencies were already installed during the initial install
+brew install opencv gazebo7
 ```
 
 ### Linux
