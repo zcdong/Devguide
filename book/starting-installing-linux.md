@@ -34,18 +34,9 @@ Install the [Ninja Build System](http://dev.px4.io/starting-installing-linux-bou
 sudo add-apt-repository ppa:george-edison55/cmake-3.x -y
 sudo apt-get update
 sudo apt-get install python-argparse git-core wget zip \
-    python-empy qtcreator cmake build-essential -y
-```
-
-### Simulation
-
-The default toolchain for simulation is CLANG 3.5.
-
-<div class="host-code"></div>
-
-```sh
-sudo apt-get install -y clang-3.5 lldb-3.5
-
+    python-empy qtcreator cmake build-essential genromfs -y
+# simulation tools
+sudo apt-get install ant protobuf-compiler libeigen3-dev libopencv-dev openjdk-7-jdk openjdk-7-jre clang-3.5 lldb-3.5 -y
 ```
 
 ### NuttX based hardware
@@ -67,7 +58,7 @@ sudo add-apt-repository ppa:terry.guo/gcc-arm-embedded -y
 sudo apt-get update
 sudo apt-get install python-serial openocd \
     flex bison libncurses5-dev autoconf texinfo build-essential \
-    libftdi-dev libtool zlib1g-dev genromfs \
+    libftdi-dev libtool zlib1g-dev \
     python-empy gcc-arm-none-eabi -y
 ```
 

@@ -10,9 +10,12 @@ After installing Homebrew, copy these commands to your shell:
 
 ```sh
 brew tap PX4/homebrew-px4
+brew tap osrf/simulation
 brew update
 brew install genromfs kconfig-frontends gcc-arm-none-eabi
 brew install astyle cmake ninja
+# simulation tools
+brew install ant graphviz sdformat3 protobuf eigen
 ```
 
 Then install the required python packages:

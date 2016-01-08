@@ -22,7 +22,6 @@ This is the summary of the PX4 dev guide.
   * [Ground Control Station](qgroundcontrol-intro.md)
   * [Writing an Application](tutorial-hello-sky.md)
 * Simulation
-  * [Prerequisites](simulation-prerequisites.md)
   * [Basic Simulation](simulation-sitl.md)
   * [Gazebo Simulation](simulation-gazebo.md)
   * [HITL Simulation](simulation-hitl.md)
