@@ -65,6 +65,7 @@ This is the summary of the PX4 dev guide.
   * [PWM / GPIO](pwm-gpio-intro.md)
   * [UART](uart-intro.md)
 * Debugging and Advanced Topics
+  * [FAQ](advanced-faq.md)
   * [System Console](advanced-system-console.md)
   * [System Boot](advanced-system-startup.md)
   * [Simulation Debugging](simulation-debugging.md)
