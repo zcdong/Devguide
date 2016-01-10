@@ -1,4 +1,4 @@
-# Frequenty Asked Questions
+# Frequently Asked Questions
 
 
 ## Build Errors
