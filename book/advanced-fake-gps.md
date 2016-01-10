@@ -29,7 +29,7 @@ export ROS_MASTER_URI=http://xxx.xxx.x.xxx:11311
 rosrun vicon_bridge tf_distort $@
 ```
 
-Put markers on your drone and create a model in the MOCAP system (later refered to as yourModelName).
+Put markers on your drone and create a model in the MOCAP system (later referred to as yourModelName).
 
 ### Step 2
 Run
