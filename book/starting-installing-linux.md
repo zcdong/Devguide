@@ -16,6 +16,8 @@ The user needs to be added to the group "dialout":
 sudo usermod -a -G dialout $USER
 ```
 
+And then you have to logout and login again.
+
 ## Installation
 
 Update the package list and install the following dependencies for all PX4 build targets. PX4 supports three main families:
