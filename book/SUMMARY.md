@@ -71,4 +71,5 @@ This is the summary of the PX4 dev guide.
   * [Simulation Debugging](simulation-debugging.md)
   * [Sending Debug Values](advanced-debug-values.md)
   * [Indoor / Fake GPS](advanced-fake-gps.md)
+  * [Camera Trigger](advanced-camera-trigger.md)
   * [Licenses](advanced-licenses.md)
