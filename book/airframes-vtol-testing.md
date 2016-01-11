@@ -13,22 +13,15 @@ There are currently 3 ways of commanding the VTOL to transition:
   * MAVLink command (MAV_CMD_DO_VTOL_TRANSITION)
   * Transition during mission (MAV_CMD_DO_VTOL_TRANSITION internally)
 
-When a transition is commanded (by either of the methods above), the VTOL enters the transition phase.
-If the VTOL receives a new transition command back to the old state during an ongoing transition it will switch back instantly.
-This is a safety feature to abort the transition when necessary. After the transition has been completed,
-the VTOL will be in the new state and a commanded transition into the reverse direction will take place normally.
+When a transition is commanded (by either of the methods above), the VTOL enters the transition phase. If the VTOL receives a new transition command back to the old state during an ongoing transition it will switch back instantly. This is a safety feature to abort the transition when necessary. After the transition has been completed, the VTOL will be in the new state and a commanded transition into the reverse direction will take place normally.
 
-<aside class="warn">
+<aside class="note">
 Make sure the AUX1 channel is assigned to an RC switch and that airspeed is working properly.
-</aside>
-
-<aside class="todo">
-TODO: support new VTOL MAVLink commands for direct VTOL takeoff/land
 </aside>
 
 ## On the bench
 
-<aside class="warn">
+<aside class="caution">
 Remove all props! To test transition functionality properly, the vehicle needs to be armed.
 </aside>
 
@@ -47,25 +40,55 @@ By default, starting in multirotor mode:
 
 ## In flight
 
-<aside class="warn">
-Before testing transitions in flight, make sure the VTOL flies stable in multirotor mode.
-In general, if something doesn't go as planned, transition to multirotor mode and let it recover (it does a good job when it's properly
-tuned).
+<aside class="tip">
+Before testing transitions in flight, make sure the VTOL flies stable in multirotor mode. In general, if something doesn't go as planned, transition to multirotor mode and let it recover (it does a good job when it's properly tuned).
 </aside>
+
+In-flight transition requires at least the following parameters to match your airframe and piloting skills:
+
+| Param | Notes |
+| :--- | :--- |
+| VT_FW_PERM_STAB | Turns permanent stabilization on/off for fixed-wing. |
+| VT_ARSP_BLEND | At which airspeed the fixed-wing controls becom active. |
+| VT_ARSP_TRANS | At which airspeed the transition to fixed-wing is complete. |
+
+There are more parameters depending on the type of VTOL, see the [parameter reference](https://pixhawk.org/firmware/parameters#vtol_attitude_control).
 
 ### Manual transition test
 
-<aside class="todo">
-TODO: describe
-</aside>
+The basic procedure to test manual transitions is as follows:
+
+  * arm and takeoff in multirotor mode
+  * climb to a safe height to allow for some drop after transition
+  * turn into the wind
+  * toggle transition switch
+  * observe transition **(MC-FW)**
+  * fly in fixed-wing
+  * come in at a safe height to allow for some drop after transition
+  * toggle transition switch
+  * observe transition **(FW-MC)**
+  * land and disarm
+
+**MC-FW**
+
+During the transition from MC to FW the following can happen:
+
+  1. it looses control while gaining speed (this can happen due to many factors)
+  2. the transition takes too long and it flies too far away before the transition finishes
+
+For 1): Switch back to multirotor (will happen instantly). Try to identify the problem (check setpoints).
+
+For 2): If blending airspeed is set and it has a higher airspeed already it is controllable as fixed-wing. Therefore it is possible to fly around and give it more time to finish the transition. Otherwise switch back to multirotor and try to identify the problem (check airspeed).
+
+**FW-MC**
+
+The transition from FW to MC is mostly unproblematic. In-case it seems to loose control the best approach is to let it recover.
 
 ### Automatic transition test (mission, commanded)
 
-Commanded transitions only work in auto (mission) or offboard flight-mode.
-Make sure you are confident to operate the auto/offboard and transition switch in flight.
+Commanded transitions only work in auto (mission) or offboard flight-mode. Make sure you are confident to operate the auto/offboard and transition switch in flight.
 
-Switching to manual will reactivate the transition switch. For example: if you switch out of auto/offboard when in automatic
-fixed-wing flight and the transition switch is currently in multirotor position it will transition to multirotor right away.
+Switching to manual will reactivate the transition switch. For example: if you switch out of auto/offboard when in automatic fixed-wing flight and the transition switch is currently in multirotor position it will transition to multirotor right away.
 
 #### Proceduce
 
@@ -80,8 +103,7 @@ The following procedure can be used to test a mission with transition:
   * disable mission
   * land manually
   
-During flight, the manual transition switch stays in multirotor position. If something doesn't go as planned,
-switch to manual and it will recover in multirotor mode.
+During flight, the manual transition switch stays in multirotor position. If something doesn't go as planned, switch to manual and it will recover in multirotor mode.
 
 #### Example mission
 
@@ -99,9 +121,4 @@ The mission should contain at least (also see screenshots below):
 
 ![Mission, showing transition WP to hover](images/vtol/qgc_mission_example_b.png)
 
-## Relevant parameters
-
-<aside class="todo">
-TODO: params for all 3 types
-</aside>
 
