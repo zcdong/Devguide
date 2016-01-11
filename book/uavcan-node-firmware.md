@@ -33,15 +33,15 @@ BOARD=s2740vc_1_0 make && BOARD=px4esc_1_6 make
 
 This will build the UAVCAN node firmware for both supported ESCs. The firmware images will be located at `com.thiemar.s2740vc-v1-1.0-1.0.<git hash>.bin` and `org.pixhawk.px4esc-v1-1.6-1.0.<git hash>.binn`.
 
-## PX4 ESC Codebase (Pixhawk ESC 1.4)
+## Sapog Codebase (Pixhawk ESC 1.4)
 
-Download the Pixhawk ESC 1.4 support branch of PX4ESC:
+Download the Sapog codebase:
 
 <div class="host-code"></div>
 
 ```sh
-git clone https://github.com/PX4/px4esc
-cd px4esc
+git clone https://github.com/PX4/sapog
+cd sapog
 ```
 
 ### Flashing the UAVCAN Bootloader
@@ -64,9 +64,9 @@ The bootloader image is located at `bootloader/firmware/bootloader.bin`, and the
 
 ```sh
 cd firmware
-make px4esc.image
+make sapog.image
 ```
-The firmware image will be located at `firmware/build/org.pixhawk.px4esc-bldc-v1-1.0.<xxxxxxxx>.bin`, where `<xxxxxxxx>` is an arbitrary sequence of numbers and letters.
+The firmware image will be located at `firmware/build/org.pixhawk.sapog-v1-1.0.<xxxxxxxx>.bin`, where `<xxxxxxxx>` is an arbitrary sequence of numbers and letters.
 
 ## Zubax GNSS
 
@@ -98,8 +98,8 @@ The ROMFS-based updater follows that pattern, but prepends the file name with ``
 The resulting finale file locations are:
 
   * S2740VC ESC: `ROMFS/px4fmu_common/uavcan/fw/com.thiemar.s2740vc-v1/1.0/_s2740vc-v1-1.0.<git hash>.bin`
-  * Pixhawk ESC 1.6: `ROMFS/px4fmu_common/uavcan/fw/org.pixhawk.px4esc-v1/1.6/_px4esc-v1-1.6.<git has>.bin`
-  * Pixhawk ESC 1.4: `ROMFS/px4fmu_common/uavcan/fw/org.pixhawk.px4esc-bldc-v1/1.4/_px4esc-bldc-v1-1.4.<git has>.bin``
+  * Pixhawk ESC 1.6: `ROMFS/px4fmu_common/uavcan/fw/org.pixhawk.px4esc-v1/1.6/_px4esc-v1-1.6.<git hash>.bin`
+  * Pixhawk ESC 1.4: `ROMFS/px4fmu_common/uavcan/fw/org.pixhawk.sapog-v1/1.4/_sapog-v1-1.4.<git hash>.bin``
   * Zubax GNSS v1: `ROMFS/px4fmu_common/uavcan/fw/com.zubax.gnss/1.0/gnss-1.0.<git has>.bin`
   * Zubax GNSS v2: `ROMFS/px4fmu_common/uavcan/fw/com.zubax.gnss/2.0/gnss-2.0.<git has>.bin`
 
