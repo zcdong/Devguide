@@ -40,9 +40,8 @@ Download the Pixhawk ESC 1.4 support branch of PX4ESC:
 <div class="host-code"></div>
 
 ```sh
-git clone https://github.com/thiemar/px4esc
+git clone https://github.com/PX4/px4esc
 cd px4esc
-git checkout px4esc_1.4_update
 ```
 
 ### Flashing the UAVCAN Bootloader
@@ -81,7 +80,7 @@ The UAVCAN node file names follow a naming convention which allows the Pixhawk t
 The convention for firmware image names is:
 
   ```<uavcan name>-<hw version major>.<hw version minor>-<sw version major>.<sw version minor>.<version hash>.bin```
-  
+
   e.g. ```com.thiemar.s2740vc-v1-1.0-1.0.68e34de6.bin```
 
 However, due to space/performance constraints (names may not exceed 28 charates), the UAVCAN firmware updater requires those filenames to be split and stored in a directory structure like the following:
