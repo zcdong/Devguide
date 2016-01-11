@@ -64,6 +64,10 @@ Open <http://localhost:4000/>. Files will update live as you edit them.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for information on how to submit to this guide.
 
+## Add a new Page
+
+To add a new page, create the "page_name".md file in the Book folder and add an appropriate location in the [SUMMARY.MD](https://github.com/PX4/Devguide/blob/master/book/SUMMARY.md) file.
+
 ## Deployment
 
 Install required packages:
