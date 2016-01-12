@@ -47,11 +47,22 @@ Follow the [Linux installation instructions](http://gazebosim.org/tutorials?tut=
 
 Run the PX4 SITL with the Iris configuration in the Firmware directory:
 
+### Quadrotor
+
 <div class="host-code"></div>
 
 ```sh
 cd ~/src/Firmware
 make posix_sitl_default gazebo
+```
+
+### Tailsitter VTOL
+
+<div class="host-code"></div>
+
+```sh
+cd ~/src/Firmware
+make posix_sitl_default gazebo_tailsitter
 ```
 
 This will bring up the PX4 shell:
