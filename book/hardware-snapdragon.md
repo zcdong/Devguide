@@ -21,11 +21,11 @@ More information about the Snapdragon Flight platform is at [Snapdragon-Flight-D
   * Wifi: Qualcomm® VIVE™ 1-stream 802.11n/ac with MU-MIMO † Integrated digital core
   * BT/WiFi: BT 4.0 and 2G/5G WiFi via QCA6234
     * 802.11n, 2×2 MIMO with 2 uCOAX connectors on-board for connection to external antenna
-  * GPS: Telit Jupiter SE868 V2 module
+  * GPS: Telit Jupiter SE868 V2 module (use of an external u-Blox module is recommended by PX4 instead)
     * uCOAX connector on-board for connection to external GPS patch antenna 
     * CSR SiRFstarV @ 5Hz via UART
-  * MPU: Invensense MPU-9250 9-Axis Sensor, 3x3mm QFN
-  * Baro: Bosch BMP280 barometric pressure sensor
+  * Accelerometer / Gyro / Mag: Invensense MPU-9250 9-Axis Sensor, 3x3mm QFN, on bus SPI1
+  * Baro: Bosch BMP280 barometric pressure sensor, on bus I2C3
   * Power: 5VDC via external 2S-6S battery regulated down to 5V via APM adapter
   * Availability: [Intrinsyc Store](http://shop.intrinsyc.com/products/snapdragon-flight-dev-kit)
 
