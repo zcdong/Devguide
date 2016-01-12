@@ -33,7 +33,15 @@ brew install opencv gazebo7
 
 ### Linux
 
-[Linux installation instructions](http://gazebosim.org/tutorials?tut=install_ubuntu&ver=6.0&cat=install) for Gazebo 6.
+The PX4 SITL uses the Gazebo simulator, but does not depend on ROS. The simulation can be [interfaced to ROS](simulation-ros-interface.md) the same way as normal flight code is.
+
+#### ROS Users
+
+If you plan to use PX4 with ROS, make sure to follow the [Gazebo version guide for version 6](http://gazebosim.org/tutorials?tut=ros_wrapper_versions#Gazebo6.xseries) for ROS.
+
+#### Normal Installation
+
+Follow the [Linux installation instructions](http://gazebosim.org/tutorials?tut=install_ubuntu&ver=6.0&cat=install) for Gazebo 6.
 
 ## Running the Simulation
 
