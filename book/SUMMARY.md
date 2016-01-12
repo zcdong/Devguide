@@ -45,6 +45,7 @@ This is the summary of the PX4 dev guide.
   * [Planes](airframes-plane.md)
     * [Wing Wing Z-84](airframes-plane-wing-z-84.md)
   * [VTOL](airframes-vtol.md)
+    * [VTOL Testing](airframes-vtol-testing.md)
     * [TBS Caipiroshka](airframes-vtol-caipiroshka.md)
   * [Boats, Submarines, Blimps, Rovers](airframes-experimental.md)
 * Companion Computers
