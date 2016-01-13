@@ -42,6 +42,7 @@ Download the Sapog codebase:
 ```sh
 git clone https://github.com/PX4/sapog
 cd sapog
+git submodule update --init --recursive
 ```
 
 ### Flashing the UAVCAN Bootloader
