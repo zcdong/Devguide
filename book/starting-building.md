@@ -60,6 +60,28 @@ Rebooting.
 
 [100%] Built target upload
 ```
+### Raspberry Pi 2 boards
+The command below build the target for Raspbian (posix_pi2_release).
+
+<div class="host-code"></div>
+
+```sh
+cd Firmware
+make posix_pi2_release # for cross-compiler build
+```
+
+If you're building *directly* on the Pi, you will want the native build target (posix_pi2_default).
+
+<div class="host-code"></div>
+
+```sh
+cd Firmware
+make posix_pi2_default # for native build
+```
+
+<aside class="todo">
+Add Pi SCP/rsync auto-uploader instructions
+</aside>
 
 ### QuRT / Snapdragon based boards
 

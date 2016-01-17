@@ -20,10 +20,11 @@ And then you have to logout and login again, as this is only changed after a new
 
 ## Installation
 
-Update the package list and install the following dependencies for all PX4 build targets. PX4 supports three main families:
+Update the package list and install the following dependencies for all PX4 build targets. PX4 supports four main families:
 
   * NuttX based hardware: [Pixhawk](hardware-pixhawk.md), [Pixfalcon](hardware-pixfalcon.md)
   * Snapdragon Flight hardware: [Snapdragon](hardware-snapdragon.md)
+  * Raspberry Pi hardware: [Raspberry Pi 2](hardware-pi2.md)
   * Host simulation: [jMAVSim SITL](simulation-sitl.md) and [Gazebo SITL](simulation-gazebo.md)
 
 <aside class="note">
@@ -86,9 +87,23 @@ Hexagon SDK:
 chmod u+x qualcomm_hexagon_sdk_2_0_eval.bin
 ./qualcomm_hexagon_sdk_2_0_eval.bin
 ```
+### Raspberry Pi hardware
+Developers working on Raspberry Pi hardware should download the RPi Linux toolchain and execute the commands below. The installation script will automatically install the cross-compiler toolchain. If you are looking for the *native Raspberry Pi toolchain* to compile directly on the Pi, see [here](hardware-pi2.md)
+
+<div class="host-code"></div>
+
+```sh
+git clone https://github.com/pixhawk/rpi2_toolchain.git
+cd rpi2_toolchain
+./install_cross <install location> #Leave blank for default install to /opt/rpi_toolchain
+```
+
+### Snapdragon Flight
+
+Developers working on Snapdragon Flight should download the Hexagon Linux toolchain and execute the commands below. The installation guide will come up, leave everything at default by just continuing to press enter.
 
 Hexagon Tools:
-
+=======
 <div class="host-code"></div>
 
 ```sh
