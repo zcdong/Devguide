@@ -103,7 +103,6 @@ cd rpi2_toolchain
 Developers working on Snapdragon Flight should download the Hexagon Linux toolchain and execute the commands below. The installation guide will come up, leave everything at default by just continuing to press enter.
 
 Hexagon Tools:
-=======
 <div class="host-code"></div>
 
 ```sh
