@@ -60,6 +60,66 @@ Rebooting.
 
 [100%] Built target upload
 ```
+### Raspberry Pi 2 boards
+The command below build the target for Raspbian (posix_pi2_release).
+
+<div class="host-code"></div>
+
+```sh
+cd Firmware
+make posix_pi2_release # for cross-compiler build
+```
+
+The "mainapp" executable file is in the directory build_posix_rpi2_release/src/firmware/posix
+Copy it over to the RPi, and run it with :
+<div class="host-code"></div>
+
+```sh
+./mainapp
+```
+
+<aside class="todo">
+Add Pi SCP/rsync auto-uploader instructions
+</aside>
+
+
+If you're building *directly* on the Pi, you will want the native build target (posix_pi2_default).
+
+<div class="host-code"></div>
+
+```sh
+cd Firmware
+make posix_pi2_default # for native build
+```
+
+The "mainapp" executable file is in the directory build_posix_rpi2_default/src/firmware/posix
+Run it directly with :
+<div class="host-code"></div>
+
+```sh
+./build_posix_rpi2_default/src/firmware/posix/mainapp
+```
+
+A successful build followed by executing mainapp will give you this :
+
+<div class="host-code"></div>
+
+```sh
+[init] shell id: 1996021760
+[init] task name: mainapp
+
+______  __   __    ___ 
+| ___ \ \ \ / /   /   |
+| |_/ /  \ V /   / /| |
+|  __/   /   \  / /_| |
+| |     / /^\ \ \___  |
+\_|     \/   \/     |_/
+
+Ready to fly.
+
+
+pxh>
+```
 
 ### QuRT / Snapdragon based boards
 
