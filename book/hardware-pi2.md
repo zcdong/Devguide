@@ -68,6 +68,8 @@ Next, setup the Avahi configuration file
 sudo nano /etc/avahi/services/multiple.service
 ```
 Add this to the file :
+<div class="host-code"></div>
+
 ```xml
 <?xml version="1.0" standalone='no'?>
 <!DOCTYPE service-group SYSTEM "avahi-service.dtd">
@@ -98,7 +100,9 @@ And that's it. You should be able to access your Pi directly by its hostname fro
 
 In order to allow the PX4 development environment to automatically push executables to your board, you need to configure passwordless access to the RPi. We use the public-key authentication method for this.
 
-To generate new SSH keys enter the following commands (Choose a sensible hostname such as ```<YOURNANME>@<YOURDEVICE>```.  Here we have used pi@px4autopilot.) These commands need to be run on the HOST development computer!
+To generate new SSH keys enter the following commands (Choose a sensible hostname such as ```<YOURNANME>@<YOURDEVICE>```.  Here we have used ```pi@px4autopilot```) 
+
+These commands need to be run on the HOST development computer!
 
 <div class="host-code"></div>
 
@@ -158,14 +162,15 @@ This should copy over a "hello.txt" file into the home folder of your RPi. Valid
 You can run PX4 builds directly on the Pi if you desire. This is the *native* build.
 The other option is to run builds on a development computer which cross-compiles for the Pi, and pushes the PX4 executable binary directly to the Pi. This is the *cross-compiler* build, and the recommended one for developers due to speed of deployment and ease of use. For cross-compiling setups, you can skip this step.
 
-The installation script will automatically update the native toolchain to that required by PX4.
+The below installation script will automatically update the native build system to that required by PX4.
 
 <div class="host-code"></div>
 
 ```sh
-git clone https://github.com/pixhawk/rpi2_toolchain.git
+git clone https://github.com/pixhawk/rpi_toolchain.git
 cd rpi_toolchain
-./install_native
+chmod +x install_native.sh
+./install_native.sh
 ```
 ### Building the code 
 
