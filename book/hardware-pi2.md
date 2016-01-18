@@ -45,10 +45,9 @@ CTRL+X press Y then hit Enter
 sudo nano/etc/hosts
 ```
 Change the entry ```127.0.1.1 raspberry```
+To ```127.0.1.1 <YOURNEWHOSTNAME>```
 
-To 127.0.1.1 <YOURNEWHOSTNAME>
-
-If your network has DHCP setup properly, you should even be able to directly SSH without the IP address now, by insteam specifying the hostname.
+If your network has DHCP setup properly, you should even be able to directly SSH without the IP address now, by instead specifying the hostname.
 
 <div class="host-code"></div>
 
