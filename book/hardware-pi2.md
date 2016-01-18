@@ -1,6 +1,6 @@
 # Raspberry Pi 2 Autopilot
 
-![](images/hardware/hardware-pi2.png)
+![](images/hardware/hardware-pi2.jpg)
 
 ## Developer Quick Start
 
@@ -48,6 +48,8 @@ sudo nano /etc/hosts
 ```
 Change the entry ```127.0.1.1 raspberry``` to ```127.0.1.1 <YOURNEWHOSTNAME>```
 
+Reboot the Pi after this step is completed to allow it to re-associate with your network.
+
 ### Setting up Avahi (Zeroconf)
 
 To make connecting to the Pi easier, we recommend setting up Avahi (Zeroconf) which allows easy access to the Pi from any network by directly specifying its hostname.
@@ -92,12 +94,11 @@ sudo /etc/init.d/avahi-daemon restart
 ```
 And that's it. You should be able to access your Pi directly by its hostname from any computer on the network.
 
-
 ### Configuring a SSH Public-Key 
 
 In order to allow the PX4 development environment to automatically push executables to your board, you need to configure passwordless access to the RPi. We use the public-key authentication method for this.
 
-To generate new SSH keys enter the following command (Choose a sensible hostname such as <YOURNANME>@<YOURDEVICE> where we have used pi@px4autopilot):
+To generate new SSH keys enter the following command (Choose a sensible hostname such as ```<YOURNANME>@<YOURDEVICE>```.  Here we have used pi@px4autopilot):
 
 <div class="host-code"></div>
 
