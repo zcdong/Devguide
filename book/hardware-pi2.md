@@ -107,7 +107,7 @@ ssh-keygen -t rsa -C pi@px4autopilot
 ```
 Upon entering this command, you'll be asked where to save the key. We suggest you save it in the default location ($HOME/.ssh/id_rsa) by just hitting Enter.
 
-Now you should see the files id_rsa and id_rsa.pub in your .ssh directory in your home folder:
+Now you should see the files ```id_rsa``` and ```id_rsa.pub``` in your ```.ssh``` directory in your home folder:
 
 <div class="host-code"></div>
 
@@ -123,21 +123,21 @@ To copy your public key to your Raspberry Pi, use the following command to appen
 <div class="host-code"></div>
 
 ```sh
-cat ~/.ssh/id_rsa.pub | ssh pi@<destination_host> 'cat >> .ssh/authorized_keys'
+cat ~/.ssh/id_rsa.pub | ssh pi@px4autopilot 'cat >> .ssh/authorized_keys'
 ```
 
 Note that this time you will have to authenticate with your password ("raspberry" by default).
 
-Now try ```ssh pi@<destination_host>``` and you should connect without a password prompt.
+Now try ```ssh pi@px4autopilot``` and you should connect without a password prompt.
 
-If you see a message ```Agent admitted failure to sign using the key.``` then add your RSA or DSA identities to the authentication agent, ssh-agent and the execute the following command:
+If you see a message "```Agent admitted failure to sign using the key.```" then add your RSA or DSA identities to the authentication agent, ssh-agent and the execute the following command:
 
 <div class="host-code"></div>
 
 ```sh
 ssh-add
 ```
-If this did not work, delete your keys with rm ~/.ssh/id* and follow the instructions again.
+If this did not work, delete your keys with ```rm ~/.ssh/id*``` and follow the instructions again.
 
 ### Testing file transfer
 We use SCP to transfer files from the development computer to the target board over a network (WiFi or Ethernet).
@@ -148,7 +148,7 @@ To test your setup, try pushing a file from the development PC to the Pi over th
 
 ```sh
 echo "Hello" > hello.txt
-scp hello.txt pi@<destination_host>:/home/pi/
+scp hello.txt pi@px4autopilot:/home/pi/
 rm hello.txt
 ```
 This should copy over a "hello.txt" file into the home folder of your RPi. Validate that the file was indeed copied, and you can proceed to the next step.
