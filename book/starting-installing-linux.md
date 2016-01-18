@@ -88,18 +88,19 @@ chmod u+x qualcomm_hexagon_sdk_2_0_eval.bin
 ./qualcomm_hexagon_sdk_2_0_eval.bin
 ```
 ### Raspberry Pi hardware
-Developers working on Raspberry Pi hardware should download the RPi Linux toolchain from below. The installation script will automatically install the cross-compiler toolchain. If you are looking for the *native Raspberry Pi toolchain* to compile directly on the Pi, see [here](http://dev.px4.io/hardware-pi2.html#native-builds-optional)
+Developers working on Raspberry Pi hardware should download the RPi Linux toolchain from below. The installation script will automatically install the cross-compiler toolchain. If you are looking for the *native* Raspberry Pi toolchain to compile directly on the Pi, see [here](http://dev.px4.io/hardware-pi2.html#native-builds-optional)
 
 <div class="host-code"></div>
 
 ```sh
 git clone https://github.com/pixhawk/rpi_toolchain.git
 cd rpi_toolchain
-./install_cross # You can pass the install path here to change the default install location
+chmod +x install_cross.sh
+./install_cross.sh
 ```
 You will be required to enter your password for toolchain installation to complete successfully.
 
-You can pass a different path to the installer script if you wouldn't like to install the toolchain to the default location of ```/opt/rpi_toolchain``` like ``` ./install_cross <PATH>```. The installer will automatically configure required environment variables as well.
+You can pass a different path to the installer script if you wouldn't like to install the toolchain to the default location of ```/opt/rpi_toolchain```. Run ``` ./install_cross.sh <PATH>```. The installer will automatically configure required environment variables as well.
 
 ### Snapdragon Flight
 
