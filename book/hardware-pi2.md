@@ -98,7 +98,7 @@ And that's it. You should be able to access your Pi directly by its hostname fro
 
 In order to allow the PX4 development environment to automatically push executables to your board, you need to configure passwordless access to the RPi. We use the public-key authentication method for this.
 
-To generate new SSH keys enter the following command (Choose a sensible hostname such as ```<YOURNANME>@<YOURDEVICE>```.  Here we have used pi@px4autopilot):
+To generate new SSH keys enter the following commands (Choose a sensible hostname such as ```<YOURNANME>@<YOURDEVICE>```.  Here we have used pi@px4autopilot.) These commands need to be run on the HOST development computer!
 
 <div class="host-code"></div>
 
