@@ -93,10 +93,13 @@ Developers working on Raspberry Pi hardware should download the RPi Linux toolch
 <div class="host-code"></div>
 
 ```sh
-git clone https://github.com/pixhawk/rpi2_toolchain.git
-cd rpi2_toolchain
-./install_cross <install location> #Leave blank for default install to /opt/rpi_toolchain
+git clone https://github.com/pixhawk/rpi_toolchain.git
+cd rpi_toolchain
+./install_cross # You can pass the install path here to change the default install location
 ```
+You will be required to enter your password for toolchain installation to complete successfully.
+
+You can pass a different path to the installer script if you wouldn't like to install the toolchain to the default location of ```/opt/rpi_toolchain``` like ``` ./install_cross <PATH>```. The installer will automatically configure required environment variables as well.
 
 ### Snapdragon Flight
 
