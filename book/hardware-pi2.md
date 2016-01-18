@@ -1,4 +1,6 @@
-# Raspberry Pi 2 Autopilots
+# Raspberry Pi 2 Autopilot
+
+![](images/hardware/hardware-pi2.png)
 
 ## Developer Quick Start
 
@@ -23,7 +25,7 @@ ssh pi@<IP-ADDRESS>
 
 ### Changing hostnames
 
-To avoid conflicts with any other RPis on the network, we advise you to change the default hostname to something sensible. We used "px4ap" for our setup. Connect to the Pi via SSH and follow the below instructions.
+To avoid conflicts with any other RPis on the network, we advise you to change the default hostname to something sensible. We used "px4autopilot" for our setup. Connect to the Pi via SSH and follow the below instructions.
 
 Edit the hostname file:
 
@@ -33,7 +35,7 @@ Edit the hostname file:
 sudo nano /etc/hostname
 ```
 
-Change ```raspberry``` to whatever hostname you want (one word with  limited characters apply)
+Change ```raspberry``` to whatever hostname you want (one word with limited characters apply)
 
 CTRL+X press Y then hit Enter
 
@@ -42,28 +44,65 @@ Next you need to change the hosts file:
 <div class="host-code"></div>
 
 ```sh
-sudo nano/etc/hosts
+sudo nano /etc/hosts
 ```
 Change the entry ```127.0.1.1 raspberry``` to ```127.0.1.1 <YOURNEWHOSTNAME>```
 
-If your network has DHCP setup properly, you should even be able to directly SSH without the IP address now, by instead specifying the hostname.
+### Setting up Avahi (Zeroconf)
+
+To make connecting to the Pi easier, we recommend setting up Avahi (Zeroconf) which allows easy access to the Pi from any network by directly specifying its hostname.
 
 <div class="host-code"></div>
 
 ```sh
-ssh pi@px4ap # Our hostname here is "px4ap"
+sudo apt-get install avahi-daemon
+sudo insserv avahi-daemon
 ```
+Next, setup the Avahi configuration file
+
+<div class="host-code"></div>
+
+```sh
+sudo nano /etc/avahi/services/multiple.service
+```
+Add this to the file :
+```xml
+<?xml version="1.0" standalone='no'?>
+<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
+<service-group>
+        <name replace-wildcards="yes">%h</name>
+        <service>
+                <type>_device-info._tcp</type>
+                <port>0</port>
+                <txt-record>model=RackMac</txt-record>
+        </service>
+        <service>
+                <type>_ssh._tcp</type>
+                <port>22</port>
+        </service>
+</service-group>
+
+```
+Restart the daemon
+
+<div class="host-code"></div>
+
+```sh
+sudo /etc/init.d/avahi-daemon restart
+```
+And that's it. You should be able to access your Pi directly by its hostname from any computer on the network.
+
 
 ### Configuring a SSH Public-Key 
 
-In order to allow the PX4 development environment to automatically push executables to your board, you need to configure passwordless access to the RPi. We use a public-key authentication method for this.
+In order to allow the PX4 development environment to automatically push executables to your board, you need to configure passwordless access to the RPi. We use the public-key authentication method for this.
 
-To generate new SSH keys enter the following command (Choose a sensible hostname such as <YOURNANME>@<YOURDEVICE> where we have used pi@px4ap):
+To generate new SSH keys enter the following command (Choose a sensible hostname such as <YOURNANME>@<YOURDEVICE> where we have used pi@px4autopilot):
 
 <div class="host-code"></div>
 
 ```sh
-ssh-keygen -t rsa -C pi@px4ap
+ssh-keygen -t rsa -C pi@px4autopilot
 ```
 Upon entering this command, you'll be asked where to save the key. We suggest you save it in the default location ($HOME/.ssh/id_rsa) by just hitting Enter.
 
