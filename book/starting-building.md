@@ -61,7 +61,7 @@ Rebooting.
 [100%] Built target upload
 ```
 ### Raspberry Pi 2 boards
-The command below build the target for Raspbian (posix_pi2_release).
+The command below builds the target for Raspbian (posix_pi2_release).
 
 <div class="host-code"></div>
 

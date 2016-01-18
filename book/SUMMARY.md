@@ -28,6 +28,7 @@ This is the summary of the PX4 dev guide.
   * [Interfacing to ROS](simulation-ros-interface.md)
 * Autopilot Hardware
   * [Snapdragon Flight](hardware-snapdragon.md)
+  * [Raspberry Pi 2](hardware-pi2.md)
   * [Pixhawk](hardware-pixhawk.md)
   * [Pixfalcon](hardware-pixfalcon.md)
   * [Pixracer](hardware-pixracer.md)
