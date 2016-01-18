@@ -1,6 +1,6 @@
 # Raspberry Pi 2 Autopilot
 
-![](images/hardware/hardware-pi2.jpg)
+![](images/hardware/hardware-rpi2.jpg)
 
 ## Developer Quick Start
 
