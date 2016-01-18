@@ -25,7 +25,7 @@ ssh pi@<IP-ADDRESS>
 
 To avoid conflicts with any other RPis on the network, we advise you to change the default hostname to something sensible. We used "px4ap" for our setup. Connect to the Pi via SSH and follow the below instructions.
 
-1. Edit the hostname file
+Edit the hostname file:
 
 <div class="host-code"></div>
 
@@ -37,15 +37,14 @@ Change ```raspberry``` to whatever hostname you want (one word with  limited cha
 
 CTRL+X press Y then hit Enter
 
-2. Next you need to change the hosts file
+Next you need to change the hosts file:
 
 <div class="host-code"></div>
 
 ```sh
 sudo nano/etc/hosts
 ```
-Change the entry ```127.0.1.1 raspberry```
-To ```127.0.1.1 <YOURNEWHOSTNAME>```
+Change the entry ```127.0.1.1 raspberry``` to ```127.0.1.1 <YOURNEWHOSTNAME>```
 
 If your network has DHCP setup properly, you should even be able to directly SSH without the IP address now, by instead specifying the hostname.
 
@@ -110,9 +109,9 @@ To test your setup, try pushing a file from the development PC to the Pi over th
 ```sh
 echo "Hello" > hello.txt
 scp hello.txt pi@<destination_host>:/home/pi/
-rm -hello.txt
+rm hello.txt
 ```
-This should copy over a "hello.txt" file into the home folder of your RPi. Confirm that the file indeed copied, and you can proceed to the next step.
+This should copy over a "hello.txt" file into the home folder of your RPi. Validate that the file was indeed copied, and you can proceed to the next step.
 
 ### Native builds (optional)
 
