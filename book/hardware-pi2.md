@@ -4,11 +4,11 @@
 
 ### OS Image
 
-Use the Emlid RT Raspbian image till the default pre-configured PX4 image is made available. The default image will have most of the setup procedures shown below already preconfigured.
+Use the [Emlid RT Raspbian image](http://docs.emlid.com/navio/Downloads/Real-time-Linux-RPi2/) till the default pre-configured PX4 image is made available. The default image will have most of the setup procedures shown below already done.
 
 ### Setting up access
 
-The Raspbian image has SSH setup already. Username is "pi" and password is "raspberry". You can connect to your RPi2 over a network (Ethernet is set to come up as DHCP by default) and then proceed to configure WiFi access. We assume that the username and password remain at their defaults for the purpose of this guide.
+The Raspbian image has SSH setup already. Username is "pi" and password is "raspberry". You can connect to your RPi2 over a network (Ethernet is set to come up with DHCP by default) and then proceed to configure WiFi access. We assume that the username and password remain at their defaults for the purpose of this guide.
 
 <aside class="todo">
 Add some wifi setup instructions
