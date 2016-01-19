@@ -29,19 +29,13 @@ To avoid conflicts with any other RPis on the network, we advise you to change t
 
 Edit the hostname file:
 
-<div class="host-code"></div>
-
 ```sh
 sudo nano /etc/hostname
 ```
 
 Change ```raspberry``` to whatever hostname you want (one word with limited characters apply)
 
-CTRL+X press Y then hit Enter
-
 Next you need to change the hosts file:
-
-<div class="host-code"></div>
 
 ```sh
 sudo nano /etc/hosts
@@ -54,21 +48,16 @@ Reboot the Pi after this step is completed to allow it to re-associate with your
 
 To make connecting to the Pi easier, we recommend setting up Avahi (Zeroconf) which allows easy access to the Pi from any network by directly specifying its hostname.
 
-<div class="host-code"></div>
-
 ```sh
 sudo apt-get install avahi-daemon
 sudo insserv avahi-daemon
 ```
 Next, setup the Avahi configuration file
 
-<div class="host-code"></div>
-
 ```sh
 sudo nano /etc/avahi/services/multiple.service
 ```
 Add this to the file :
-<div class="host-code"></div>
 
 ```xml
 <?xml version="1.0" standalone='no'?>
@@ -88,8 +77,6 @@ Add this to the file :
 
 ```
 Restart the daemon
-
-<div class="host-code"></div>
 
 ```sh
 sudo /etc/init.d/avahi-daemon restart
@@ -162,9 +149,7 @@ This should copy over a "hello.txt" file into the home folder of your RPi. Valid
 You can run PX4 builds directly on the Pi if you desire. This is the *native* build.
 The other option is to run builds on a development computer which cross-compiles for the Pi, and pushes the PX4 executable binary directly to the Pi. This is the *cross-compiler* build, and the recommended one for developers due to speed of deployment and ease of use. For cross-compiling setups, you can skip this step.
 
-The below installation script will automatically update the native build system to that required by PX4.
-
-<div class="host-code"></div>
+The below installation script will automatically update the native build system on the Pi to that required by PX4. Run these commands on the Pi itself!
 
 ```sh
 git clone https://github.com/pixhawk/rpi_toolchain.git
