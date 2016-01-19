@@ -67,7 +67,7 @@ The command below builds the target for Raspbian (posix_pi2_release).
 
 ```sh
 cd Firmware
-make posix_pi2_release # for cross-compiler build
+make posix_rpi2_release # for cross-compiler build
 ```
 
 The "mainapp" executable file is in the directory build_posix_rpi2_release/src/firmware/posix.
@@ -89,7 +89,7 @@ If you're building *directly* on the Pi, you will want the native build target (
 
 ```sh
 cd Firmware
-make posix_pi2_default # for native build
+make posix_rpi2_default # for native build
 ```
 
 The "mainapp" executable file is in the directory build_posix_rpi2_default/src/firmware/posix.
