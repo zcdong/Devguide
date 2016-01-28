@@ -29,9 +29,9 @@ Update the mixer for Pixracer
 
 | Output | Actuator |
 | -- | -- | -- |
-| MAIN1 | 50 Hz | Left aileron servo |
-| MAIN2 | 50 Hz | Right aileron servo |
+| MAIN1 | 50 Hz | Left motor controller |
+| MAIN2 | 50 Hz | Right motor controller |
 | MAIN3 | 50 Hz | Empty |
 | MAIN4 | 50 Hz | Empty |
-| MAIN5 | 400 Hz | Left motor controller |
-| MAIN6 | 400 Hz | Right motor controller |
+| MAIN5 | 400 Hz | Left aileron servo |
+| MAIN6 | 400 Hz | Right aileron servo |
