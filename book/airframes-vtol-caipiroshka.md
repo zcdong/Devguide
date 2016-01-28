@@ -8,6 +8,8 @@ The Caipiroshka VTOL is a slightly modified TBS Caipirinha.
 
 Switch to the configuration section in [QGroundControl](qgroundcontrol-intro.md) and select the airframe tab. Scroll down the list to find the VTOL Duorotor Tailsitter icon. Select the ```Duorotor Tailsitter``` from the drop-down list.
 
+![](images/gcs/qgc_caipiroshka.jpg)
+
 ## Parts List
 
   * TBS Caipirinha Wing ([Eflight store](http://www.eflight.ch/shop/USER_ARTIKEL_HANDLING_AUFRUF.php?von_suchresultat=true&Ziel_ID=19638&Kategorie_ID=110923))
