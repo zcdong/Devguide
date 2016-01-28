@@ -4,6 +4,10 @@ The Caipiroshka VTOL is a slightly modified TBS Caipirinha.
 
 {% youtube %}https://www.youtube.com/watch?v=acG0aTuf3f8&vq=hd720{% endyoutube %}
 
+## Airframe configuration
+
+Switch to the configuration section in [QGroundControl](qgroundcontrol-intro.md) and select the airframe tab. Scroll down the list to find the VTOL Duorotor Tailsitter icon. Select the ```Duorotor Tailsitter``` from the drop-down list.
+
 ## Parts List
 
   * TBS Caipirinha Wing ([Eflight store](http://www.eflight.ch/shop/USER_ARTIKEL_HANDLING_AUFRUF.php?von_suchresultat=true&Ziel_ID=19638&Kategorie_ID=110923))
@@ -20,10 +24,6 @@ The Caipiroshka VTOL is a slightly modified TBS Caipirinha.
     * Team Orion 3S 11.1V 50 C ([Brack store](https://www.brack.ch/team-orion-2200mah-11-1v-50c-308340))
   * [Pixracer autopilot board + power module](hardware-pixracer.md)
   * [Digital airspeed sensor](http://www.hobbyking.com/hobbyking/store/__62752__HKPilot_32_Digital_Air_Speed_Sensor_And_Pitot_Tube_Set.html)
-
-<aside type="todo">
-Update the mixer for Pixracer
-</aside>
 
 ## Servo Connections
 
