@@ -59,7 +59,6 @@ Now in a new terminal make sure you will be able to insert the Iris model throug
 # Set the plugin path so Gazebo finds our model and sim
 export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:[PATH_TO_FIRMWARE]/Firmware/Tools/sitl_gazebo/Build
 # Set the model path so Gazebo finds the airframes
-# Disable online model lookup since this is quite experimental and unstable
 export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:[PATH_TO_FIRMWARE]/Firmware/Tools/sitl_gazebo/models
 ```
 
