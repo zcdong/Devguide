@@ -26,7 +26,7 @@ Switch to the configuration section in [QGroundControl](qgroundcontrol-intro.md)
   * [Digital airspeed sensor](http://www.hobbyking.com/hobbyking/store/__62752__HKPilot_32_Digital_Air_Speed_Sensor_And_Pitot_Tube_Set.html)
 
 ## Servo Connections
-
+The descriptions in the table below are referring to the user facing the front of the vehicle when it lies flat on its belly on a table.
 | Output | Actuator |
 | -- | -- | -- |
 | MAIN1 | 50 Hz | Left motor controller |
