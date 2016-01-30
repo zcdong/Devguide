@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Px4-devguide-cn.GitHub.io by zcdong</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Px4-devguide-cn.GitHub.io</h1>
+      <h2 class="project-tagline">PX4 Devguide GitBook 中文版</h2>
+      <a href="https://github.com/zcdong/PX4-devguide-cn.github.io" class="btn">View on GitHub</a>
+      <a href="https://github.com/zcdong/PX4-devguide-cn.github.io/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/zcdong/PX4-devguide-cn.github.io/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="px4-developer-guide" class="anchor" href="#px4-developer-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PX4 Developer Guide</h1>
+
+<p><a href="https://gitter.im/PX4/Devguide?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/PX4/Devguide.svg" alt="Join the chat at https://gitter.im/PX4/Devguide"></a></p>
+
+<p><a href="https://travis-ci.org/PX4/Devguide"><img src="https://travis-ci.org/PX4/Devguide.svg?branch=master" alt="Build Status"></a></p>
+
+<p>This guide <em>is published by Travis CI</em> online at: <a href="http://dev.px4.io/">http://dev.px4.io/</a></p>
+
+<h3>
+<a id="prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prerequisites</h3>
+
+<p>To start editing, install <a href="https://www.gitbook.com/">GitBook</a> (requires Node.js):</p>
+
+<p>On Mac OS:</p>
+
+<pre><code>brew install npm
+</code></pre>
+
+<p>On Linux - you're using Linux, so you should know!</p>
+
+<div class="highlight highlight-source-shell"><pre>sudo apt-get install npm nodejs-legacy curl</pre></div>
+
+<h3>
+<a id="installing-gitbook" class="anchor" href="#installing-gitbook" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installing Gitbook</h3>
+
+<pre><code>sudo npm install grunt-cli -g
+sudo npm install gitbook-cli -g
+</code></pre>
+
+<p>Fork this repo by clicking on the FORK Button on the top right of this github site.</p>
+
+<p>Git clone your fork of this repo:</p>
+
+<pre><code>git clone http://github.com/YOUR_GITHUB_USERNAME/Devguide.git
+</code></pre>
+
+<p>Change to the directory of this repo:</p>
+
+<pre><code>cd Devguide
+npm install
+gitbook install book
+
+</code></pre>
+
+<h3>
+<a id="running" class="anchor" href="#running" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Running</h3>
+
+<p>Build once with grunt every time the HTML template changes:</p>
+
+<pre><code>grunt
+</code></pre>
+
+<p>Then view it locally. <em>NOTE</em>: The local view will update when the markup files are changed,
+so there is no need to re-run this command.</p>
+
+<pre><code>gitbook serve book
+</code></pre>
+
+<p>Open <a href="http://localhost:4000/">http://localhost:4000/</a>. Files will update live as you edit them.</p>
+
+<p>See <a href="CONTRIBUTING.md">CONTRIBUTING.md</a> for information on how to submit to this guide.</p>
+
+<h2>
+<a id="add-a-new-page" class="anchor" href="#add-a-new-page" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Add a new Page</h2>
+
+<p>To add a new page, create the "page_name".md file in the Book folder and add an appropriate location in the <a href="https://github.com/PX4/Devguide/blob/master/book/SUMMARY.md">SUMMARY.MD</a> file.</p>
+
+<h2>
+<a id="deployment" class="anchor" href="#deployment" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deployment</h2>
+
+<p>Install required packages:</p>
+
+<div class="highlight highlight-source-shell"><pre>sudo gem install dotenv aws-sdk thread bundler git mime</pre></div>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">export</span> BUCKET=dev.px4.io
+<span class="pl-k">export</span> AWS_KEY=[KEY]
+<span class="pl-k">export</span> AWS_SECRET=[SECRET]
+./deploy.rb</pre></div>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>Content: CC-BY, (c) PX4 Project</p>
+
+<p>Template: CC-BY, stolen from the <a href="http://dev.3dr.com">Solo dev guide</a>.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/zcdong/PX4-devguide-cn.github.io">Px4-devguide-cn.GitHub.io</a> is maintained by <a href="https://github.com/zcdong">zcdong</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
